@@ -88,7 +88,7 @@ If you'd like to use unreleased packages, you can clone this repository or follo
 
 ## Contribution
 
-This theme was designed by Sophy Ouch (@sssoz) and built by Nate Wright (@NateWr) and Vitalii Bezsheiko (@Vitaliy-1) using [Bootstrap4](https://getbootstrap.com/).
+This theme was designed by Sophy (@sssoz) and built by Nate Wright (@NateWr) and Vitalii Bezsheiko (@Vitaliy-1) using [Bootstrap4](https://getbootstrap.com/).
 
 ## Contributions
 
