@@ -1,11 +1,11 @@
 /**
  * @file styles/index.less
  *
- * Copyright (c) 2014-2020 Simon Fraser University
- * Copyright (c) 2003-2020 John Willinsky
+ * Copyright (c) 2014-2025 Simon Fraser University
+ * Copyright (c) 2003-2025 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @brief importing Health Sciences theme stylesheets
+ * @brief importing African Journal of Library and Information Innovations theme stylesheets
  *
  */
 @import "variables";
@@ -48,3 +48,102 @@
 
 @import "components/sidebar";
 @import "components/footer";
+
+// African Journal Theme Enhancements
+// Red, Black, Yellow palette with minimal white space
+
+body {
+	background-color: @black;
+	color: @primary-text;
+}
+
+// Increase logo visibility
+.navbar-logo img,
+.navbar-brand img {
+	max-height: 100px !important;
+	width: auto;
+	border: 2px solid @primary;
+	padding: 5px;
+	background-color: @black;
+}
+
+// Enhanced footer branding
+.footer-brand-image {
+	max-width: 120px !important;
+	max-height: 120px !important;
+	border: 3px solid @primary;
+	padding: 8px;
+	background-color: @accent-black;
+}
+
+// Remove excessive white space padding
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+// Dark theme implementation
+.container {
+	background-color: @accent-black;
+}
+
+// Text readability with yellow/gold on dark backgrounds
+a {
+	color: @primary-light;
+
+	&:hover,
+	&:focus {
+		color: @contrast;
+		background-color: @primary;
+		padding: 2px 4px;
+		text-decoration: underline;
+	}
+}
+
+// Emphasize headings
+h1, h2, h3, h4, h5, h6 {
+	color: @primary-light;
+	font-weight: 700;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+// Card styling
+.card {
+	background-color: @accent-black;
+	border: 2px solid @primary;
+	border-left: 5px solid @primary-light;
+}
+
+// Button styling
+.btn {
+	font-weight: 700;
+	border: 2px solid @primary-light;
+
+	&:hover,
+	&:focus {
+		background-color: @primary;
+		border-color: @contrast;
+		color: @contrast;
+	}
+}
+
+.btn-primary {
+	background-color: @primary;
+	border-color: @primary-light;
+	color: @contrast;
+}
+
+// Alert boxes
+.alert {
+	border-left: 5px solid @primary-light;
+	background-color: @accent-black;
+	color: @primary-text;
+	border: 2px solid @primary;
+}
+
+// Remove excessive white space
+.main-container,
+.main-content {
+	background-color: @black;
+	color: @primary-text;
+}
