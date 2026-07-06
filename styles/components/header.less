@@ -1,5 +1,6 @@
 .main-header {
-	background-color: @light-grey;
+	background-color: @black;
+	border-bottom: 3px solid @primary;
 
 	.container {
 		position: relative;
@@ -18,16 +19,21 @@
 	.dropdown-item {
 		padding: 0.5em;
 		font-size: 14px;
-		font-weight: 400;
+		font-weight: 700;
 		text-transform: uppercase;
+		color: @primary-text;
 	}
 
 	.dropdown-menu {
 		padding: 0;
+		background-color: @accent-black;
+		border: 2px solid @primary;
 	}
 
 	.dropdown-item {
 		padding-left: 1.5em;
+		color: @primary-text;
+		background-color: @accent-black;
 	}
 }
 
@@ -39,6 +45,8 @@
 		height: auto;
 		max-height: 1em;
 		max-width: 100%;
+		border: 2px solid @primary-text;
+		padding: 2px;
 	}
 }
 
@@ -50,12 +58,16 @@
 	margin-left: -0.5em;
 	padding-left: 0.5em;
 	padding-right: 0.5em;
-	border: 1px solid transparent;
+	border: 2px solid @primary;
 	font-family: @font-serif;
 	font-size: 14px;
+	color: @primary-text;
+	background-color: @accent-black;
+	font-weight: 700;
 
 	&:hover {
-		color: @dark-grey;
+		color: @contrast;
+		background-color: @primary;
 	}
 }
 
@@ -71,7 +83,8 @@
 
 		&:hover,
 		&:focus {
-			color: #fff;
+			color: @contrast;
+			background-color: @primary;
 		}
 	}
 }
@@ -80,24 +93,27 @@
 
 	.nav-link,
 	.dropdown-item {
-		color: @dark-grey;
+		color: @primary-text;
 
 		&:hover,
 		&:focus {
 			outline: 0;
 			background: @primary;
-			color: #fff;
+			color: @contrast;
+			border-left: 3px solid @primary-text;
 		}
 	}
 
 	.dropdown-menu {
-		background: transparent;
-		border: none;
+		background: @accent-black;
+		border: 2px solid @primary;
 	}
 }
 
 .badge {
 	font-size: 0.85em;
+	background-color: @primary;
+	color: @contrast;
 }
 
 @media (min-width: 992px) {
@@ -109,6 +125,8 @@
 	.navbar {
 		padding-top: 0;
 		padding-bottom: 0;
+		background-color: @accent-black;
+		border-bottom: 3px solid @primary;
 	}
 
 	#userNav,
@@ -131,16 +149,19 @@
 		padding-bottom: 1.5rem;
 		max-width: 60%;
 		text-align: center;
+		border-bottom: 2px solid @primary;
 
 		img {
 			max-height: 75px;
+			border: 2px solid @primary-text;
+			padding: 5px;
 		}
 
 		a {
-			color: @dark-grey;
+			color: @primary-text;
 
 			&:hover {
-				color: @dark-grey;
+				color: @contrast;
 				text-decoration: none;
 			}
 		}
@@ -148,6 +169,10 @@
 
 	.navbar-logo-text {
 		font-size: 25px;
+		color: @primary-text;
+		border: 2px solid @primary;
+		padding: 10px;
+		margin: 10px;
 	}
 
 	#primaryNav {
@@ -156,6 +181,8 @@
 		width: 100%;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
+		background-color: @black;
+		border-top: 3px solid @primary;
 
 		.nav-item {
 			position: static;
@@ -167,7 +194,9 @@
 			line-height: 1.5rem;
 			text-transform: uppercase;
 			vertical-align: middle;
-			border: 1px solid transparent;
+			border: 2px solid transparent;
+			color: @primary-text;
+			font-weight: 700;
 		}
 
 		.nav-link {
@@ -175,18 +204,20 @@
 
 			&:hover,
 			&:focus {
-				background: transparent;
-				color: @dark-grey;
-				border-color: @mid-grey;
+				background: @primary;
+				color: @contrast;
+				border-color: @primary-text;
 			}
 		}
 
 		.dropdown-item {
 			padding: 0.5rem;
+			background-color: @black;
+			color: @primary-text;
 
 			&:hover,
 			&:focus {
-				background: transparent;
+				background: @primary;
 				color: @contrast;
 				border-color: @primary-light;
 			}
@@ -203,15 +234,17 @@
 			width: 100%;
 			margin: 0;
 			padding: 1rem;
-			background-color: @primary;
+			background-color: @accent-black;
+			border: 2px solid @primary;
 			border-radius: 0;
 		}
 
 		.dropdown-item {
 			font-size: 17px;
-			color: @contrast;
+			color: @primary-text;
 			text-align: center;
 			width: initial;
+			background-color: @accent-black;
 
 			&:focus,
 			&:hover {
@@ -241,21 +274,25 @@
 	#userNav .dropdown-menu,
 	.language-toggle .dropdown-menu {
 		padding: 0.5em;
+		background-color: @accent-black;
+		border: 2px solid @primary;
 	}
 
 	#userNav .nav-link,
 	.language-toggle .dropdown-toggle {
-		color: @dark-grey;
-		border: 1px solid transparent;
+		color: @primary-text;
+		border: 2px solid @primary-text;
 		font-size: 12px;
-		font-weight: 400;
+		font-weight: 700;
 		line-height: 1.5em;
 		text-transform: none;
 
 		&:hover,
 		&:focus {
 			outline: 0;
-			border-color: @mid-grey;
+			border-color: @primary;
+			background-color: @primary;
+			color: @contrast;
 		}
 	}
 
@@ -263,12 +300,14 @@
 	.language-toggle .dropdown-item {
 		padding-left: 0.5em;
 		font-size: 14px;
-		color: @contrast;
+		color: @primary-text;
 		text-transform: none;
+		background-color: @accent-black;
 
 		&:hover,
 		&:focus {
-			color: @primary-link;
+			color: @contrast;
+			background-color: @primary;
 		}
 	}
 }
