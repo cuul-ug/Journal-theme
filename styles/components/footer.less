@@ -2,16 +2,21 @@
 	margin-top: 3rem;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	background: @dark-grey;
-	color: #fff;
+	background: @black;
+	color: @primary-text;
+	border-top: 4px solid @primary;
 
 	a {
-		color: #fff;
+		color: @primary-light;
 		text-decoration: underline;
+		font-weight: 600;
 
 		&:hover,
 		&:focus {
 			text-decoration: underline;
+			color: @contrast;
+			background-color: @primary;
+			padding: 2px 4px;
 		}
 	}
 }
@@ -20,9 +25,16 @@
 	margin-bottom: 0;
 }
 
+.site-footer-content {
+	color: @primary-text;
+	font-weight: 500;
+}
+
 .footer-brand-image {
 	margin-top: 2rem;
 	max-width: 96px;
+	border: 2px solid @primary-text;
+	padding: 4px;
 }
 
 @media(min-width: 768px) {
@@ -30,10 +42,12 @@
 	.site-footer {
 		padding-top: 3rem;
 		padding-bottom: 3rem;
+		border-top: 4px solid @primary;
 	}
 
 	.footer-brand-image {
 		margin-top: 0;
+		border: 2px solid @primary-text;
 	}
 }
 
@@ -42,5 +56,6 @@
 	.site-footer {
 		padding-top: 4rem;
 		padding-bottom: 4rem;
+		border-top: 5px solid @primary;
 	}
 }
