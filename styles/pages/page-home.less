@@ -1,8 +1,8 @@
 /**
  * @file styles/pages/page-home.less
  *
- * Copyright (c) 2014-2020 Simon Fraser University
- * Copyright (c) 2003-2020 John Willinsky
+ * Copyright (c) 2014-2025 Simon Fraser University
+ * Copyright (c) 2003-2025 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @brief journal index page
@@ -14,25 +14,37 @@
 		display: block;
 		width: 100%;
 		height: auto;
+		border: 3px solid @primary;
 	}
 }
 
 .container-homepage-issue {
 	margin-top: 2rem;
 	border: 0;
+	background-color: @dark-grey;
+	padding: 2rem;
+	border-left: 5px solid @primary;
 }
 
 .homepage-announcement {
 	img {
 		max-width: 100%;
 		height: auto;
+		border: 2px solid @primary-text;
 	}
+	background-color: @light-grey;
+	padding: 1rem;
+	margin: 1rem 0;
 }
 
 .homepage-announcement-date {
-	font-weight: 400;
+	font-weight: 700;
 	font-size: 75%;
-	color: @mid-grey;
+	color: @primary-text;
+	background-color: @black;
+	padding: 5px 8px;
+	display: inline-block;
+	border: 1px solid @primary;
 }
 
 .homepage-issue-current,
@@ -41,10 +53,16 @@
 	margin-top: 1rem;
 	margin-bottom: 1rem;
 	text-align: center;
+	color: @primary-text;
+	font-weight: 700;
 }
 
 .homepage-issue-published {
 	font-family: @font-sans;
+	color: @primary-light;
+	background-color: @black;
+	padding: 8px;
+	border: 2px solid @primary;
 }
 
 .homepage-issue-cover {
@@ -54,6 +72,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 2rem;
+	border: 3px solid @primary;
+	box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
 }
 
 .homepage-issue-description {
@@ -61,6 +81,10 @@
 	max-height: 500px;
 	overflow-y: hidden;
 	padding-bottom: 4rem;
+	background-color: @dark-grey;
+	color: @primary-text;
+	padding: 2rem;
+	border-left: 4px solid @primary-text;
 
 	&:after {
 		content: '';
@@ -68,7 +92,7 @@
 		bottom: 0;
 		width: 100%;
 		height: 100px;
-		background-image: linear-gradient(rgba(255,255,255,0), #fff 20%);
+		background-image: linear-gradient(rgba(26,26,26,0), #1a1a1a 20%);
 	}
 }
 
@@ -84,6 +108,10 @@
 	position: relative;
 	overflow-y: hidden;
 	max-height: 210px;
+	background-color: @dark-grey;
+	color: @primary-text;
+	padding: 2rem;
+	border-left: 4px solid @primary;
 }
 
 .homepage-description-buttons {
@@ -93,19 +121,40 @@
 #homepageDescriptionMore, #homepageDescriptionLess {
 	color: @primary-text;
 	cursor: pointer;
+	font-weight: 700;
+	background-color: @primary;
+	color: @contrast;
+	padding: 6px 12px;
+	border: 2px solid @primary-text;
+	display: inline-block;
+
+	&:hover {
+		background-color: @primary-text;
+		color: @black;
+	}
 }
 
 .homepage-issue-galleys {
 	padding-bottom: 2rem;
+	background-color: @dark-grey;
 }
 
 .homepage-additional-content {
 	margin-top: 4rem;
 	margin-bottom: 4rem;
+	background-color: @light-grey;
+	padding: 2rem;
+	border: 2px solid @primary;
+	border-left: 6px solid @primary;
 }
 
 .homepage-issue-identifier {
 	font-size: 24px;
+	color: @primary-light;
+	font-weight: 700;
+	background-color: @black;
+	padding: 10px;
+	border: 2px solid @primary;
 }
 
 @media(min-width: 992px) {
@@ -113,31 +162,42 @@
 	.homepage-issue-header {
 		margin-top: 3rem;
 		margin-bottom: 3rem;
+		background-color: @dark-grey;
+		padding: 2rem;
+		border-left: 5px solid @primary;
 	}
 
 	.homepage-issue-cover {
-		box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+		box-shadow: 0 10px 20px rgba(220, 20, 60, 0.4);
+		border: 4px solid @primary-text;
 	}
 
 	.homepage-issue-description-wrapper {
 		padding: 3rem;
-		background: @light-grey;
+		background: @dark-grey;
+		border-left: 5px solid @primary;
 	}
 
 	.homepage-issue-description {
 		max-height: 15em;
+		background-color: @light-grey;
+		color: @primary-text;
+		border: 2px solid @primary;
 
 		&:after {
-			background-image: linear-gradient(rgba(255,255,255,0), @light-grey 20%);
+			background-image: linear-gradient(rgba(26,26,26,0), #2d2d2d 20%);
 		}
 
 		.h2 {
 			margin-bottom: 1rem;
+			color: @primary-text;
+			font-weight: 700;
 		}
 	}
 
 	.homepage-issue-galleys {
 		padding-bottom: 0;
+		background-color: @dark-grey;
 	}
 }
 
@@ -159,7 +219,7 @@
 			bottom: 0;
 			width: 100%;
 			height: 100%;
-			background: rgba(0,0,0,0.4);
+			background: rgba(0,0,0,0.7);
 		}
 	}
 
@@ -168,8 +228,9 @@
 		.homepage-issue-current,
 		.homepage-issue-identifier,
 		.homepage-issue-published {
-			color: #fff;
-			text-shadow: 0 0 2px @black;
+			color: @primary-light;
+			text-shadow: 0 0 3px @black;
+			font-weight: 900;
 		}
 
 		.homepage-issue-current {
@@ -179,6 +240,8 @@
 		.homepage-issue-published {
 			margin-top: 3rem;
 			margin-bottom: 3rem;
+			background-color: rgba(0,0,0,0.8);
+			border: 2px solid @primary-text;
 		}
 	}
 
