@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @file plugins/themes/healthSciences/HealthSciencesThemePlugin.inc.php
+ * @file plugins/themes/ajlii/AfricanJournalThemePlugin.inc.php
  *
  * Copyright (c) 2014-2025 Simon Fraser University
  * Copyright (c) 2003-2025 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @class HealthSciencesThemePlugin
- * @ingroup plugins_themes_healthSciences
+ * @class AfricanJournalThemePlugin
+ * @ingroup plugins_themes_ajlii
  *
- * @brief Health Sciences theme
+ * @brief African Journal of Library and Information Innovations Theme
  */
 
 use APP\core\Application;
@@ -18,7 +18,7 @@ use PKP\config\Config;
 use PKP\facades\Locale;
 use PKP\plugins\ThemePlugin;
 
-class HealthSciencesThemePlugin extends ThemePlugin
+class AfricanJournalThemePlugin extends ThemePlugin
 {
     /**
      * Load the custom styles for our theme
@@ -29,27 +29,27 @@ class HealthSciencesThemePlugin extends ThemePlugin
 
         // Add theme options
         $this->addOption('baseColour', 'colour', [
-            'label' => 'plugins.themes.healthSciences.option.colour.label',
-            'description' => 'plugins.themes.healthSciences.option.colour.description',
-            'default' => '#10BECA',
+            'label' => 'plugins.themes.ajlii.option.colour.label',
+            'description' => 'plugins.themes.ajlii.option.colour.description',
+            'default' => '#DC143C',
         ]);
 
         // Add usage stats display options
         $this->addOption('displayStats', 'FieldOptions', [
             'type' => 'radio',
-            'label' => __('plugins.themes.healthSciences.option.displayStats.label'),
+            'label' => __('plugins.themes.ajlii.option.displayStats.label'),
             'options' => [
                 [
                     'value' => 'none',
-                    'label' => __('plugins.themes.healthSciences.option.displayStats.none'),
+                    'label' => __('plugins.themes.ajlii.option.displayStats.none'),
                 ],
                 [
                     'value' => 'bar',
-                    'label' => __('plugins.themes.healthSciences.option.displayStats.bar'),
+                    'label' => __('plugins.themes.ajlii.option.displayStats.bar'),
                 ],
                 [
                     'value' => 'line',
-                    'label' => __('plugins.themes.healthSciences.option.displayStats.line'),
+                    'label' => __('plugins.themes.ajlii.option.displayStats.line'),
                 ],
             ],
             'default' => 'none',
@@ -58,8 +58,8 @@ class HealthSciencesThemePlugin extends ThemePlugin
         // Update colour based on theme option
         $additionalLessVariables = [];
         $baseColour = $this->getOption('baseColour');
-        if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', (string) $baseColour)) $baseColour = '#10BECA'; // pkp/pkp-lib#11974
-        if ($baseColour !== '#10BECA') {
+        if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', (string) $baseColour)) $baseColour = '#DC143C'; // pkp/pkp-lib#11974
+        if ($baseColour !== '#DC143C') {
             $additionalLessVariables[] = '@primary:' . $baseColour . ';';
             $additionalLessVariables[] = '
 				@primary-light: desaturate(lighten(@primary, 41%), 15%);
@@ -69,11 +69,11 @@ class HealthSciencesThemePlugin extends ThemePlugin
         }
 
         // Update contrast colour based on primary colour
-        $checkMarkColour = '000';
+        $checkMarkColour = 'FFF';
         if ($this->isColourDark($baseColour)) {
             $checkMarkColour = 'FFF';
             $additionalLessVariables[] = '
-				@contrast: rgba(255, 255, 255, 0.85);
+				@contrast: rgba(255, 255, 255, 0.95);
 				@primary-text: lighten(@primary, 15%);
 				@primary-link: lighten(@primary, 50%);
 				@btn-border-colour: @primary;
@@ -128,7 +128,7 @@ class HealthSciencesThemePlugin extends ThemePlugin
      */
     public function getDisplayName(): string
     {
-        return __('plugins.themes.healthSciences.name');
+        return __('plugins.themes.ajlii.name');
     }
 
     /**
@@ -136,7 +136,7 @@ class HealthSciencesThemePlugin extends ThemePlugin
      */
     public function getDescription(): string
     {
-        return __('plugins.themes.healthSciences.description');
+        return __('plugins.themes.ajlii.description');
     }
 
     /**
