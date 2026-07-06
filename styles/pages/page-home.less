@@ -5,7 +5,7 @@
  * Copyright (c) 2003-2025 John Willinsky
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @brief journal index page
+ * @brief journal index page with sliding hero image carousel
  */
 
 .homepage-image {
@@ -15,6 +15,99 @@
 		width: 100%;
 		height: auto;
 		border: 3px solid @primary;
+	}
+}
+
+// Hero Carousel Slider
+.homepage-image-carousel {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	background-color: @black;
+	border: 4px solid @primary;
+	border-bottom: 6px solid @primary-light;
+
+	.carousel-inner {
+		background-color: @black;
+	}
+
+	.carousel-item {
+		transition: opacity 0.8s ease-in-out;
+		background-color: @black;
+
+		img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			display: block;
+			border: none;
+		}
+	}
+
+	.carousel-control-prev,
+	.carousel-control-next {
+		background-color: rgba(220, 20, 60, 0.6);
+		border: 2px solid @primary-light;
+		width: 50px;
+		height: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+
+		&:hover,
+		&:focus {
+			background-color: rgba(220, 20, 60, 0.9);
+		}
+
+		.carousel-control-prev-icon,
+		.carousel-control-next-icon {
+			filter: brightness(1.5);
+		}
+	}
+
+	.carousel-control-prev {
+		left: 10px;
+		border-radius: 50%;
+	}
+
+	.carousel-control-next {
+		right: 10px;
+		border-radius: 50%;
+	}
+
+	.carousel-indicators {
+		bottom: 15px;
+
+		button {
+			background-color: @primary-light;
+			border: 2px solid @contrast;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+
+			&.active {
+				background-color: @contrast;
+				border-color: @primary-light;
+			}
+		}
+	}
+
+	.carousel-caption {
+		background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3));
+		padding: 30px;
+		border-top: 3px solid @primary;
+
+		h5 {
+			color: @primary-light;
+			font-weight: 900;
+			text-shadow: 2px 2px 4px @black;
+			font-size: 24px;
+		}
+
+		p {
+			color: @contrast;
+			font-weight: 600;
+			text-shadow: 1px 1px 3px @black;
+		}
 	}
 }
 
@@ -159,6 +252,21 @@
 
 @media(min-width: 992px) {
 
+	.homepage-image-carousel {
+		min-height: 500px;
+		border: 5px solid @primary;
+
+		.carousel-item img {
+			height: 500px;
+		}
+
+		.carousel-control-prev,
+		.carousel-control-next {
+			width: 60px;
+			height: 60px;
+		}
+	}
+
 	.homepage-issue-header {
 		margin-top: 3rem;
 		margin-bottom: 3rem;
@@ -223,6 +331,14 @@
 		}
 	}
 
+	.homepage-image-carousel {
+		min-height: 600px;
+
+		.carousel-item img {
+			height: 600px;
+		}
+	}
+
 	.homepage-image-behind-issue + .container-homepage-issue {
 
 		.homepage-issue-current,
@@ -271,10 +387,32 @@
 			margin-bottom: 4.5rem;
 		}
 	}
+
+	.homepage-image-carousel {
+		min-height: 700px;
+
+		.carousel-item img {
+			height: 700px;
+		}
+	}
 }
 
 @media (max-width: 991px) {
 	.homepage-description-buttons {
 		margin-bottom: 30px;
+	}
+
+	.homepage-image-carousel {
+		min-height: 300px;
+
+		.carousel-item img {
+			height: 300px;
+		}
+
+		.carousel-control-prev,
+		.carousel-control-next {
+			width: 40px;
+			height: 40px;
+		}
 	}
 }
