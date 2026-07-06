@@ -2,10 +2,10 @@
 <!DOCTYPE version SYSTEM "../../../lib/pkp/dtd/pluginVersion.dtd">
 
 <!--
-  * plugins/themes/healthSciences/version.xml
+  * plugins/themes/ajlii/version.xml
   *
-  * Copyright (c) 2014-2023 Simon Fraser University
-  * Copyright (c) 2003-2023 John Willinsky
+  * Copyright (c) 2014-2025 Simon Fraser University
+  * Copyright (c) 2003-2025 John Willinsky
   * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
   *
   * Plugin version information.
@@ -13,7 +13,7 @@
 
 <version>
 	<!-- The application should match the theme folder to ensure it is unique -->
-	<application>healthSciences</application>
+	<application>ajlii</application>
 
 	<!-- The type should always be `plugins.themes` -->
 	<type>plugins.themes</type>
@@ -23,14 +23,14 @@
 	    Valid: 1.0.2.3, 0.1.4.0
 		Invalid: 1.0, v1.0.4, 1.0.0.0b
 	-->
-	<release>1.1.2.2</release>
+	<release>1.0.0.0</release>
 
 	<!-- The date of the latest version -->
-	<date>2023-08-09</date>
+	<date>2025-07-06</date>
 
 	<!-- This should always be 1 -->
 	<lazy-load>1</lazy-load>
 
 	<!-- The class name of the plugin. See index.php -->
-	<class>HealthSciencesThemePlugin</class>
+	<class>AfricanJournalThemePlugin</class>
 </version>
