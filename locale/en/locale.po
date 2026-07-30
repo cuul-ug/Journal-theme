@@ -23,6 +23,12 @@ msgstr "African Journal of Library and Information Innovations"
 msgid "plugins.themes.ajlii.publisher"
 msgstr "Consortium of Uganda University Libraries"
 
+msgid "plugins.themes.ajlii.header.aboutJournal"
+msgstr "About AJLII"
+
+msgid "plugins.themes.ajlii.nav.menu"
+msgstr "Menu"
+
 msgid "plugins.themes.ajlii.seo.description"
 msgstr "African Journal of Library and Information Innovations (AJLII) is a peer-reviewed, gold open-access publication of the Consortium of Uganda University Libraries (CUUL), providing a continental platform for library and information science research that advances innovation, collaboration, equity, and knowledge access across Africa."
 

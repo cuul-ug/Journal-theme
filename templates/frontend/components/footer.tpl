@@ -51,7 +51,7 @@
 			</div>
 		</div>
 		<div class="site-footer-bottom">
-			<p>&copy; {$smarty.now|date_format:"%Y"} {translate key="plugins.themes.ajlii.publisher"}. {translate key="plugins.themes.ajlii.footer.copyright"}</p>
+			<p>&copy; {$smarty.now|date_format:"Y"} {translate key="plugins.themes.ajlii.publisher"}. {translate key="plugins.themes.ajlii.footer.copyright"}</p>
 			<p>{translate key="plugins.themes.ajlii.footer.platform"} <a href="{url page="about" op="aboutThisPublishingSystem"}">Open Journal Systems</a>.</p>
 		</div>
 	</div>

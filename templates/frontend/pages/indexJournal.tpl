@@ -50,7 +50,7 @@
 			</article>
 		</div>
 		<p class="ajlii-freshness-signal">
-			{translate key="plugins.themes.ajlii.aeo.updated"} {$smarty.now|date_format:"%Y-%m-%d"}.
+			{translate key="plugins.themes.ajlii.aeo.updated"} {$smarty.now|date_format:"Y-m-d"}.
 		</p>
 	</section>
 
