@@ -347,6 +347,33 @@ msgstr "Search Results for <em>{$query}</em>"
 msgid "plugins.themes.ajlii.search.params"
 msgstr "Search Parameters"
 
+msgid "plugins.themes.ajlii.search.scopeLabel"
+msgstr "Search scope"
+
+msgid "plugins.themes.ajlii.search.scopeAll"
+msgstr "All AJLII"
+
+msgid "plugins.themes.ajlii.search.scopeArticles"
+msgstr "Articles"
+
+msgid "plugins.themes.ajlii.search.scopeIssues"
+msgstr "Issues"
+
+msgid "plugins.themes.ajlii.search.scopeAuthors"
+msgstr "Authors"
+
+msgid "plugins.themes.ajlii.search.scopeTopic"
+msgstr "Topic"
+
+msgid "plugins.themes.ajlii.search.scopeSubject"
+msgstr "Subject"
+
+msgid "plugins.themes.ajlii.search.scopeKeywords"
+msgstr "Keywords"
+
+msgid "plugins.themes.ajlii.search.placeholder"
+msgstr "Search AJLII"
+
 msgid "plugins.themes.ajlii.option.displayStats.label"
 msgstr "Usage statistics display options"
 
@@ -961,3 +988,27 @@ msgstr "Editorial history records past and continuing service to AJLII and suppo
 
 msgid "plugins.themes.ajlii.editorial.relatedLinks"
 msgstr "Related editorial pages"
+
+msgid "plugins.themes.ajlii.login.kicker"
+msgstr "AJLII account access"
+
+msgid "plugins.themes.ajlii.login.title"
+msgstr "Login to AJLII"
+
+msgid "plugins.themes.ajlii.login.intro"
+msgstr "Use your AJLII account to read alerts, submit manuscripts, manage author details, review assigned submissions, or support editorial workflows."
+
+msgid "plugins.themes.ajlii.login.supportTitle"
+msgstr "Account support"
+
+msgid "plugins.themes.ajlii.login.readerSupport"
+msgstr "Readers can save alerts and follow new issues from the African Journal of Library and Information Innovations."
+
+msgid "plugins.themes.ajlii.login.authorSupport"
+msgstr "Authors can submit manuscripts, track editorial decisions, and update contributor details."
+
+msgid "plugins.themes.ajlii.login.editorSupport"
+msgstr "Reviewers and editors can access assigned tasks through their authenticated OJS account."
+
+msgid "plugins.themes.ajlii.login.accountLinks"
+msgstr "Account links"
