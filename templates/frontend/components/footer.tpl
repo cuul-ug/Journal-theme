@@ -14,46 +14,83 @@
 			{call_hook name="Templates::Common::Sidebar"}
 		</div>
 	</div>
-	<div class="container site-footer-content">
-		<div class="row site-footer-grid">
-			<div class="col-md-5">
-				<h2>{translate key="plugins.themes.ajlii.journalTitle"}</h2>
-				<p>{translate key="plugins.themes.ajlii.footer.publisher"}</p>
+	<div class="site-footer-primary">
+		<div class="container site-footer-primary-grid">
+			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.journalLinks"}">
+				<h2>{translate key="plugins.themes.ajlii.footer.journalLinks"}</h2>
+				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.aboutJournal"}</a>
+				<a href="{url page="about" op="editorialTeam"}">{translate key="plugins.themes.ajlii.footer.editorialBoard"}</a>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a>
+				<a href="{url page="issue" op="archive"}">{translate key="journal.archives"}</a>
+				<a href="{url page="announcements"}">{translate key="announcement.announcements"}</a>
+			</nav>
+			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.publisherLinks"}">
+				<h2>{translate key="plugins.themes.ajlii.footer.publisherLinks"}</h2>
+				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contactPage"}</a>
+				<a href="{url page="search"}">{translate key="common.search"}</a>
+				<a href="{url page="information" op="authors"}">{translate key="plugins.themes.ajlii.footer.forAuthors"}</a>
+				<a href="{url page="information" op="readers"}">{translate key="plugins.themes.ajlii.footer.forReaders"}</a>
+				<a href="{url page="information" op="librarians"}">{translate key="plugins.themes.ajlii.footer.forLibrarians"}</a>
+			</nav>
+			<div class="site-footer-brand-block">
+				<a class="site-footer-publisher-mark" href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}" aria-label="{translate|escape key="plugins.themes.ajlii.footer.cuulPublishing"}">
+					<span class="site-footer-publisher-logo" aria-hidden="true">
+						{if $displayPageHeaderLogo}
+							<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}"
+							     {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"
+							     {else}alt="{translate key="plugins.themes.ajlii.publisher"}"{/if}>
+						{else}
+							CUUL
+						{/if}
+					</span>
+					<span>{translate key="plugins.themes.ajlii.footer.cuulPublishing"}</span>
+				</a>
 				<p>{translate key="plugins.themes.ajlii.footer.scope"}</p>
-			</div>
-			<div class="col-md-3">
-				<h3>{translate key="plugins.themes.ajlii.footer.openAccess"}</h3>
-				<p>{translate key="plugins.themes.ajlii.footer.ccby"}</p>
-				<a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0 International</a>
-			</div>
-			<div class="col-md-4">
-				<h3>{translate key="plugins.themes.ajlii.footer.contact"}</h3>
-				<address>
-					{translate key="plugins.themes.ajlii.publisher"}<br>
-					Kampala, Uganda<br>
-					<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contactPage"}</a>
-				</address>
-				{if $ajliiAuthorityLinks}
-					<nav class="ajlii-authority-links" aria-label="{translate|escape key="plugins.themes.ajlii.authority.title"}">
-						<h3>{translate key="plugins.themes.ajlii.authority.title"}</h3>
-						<ul>
-							{foreach from=$ajliiAuthorityLinks item=authorityLink}
-								<li><a href="{$authorityLink.url|escape}" target="_blank" rel="me noopener">{$authorityLink.label|escape}</a></li>
-							{/foreach}
-						</ul>
-					</nav>
-				{/if}
-				{if $pageFooter}
-					<div class="site-footer-custom">
-						{$pageFooter}
-					</div>
-				{/if}
+				<p>{translate key="plugins.themes.ajlii.footer.openAccessStatement"}</p>
 			</div>
 		</div>
-		<div class="site-footer-bottom">
+	</div>
+	<div class="site-footer-secondary">
+		<div class="container site-footer-secondary-grid">
+			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.openAccess"}">
+				<h2>{translate key="plugins.themes.ajlii.footer.openAccess"}</h2>
+				<a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0 International</a>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.publishWithUs"}</a>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.apcAndWaivers"}</a>
+				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.ethicsIntegrity"}</a>
+			</nav>
+			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.supportLinks"}">
+				<h2>{translate key="plugins.themes.ajlii.footer.supportLinks"}</h2>
+				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
+				<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.footer.privacyPolicy"}</a>
+				<button class="ajlii-footer-cookie-link" type="button" data-cookie-settings>{translate key="plugins.themes.ajlii.footer.cookiePolicy"}</button>
+				<button class="ajlii-footer-cookie-link" type="button" data-cookie-settings>{translate key="plugins.themes.ajlii.cookie.settings"}</button>
+				<details class="site-footer-legal-note">
+					<summary>{translate key="plugins.themes.ajlii.footer.legalNotice"}</summary>
+					<p>{translate key="plugins.themes.ajlii.footer.legalNoticeText"}</p>
+				</details>
+			</nav>
+			<div class="site-footer-statement">
+				<h2>{translate key="plugins.themes.ajlii.footer.publisherStatementTitle"}</h2>
+				<p>{translate key="plugins.themes.ajlii.footer.publisherStatement"}</p>
+			</div>
+			{if $ajliiAuthorityLinks}
+				<nav class="site-footer-link-column ajlii-authority-links" aria-label="{translate|escape key="plugins.themes.ajlii.authority.title"}">
+					<h2>{translate key="plugins.themes.ajlii.authority.title"}</h2>
+					{foreach from=$ajliiAuthorityLinks item=authorityLink}
+						<a href="{$authorityLink.url|escape}" target="_blank" rel="me noopener">{$authorityLink.label|escape}</a>
+					{/foreach}
+				</nav>
+			{/if}
+		</div>
+		<div class="container site-footer-bottom">
 			<p>&copy; {$smarty.now|date_format:"Y"} {translate key="plugins.themes.ajlii.publisher"}. {translate key="plugins.themes.ajlii.footer.copyright"}</p>
-			<p>{translate key="plugins.themes.ajlii.footer.platform"} <a href="{url page="about" op="aboutThisPublishingSystem"}">Open Journal Systems</a>.</p>
-			<p><button class="ajlii-footer-cookie-link" type="button" data-cookie-settings>{translate key="plugins.themes.ajlii.cookie.settings"}</button></p>
+			<p>{translate key="plugins.themes.ajlii.footer.hostedOn"} <a href="{url page="about" op="aboutThisPublishingSystem"}">Open Journal Systems</a>.</p>
+			{if $pageFooter}
+				<div class="site-footer-custom">
+					{$pageFooter}
+				</div>
+			{/if}
 		</div>
 	</div>
 </footer><!-- pkp_structure_footer_wrapper -->
