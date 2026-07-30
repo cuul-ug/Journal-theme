@@ -2505,15 +2505,37 @@ body.ajlii-wcag-bigCursor * {
 		min-height: 60px;
 	}
 
-	.ajlii-nav-container,
-	.main-header .navbar {
+	.ajlii-nav-container {
 		display: block;
+		padding: 0.5rem 0;
+	}
+
+	.main-header .navbar {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		gap: 0.5rem;
+		width: 100%;
 		padding: 0.5rem 0;
 	}
 
 	.ajlii-mobile-menu-label {
 		display: inline-flex;
-		margin-right: 0.75rem;
+		align-items: center;
+		min-height: var(--ajlii-touch-target);
+		margin-right: 0;
+		color: #fff;
+		font-weight: 800;
+	}
+
+	.navbar-toggler {
+		justify-self: end;
+	}
+
+	.main-header .navbar-collapse,
+	.ajlii-header-search,
+	.ajlii-ai-discovery {
+		grid-column: 1 / -1;
 	}
 
 	.navbar-nav {
