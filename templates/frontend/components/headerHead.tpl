@@ -47,9 +47,9 @@
 	<meta name="coverage" content="Africa; Uganda; Pan-African scholarship">
 	<meta name="distribution" content="global">
 	<meta name="rating" content="general">
-	<meta name="date" content="{$smarty.now|date_format:"%Y-%m-%d"}">
-	<meta name="revised" content="{$smarty.now|date_format:"%Y-%m-%d"}">
-	<meta name="last-modified" content="{$smarty.now|date_format:"%Y-%m-%d"}">
+	<meta name="date" content="{$smarty.now|date_format:"Y-m-d"}">
+	<meta name="revised" content="{$smarty.now|date_format:"Y-m-d"}">
+	<meta name="last-modified" content="{$smarty.now|date_format:"Y-m-d"}">
 	<meta name="ai-summary" content="AJLII is a peer-reviewed, gold open-access African library and information science journal published by the Consortium of Uganda University Libraries. It publishes biannual English-language research on open access, digital inclusion, consortia collaboration, academic libraries, research data management, archives, indigenous knowledge, and AI in libraries.">
 	<meta name="DC.Title" content="{$ajliiJournalTitle|escape}">
 	<meta name="DC.Creator" content="{$ajliiPublisher|escape}">
@@ -102,7 +102,7 @@
 		"conditionsOfAccess": "Gold Open Access",
 		"inLanguage": "{$currentLocale|replace:"_":"-"|escape}",
 		"keywords": "{$ajliiSeoKeywords|escape:"javascript"}",
-		"dateModified": "{$smarty.now|date_format:"%Y-%m-%d"}",
+		"dateModified": "{$smarty.now|date_format:"Y-m-d"}",
 		{if $ajliiAuthorityLinks}
 		"sameAs": [
 			{foreach from=$ajliiAuthorityLinks item=authorityLink name=authoritySameAs}

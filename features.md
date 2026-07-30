@@ -470,6 +470,8 @@ AI proxy endpoint URL: https://journal.example/api/ai
 
 The production package keeps the files OJS needs to run the theme.
 
+Static frontend assets are loaded from `libs/app.min.css`, `styles/ajlii-production.css`, and `libs/app.min.js`. The extra production stylesheet provides a stable fallback for the AJLII header, footer, WCAG panel, reader modal, AI assistant, and discovery panels when server-side LESS compilation is unavailable.
+
 Runtime files:
 
 - `AfricanJournalThemePlugin.inc.php`

@@ -40,6 +40,7 @@ Configure authority URLs and the citation monitor endpoint in the theme settings
 ## Installation
 
 1. Copy this directory to your OJS installation at `plugins/themes/ajlii`.
+   The folder name must be exactly `ajlii`; do not leave a GitHub archive folder name such as `Journal-theme-AJLIIv1.0.0` inside `plugins/themes`.
 2. In OJS, go to `Settings` > `Website` > `Plugins`.
 3. Enable the **African Journal of Library and Information Innovations** theme.
 4. Go to `Settings` > `Website` > `Appearance`.
@@ -92,6 +93,8 @@ These signals are reading aids generated from visible page content. They do not 
 ## Production Package
 
 This repository is trimmed for production deployment. It keeps only the files OJS needs to run the AJLII theme, plus documentation and licence files.
+
+The theme loads static production assets from `libs/app.min.css`, `styles/ajlii-production.css`, and `libs/app.min.js`. After uploading a new release to OJS, clear compiled templates and theme cache so OJS registers the latest stylesheet list.
 
 Runtime assets are in `templates/`, `styles/`, `fonts/`, `locale/`, and `libs/`. The compiled browser bundle is `libs/app.min.js`, and the compiled CSS bundle is `libs/app.min.css`.
 

@@ -14,9 +14,8 @@
 	{assign var="showingLogo" value=false}
 {/if}
 
-{capture assign="homeUrl"}
-	{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
-{/capture}
+{capture assign="homeUrl"}{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}{/capture}
+{assign var="homeUrl" value=$homeUrl|strip}
 
 {* Logo or site title. Only use <h1> heading on the homepage.
 	 Otherwise that should go to the page title. *}
@@ -50,13 +49,13 @@
 <header class="main-header">
 	<div class="ajlii-publisher-bar">
 		<div class="container ajlii-publisher-inner">
-			<a class="ajlii-publisher-mark" href="{$homeUrl}" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
+			<a class="ajlii-publisher-mark" href="{$homeUrl|escape}" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
 				<span class="ajlii-publisher-name">CUUL</span>
 				<span class="ajlii-publisher-subtitle">{translate key="plugins.themes.ajlii.publisher"}</span>
 			</a>
 			<div class="ajlii-header-tools" aria-label="{translate key="common.navigation.user"}">
-				<a class="ajlii-tool-link" href="{url page="about"}" aria-label="{translate key="about.aboutTheJournal"}">i</a>
-				<a class="ajlii-tool-link ajlii-tool-user" href="{url page="login"}" aria-label="{translate key="user.login"}"></a>
+				<a class="ajlii-tool-link" href="{url page="about"}" aria-label="{translate key="plugins.themes.ajlii.header.aboutJournal"}">i</a>
+				<a class="ajlii-tool-link ajlii-tool-user" href="{url page="login"}" aria-label="{translate key="user.login"}"><span>{translate key="user.login"}</span></a>
 			</div>
 		</div>
 	</div>
@@ -64,7 +63,7 @@
 	<div class="ajlii-journal-band">
 		<div class="container ajlii-journal-inner">
 			<{$siteNameTag} class="ajlii-journal-title">
-				<a href="{$homeUrl}">{translate key="plugins.themes.ajlii.journalTitle"}</a>
+				<a href="{$homeUrl|escape}">{translate key="plugins.themes.ajlii.journalTitle"}</a>
 			</{$siteNameTag}>
 			<div class="ajlii-cuul-badge" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
 				<span>CUUL</span>
@@ -76,13 +75,9 @@
 	<div class="container ajlii-nav-container">
 		<div class="visually-hidden">{$pageTitleTranslated|escape}</div>
 
-	<div class="navbar-logo">
-		<a href="{$homeUrl}">{$brand}</a>
-	</div>
-
 	{* Main navigation *}
 	<nav class="navbar navbar-expand-lg navbar-light">
-		<a class="navbar-brand" href="{$homeUrl}">{$brand}</a>
+		<span class="ajlii-mobile-menu-label">{translate key="plugins.themes.ajlii.nav.menu"}</span>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
 		        aria-controls="main-navbar" aria-expanded="false"
 		        aria-label="{translate key="plugins.themes.ajlii.nav.toggle"}">

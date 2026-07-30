@@ -149,10 +149,9 @@ class AfricanJournalThemePlugin extends ThemePlugin
 
         $this->addScript('app-js', 'libs/app.min.js');
 
-        // Load theme stylesheet and script
+        // Load static production stylesheets and script.
         $this->addStyle('app-css', 'libs/app.min.css');
-        $this->addStyle('stylesheet', 'styles/index.less');
-        $this->modifyStyle('stylesheet', ['addLessVariables' => join("\n", $additionalLessVariables)]);
+        $this->addStyle('production-css', 'styles/ajlii-production.css');
 
         // Styles for HTML galleys
         $this->addStyle('htmlFont', 'styles/htmlGalley.less', ['contexts' => 'htmlGalley']);
