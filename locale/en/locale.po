@@ -326,6 +326,21 @@ msgstr "Before you start:"
 msgid "plugins.themes.ajlii.register.beforeStartText"
 msgstr "Use your institutional details where possible. Required fields are marked clearly, and privacy consent is handled according to the journal privacy statement."
 
+msgid "plugins.themes.ajlii.register.orcidTitle"
+msgstr "Register with ORCID"
+
+msgid "plugins.themes.ajlii.register.orcidText"
+msgstr "Use ORCID to authenticate your researcher identity and connect a verified iD to your AJLII account. ORCID credentials and token exchange are handled by the configured server-side OJS ORCID integration."
+
+msgid "plugins.themes.ajlii.register.orcidButton"
+msgstr "Register with ORCID"
+
+msgid "plugins.themes.ajlii.register.orcidAbout"
+msgstr "Learn how AJLII uses ORCID"
+
+msgid "plugins.themes.ajlii.register.orcidSetupNote"
+msgstr "ORCID registration is ready for display after the Journal Manager enables it in the AJLII theme settings and configures the OJS ORCID Profile plugin with valid API credentials."
+
 msgid "plugins.themes.ajlii.search.resultsFor"
 msgstr "Search Results for <em>{$query}</em>"
 
@@ -382,6 +397,42 @@ msgstr "AI and referral citation monitor endpoint"
 
 msgid "plugins.themes.ajlii.option.citationMonitorUrl.description"
 msgstr "Optional HTTPS endpoint that receives lightweight page, referrer, source, and timestamp events for AI citation tracking and omnichannel visibility monitoring."
+
+msgid "plugins.themes.ajlii.option.orcidRegistrationEnabled.label"
+msgstr "ORCID registration"
+
+msgid "plugins.themes.ajlii.option.orcidRegistrationEnabled.enabled"
+msgstr "Show Register with ORCID on the registration page"
+
+msgid "plugins.themes.ajlii.option.orcidRegistrationEnabled.disabled"
+msgstr "Do not show ORCID registration"
+
+msgid "plugins.themes.ajlii.option.orcidApiEnvironment.label"
+msgstr "ORCID API environment"
+
+msgid "plugins.themes.ajlii.option.orcidApiEnvironment.production"
+msgstr "Production ORCID registry"
+
+msgid "plugins.themes.ajlii.option.orcidApiEnvironment.sandbox"
+msgstr "Sandbox testing registry"
+
+msgid "plugins.themes.ajlii.option.orcidClientId.label"
+msgstr "ORCID public Client ID"
+
+msgid "plugins.themes.ajlii.option.orcidClientId.description"
+msgstr "Public ORCID OAuth Client ID used to start authentication. Store the Client Secret only in the server-side OJS ORCID Profile plugin or equivalent secure configuration."
+
+msgid "plugins.themes.ajlii.option.orcidRedirectUri.label"
+msgstr "ORCID redirect URI"
+
+msgid "plugins.themes.ajlii.option.orcidRedirectUri.description"
+msgstr "HTTPS callback registered with ORCID, usually your OJS ORCID callback such as https://your-domain/index.php/journal-path/orcidapi/orcidAuthorize. Leave blank to use the current OJS route."
+
+msgid "plugins.themes.ajlii.option.orcidScope.label"
+msgstr "ORCID OAuth scope"
+
+msgid "plugins.themes.ajlii.option.orcidScope.description"
+msgstr "OAuth scope requested from ORCID. Use /authenticate for verified iD collection, or the scope required by the configured OJS ORCID integration."
 
 msgid "plugins.themes.ajlii.option.heroSliderEnabled.label"
 msgstr "Homepage banner slider"
@@ -730,3 +781,102 @@ msgstr "Save choices"
 
 msgid "plugins.themes.ajlii.cookie.accept"
 msgstr "Accept optional cookies"
+
+msgid "plugins.themes.ajlii.information.title"
+msgstr "Information"
+
+msgid "plugins.themes.ajlii.information.kicker"
+msgstr "AJLII and CUUL support"
+
+msgid "plugins.themes.ajlii.information.intro"
+msgstr "Find journal policies, publishing guidance, open-access information, account help, and CUUL Publishing support for the African Journal of Library and Information Innovations."
+
+msgid "plugins.themes.ajlii.information.aboutTitle"
+msgstr "About AJLII"
+
+msgid "plugins.themes.ajlii.information.aboutJournal"
+msgstr "Journal overview"
+
+msgid "plugins.themes.ajlii.information.editorialBoard"
+msgstr "Editorial Board"
+
+msgid "plugins.themes.ajlii.information.contactOffice"
+msgstr "Contact the editorial office"
+
+msgid "plugins.themes.ajlii.information.privacy"
+msgstr "Privacy statement"
+
+msgid "plugins.themes.ajlii.information.platform"
+msgstr "Publishing platform"
+
+msgid "plugins.themes.ajlii.information.publishTitle"
+msgstr "Publishing"
+
+msgid "plugins.themes.ajlii.information.authorGuidelines"
+msgstr "Author guidelines"
+
+msgid "plugins.themes.ajlii.information.apc"
+msgstr "Article Processing Charge and waivers"
+
+msgid "plugins.themes.ajlii.information.peerReview"
+msgstr "Double-blind peer review"
+
+msgid "plugins.themes.ajlii.information.ethics"
+msgstr "Publishing ethics"
+
+msgid "plugins.themes.ajlii.information.researchTitle"
+msgstr "Research and discovery"
+
+msgid "plugins.themes.ajlii.information.supportTitle"
+msgstr "Get help with access"
+
+msgid "plugins.themes.ajlii.information.legalNotice"
+msgstr "Legal notice"
+
+msgid "plugins.themes.ajlii.information.accessibility"
+msgstr "Accessibility"
+
+msgid "plugins.themes.ajlii.information.openResearchTitle"
+msgstr "Open research"
+
+msgid "plugins.themes.ajlii.information.openAccess"
+msgstr "Open access"
+
+msgid "plugins.themes.ajlii.information.readPublish"
+msgstr "Read and publish support"
+
+msgid "plugins.themes.ajlii.information.researchData"
+msgstr "Research data"
+
+msgid "plugins.themes.ajlii.information.preservation"
+msgstr "Preservation and digitisation"
+
+msgid "plugins.themes.ajlii.information.usingContentTitle"
+msgstr "Using the content"
+
+msgid "plugins.themes.ajlii.information.citation"
+msgstr "Citation"
+
+msgid "plugins.themes.ajlii.information.metrics"
+msgstr "Metrics"
+
+msgid "plugins.themes.ajlii.information.standards"
+msgstr "Standards compliance"
+
+msgid "plugins.themes.ajlii.information.accountsTitle"
+msgstr "Personal account"
+
+msgid "plugins.themes.ajlii.information.manageRoles"
+msgstr "Manage roles and profile"
+
+msgid "plugins.themes.ajlii.information.enquiriesTitle"
+msgstr "Enquiries"
+
+msgid "plugins.themes.ajlii.information.editorialEnquiries"
+msgstr "Editorial enquiries"
+
+msgid "plugins.themes.ajlii.information.mediaEnquiries"
+msgstr "Media enquiries"
+
+msgid "plugins.themes.ajlii.information.institutionalSupport"
+msgstr "Institutional support"

@@ -93,6 +93,56 @@ class AfricanJournalThemePlugin extends ThemePlugin
             'default' => '',
         ]);
 
+        $this->addOption('orcidRegistrationEnabled', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.ajlii.option.orcidRegistrationEnabled.label'),
+            'options' => [
+                [
+                    'value' => '1',
+                    'label' => __('plugins.themes.ajlii.option.orcidRegistrationEnabled.enabled'),
+                ],
+                [
+                    'value' => '0',
+                    'label' => __('plugins.themes.ajlii.option.orcidRegistrationEnabled.disabled'),
+                ],
+            ],
+            'default' => '0',
+        ]);
+
+        $this->addOption('orcidApiEnvironment', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.ajlii.option.orcidApiEnvironment.label'),
+            'options' => [
+                [
+                    'value' => 'production',
+                    'label' => __('plugins.themes.ajlii.option.orcidApiEnvironment.production'),
+                ],
+                [
+                    'value' => 'sandbox',
+                    'label' => __('plugins.themes.ajlii.option.orcidApiEnvironment.sandbox'),
+                ],
+            ],
+            'default' => 'production',
+        ]);
+
+        $this->addOption('orcidClientId', 'FieldText', [
+            'label' => __('plugins.themes.ajlii.option.orcidClientId.label'),
+            'description' => __('plugins.themes.ajlii.option.orcidClientId.description'),
+            'default' => '',
+        ]);
+
+        $this->addOption('orcidRedirectUri', 'FieldText', [
+            'label' => __('plugins.themes.ajlii.option.orcidRedirectUri.label'),
+            'description' => __('plugins.themes.ajlii.option.orcidRedirectUri.description'),
+            'default' => '',
+        ]);
+
+        $this->addOption('orcidScope', 'FieldText', [
+            'label' => __('plugins.themes.ajlii.option.orcidScope.label'),
+            'description' => __('plugins.themes.ajlii.option.orcidScope.description'),
+            'default' => '/authenticate',
+        ]);
+
         $this->addOption('heroSliderEnabled', 'FieldOptions', [
             'type' => 'radio',
             'label' => __('plugins.themes.ajlii.option.heroSliderEnabled.label'),
@@ -223,8 +273,10 @@ class AfricanJournalThemePlugin extends ThemePlugin
     public function saveOption($name, $value, $contextId = null) {
         // Validate the base colour setting value.
         if ($name == 'baseColour' && !preg_match('/^#[0-9a-fA-F]{1,6}$/', $value)) $value = null; // pkp/pkp-lib#11974
-        if (($name == 'aiProxyUrl' || $name == 'citationMonitorUrl' || preg_match('/^authority.*Url$/', $name)) && $value && !preg_match('/^https?:\/\//i', $value)) $value = null;
+        if (($name == 'aiProxyUrl' || $name == 'citationMonitorUrl' || $name == 'orcidRedirectUri' || preg_match('/^authority.*Url$/', $name)) && $value && !preg_match('/^https?:\/\//i', $value)) $value = null;
         if (preg_match('/^heroSlide\d+(ImageUrl|Url)$/', $name) && $value && !preg_match('/^(https?:\/\/|\/)/i', $value)) $value = null;
+        if ($name == 'orcidClientId' && $value && !preg_match('/^[A-Za-z0-9._:-]+$/', $value)) $value = null;
+        if ($name == 'orcidScope' && $value && !preg_match('/^[A-Za-z0-9_\/ .:-]+$/', $value)) $value = '/authenticate';
         parent::saveOption($name, $value, $contextId);
     }
 
@@ -307,9 +359,36 @@ class AfricanJournalThemePlugin extends ThemePlugin
                 'ajliiAiModel' => $this->getOption('aiModel') ?: '',
                 'ajliiAiProxyUrl' => $this->getOption('aiProxyUrl') ?: '',
                 'ajliiCitationMonitorUrl' => $this->getOption('citationMonitorUrl') ?: '',
+                'ajliiOrcidRegistrationEnabled' => $this->getOption('orcidRegistrationEnabled') === '1',
+                'ajliiOrcidAuthUrl' => $this->getOrcidAuthorizeUrl($request),
+                'ajliiOrcidAboutUrl' => $request->url(null, 'orcidapi', 'about'),
                 'ajliiAuthorityLinks' => $authorityLinks,
             ]);
         }
+    }
+
+    private function getOrcidAuthorizeUrl($request): string
+    {
+        if ($this->getOption('orcidRegistrationEnabled') !== '1') {
+            return '';
+        }
+
+        $clientId = trim((string) $this->getOption('orcidClientId'));
+        if (!$clientId) {
+            return '';
+        }
+
+        $environment = $this->getOption('orcidApiEnvironment') === 'sandbox' ? 'sandbox' : 'production';
+        $baseUrl = $environment === 'sandbox' ? 'https://sandbox.orcid.org/oauth/authorize' : 'https://orcid.org/oauth/authorize';
+        $redirectUri = trim((string) $this->getOption('orcidRedirectUri')) ?: $request->url(null, 'orcidapi', 'orcidAuthorize');
+        $scope = trim((string) $this->getOption('orcidScope')) ?: '/authenticate';
+
+        return $baseUrl . '?' . http_build_query([
+            'client_id' => $clientId,
+            'response_type' => 'code',
+            'scope' => $scope,
+            'redirect_uri' => $redirectUri,
+        ], '', '&', PHP_QUERY_RFC3986);
     }
 
     private function getHeroSliderSlides(): array

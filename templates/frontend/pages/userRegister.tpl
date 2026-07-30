@@ -34,6 +34,26 @@
 				<strong>{translate key="plugins.themes.ajlii.register.beforeStartTitle"}</strong>
 				<span>{translate key="plugins.themes.ajlii.register.beforeStartText"}</span>
 			</div>
+			<div class="page-register-orcid">
+				<div>
+					<h2>{translate key="plugins.themes.ajlii.register.orcidTitle"}</h2>
+					<p>{translate key="plugins.themes.ajlii.register.orcidText"}</p>
+					{if !$ajliiOrcidAuthUrl}
+						<p class="page-register-orcid-note">{translate key="plugins.themes.ajlii.register.orcidSetupNote"}</p>
+					{/if}
+				</div>
+				<div class="page-register-orcid-actions">
+					{if $ajliiOrcidAuthUrl}
+						<a class="ajlii-orcid-button" id="connect-orcid-button" href="{$ajliiOrcidAuthUrl|escape}" rel="nofollow">
+							<span aria-hidden="true">iD</span>
+							{translate key="plugins.themes.ajlii.register.orcidButton"}
+						</a>
+					{/if}
+					<a class="page-register-orcid-about" href="{$ajliiOrcidAboutUrl|escape}">
+						{translate key="plugins.themes.ajlii.register.orcidAbout"}
+					</a>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="row justify-content-md-center">
