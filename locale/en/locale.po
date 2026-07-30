@@ -137,6 +137,108 @@ msgstr "Unless otherwise stated, journal content is licensed under CC BY 4.0 Int
 msgid "plugins.themes.ajlii.footer.platform"
 msgstr "Hosted on"
 
+msgid "plugins.themes.ajlii.footer.journalLinks"
+msgstr "AJLII journal links"
+
+msgid "plugins.themes.ajlii.footer.publisherLinks"
+msgstr "CUUL publishing support"
+
+msgid "plugins.themes.ajlii.footer.aboutJournal"
+msgstr "About AJLII"
+
+msgid "plugins.themes.ajlii.footer.editorialBoard"
+msgstr "Editorial Board"
+
+msgid "plugins.themes.ajlii.footer.authorGuidelines"
+msgstr "Author Guidelines"
+
+msgid "plugins.themes.ajlii.footer.cuulPublishing"
+msgstr "Consortium of Uganda University Libraries Publishing"
+
+msgid "plugins.themes.ajlii.footer.openAccessStatement"
+msgstr "Gold open access, double-blind peer review, and CC BY 4.0 licensing for equitable African scholarship."
+
+msgid "plugins.themes.ajlii.footer.publishWithUs"
+msgstr "Publish with AJLII"
+
+msgid "plugins.themes.ajlii.footer.apcAndWaivers"
+msgstr "APC and fee waivers"
+
+msgid "plugins.themes.ajlii.footer.ethicsIntegrity"
+msgstr "Ethics and integrity"
+
+msgid "plugins.themes.ajlii.footer.supportLinks"
+msgstr "Support and legal"
+
+msgid "plugins.themes.ajlii.footer.privacyPolicy"
+msgstr "Privacy policy"
+
+msgid "plugins.themes.ajlii.footer.cookiePolicy"
+msgstr "Cookie policy"
+
+msgid "plugins.themes.ajlii.footer.legalNotice"
+msgstr "Legal notice"
+
+msgid "plugins.themes.ajlii.footer.legalNoticeText"
+msgstr "AJLII is published by the Consortium of Uganda University Libraries Publishing in Kampala, Uganda. Journal content is provided for scholarly communication and open-access publishing under the stated licence and editorial policies."
+
+msgid "plugins.themes.ajlii.footer.publisherStatementTitle"
+msgstr "CUUL publishing statement"
+
+msgid "plugins.themes.ajlii.footer.publisherStatement"
+msgstr "CUUL Publishing supports university libraries, researchers, and information professionals through open-access journal infrastructure, collaborative knowledge stewardship, and Pan-African scholarly visibility."
+
+msgid "plugins.themes.ajlii.footer.hostedOn"
+msgstr "Hosted on"
+
+msgid "plugins.themes.ajlii.footer.forAuthors"
+msgstr "For Authors"
+
+msgid "plugins.themes.ajlii.footer.forReaders"
+msgstr "For Readers"
+
+msgid "plugins.themes.ajlii.footer.forLibrarians"
+msgstr "For Librarians"
+
+msgid "plugins.themes.ajlii.homeLinks.title"
+msgstr "AJLII publishing and journal information"
+
+msgid "plugins.themes.ajlii.homeLinks.publishDealsTitle"
+msgstr "Open access publishing support"
+
+msgid "plugins.themes.ajlii.homeLinks.publishDealsText"
+msgstr "Authors can publish in AJLII through a gold open-access model with a modest Article Processing Charge and support pathways for eligible emerging researchers."
+
+msgid "plugins.themes.ajlii.homeLinks.publishDealsLink"
+msgstr "View submission guidance"
+
+msgid "plugins.themes.ajlii.homeLinks.editorsTitle"
+msgstr "Meet the Editors"
+
+msgid "plugins.themes.ajlii.homeLinks.editorsText"
+msgstr "AJLII is guided by African library and information science scholars, methodological experts, and international knowledge partners."
+
+msgid "plugins.themes.ajlii.homeLinks.editorsLink"
+msgstr "View Editorial Board"
+
+msgid "plugins.themes.ajlii.homeLinks.aboutTitle"
+msgstr "About the Journal"
+
+msgid "plugins.themes.ajlii.homeLinks.aboutText"
+msgstr "AJLII advances innovation, collaboration, equity, and knowledge access across Africa through peer-reviewed library and information science research."
+
+msgid "plugins.themes.ajlii.homeLinks.aboutLink"
+msgstr "Find out more"
+
+msgid "plugins.themes.ajlii.homeLinks.whyPublishTitle"
+msgstr "Why publish with AJLII?"
+
+msgid "plugins.themes.ajlii.homeLinks.whyPublishText"
+msgstr "Publish open-access research for a continental audience of librarians, archivists, information professionals, policy makers, and higher education institutions."
+
+msgid "plugins.themes.ajlii.homeLinks.whyPublishLink"
+msgstr "Learn more and submit your research"
+
 msgid "plugins.themes.ajlii.wcag.open"
 msgstr "Open accessibility tools"
 
@@ -196,6 +298,33 @@ msgstr "No account?"
 
 msgid "plugins.themes.ajlii.register.registerHere"
 msgstr "Register here"
+
+msgid "plugins.themes.ajlii.register.pageTitle"
+msgstr "Register with AJLII"
+
+msgid "plugins.themes.ajlii.register.kicker"
+msgstr "AJLII account access"
+
+msgid "plugins.themes.ajlii.register.intro"
+msgstr "Create an account to read alerts, submit manuscripts, manage author details, or support the African Journal of Library and Information Innovations as a reviewer."
+
+msgid "plugins.themes.ajlii.register.supportTitle"
+msgstr "Account options"
+
+msgid "plugins.themes.ajlii.register.supportAuthor"
+msgstr "Authors can prepare submissions and track editorial progress."
+
+msgid "plugins.themes.ajlii.register.supportReviewer"
+msgstr "Reviewers can share expertise in library and information science, digital inclusion, archives, research data, and African scholarship."
+
+msgid "plugins.themes.ajlii.register.supportReader"
+msgstr "Readers can receive publication alerts and follow new open-access issues."
+
+msgid "plugins.themes.ajlii.register.beforeStartTitle"
+msgstr "Before you start:"
+
+msgid "plugins.themes.ajlii.register.beforeStartText"
+msgstr "Use your institutional details where possible. Required fields are marked clearly, and privacy consent is handled according to the journal privacy statement."
 
 msgid "plugins.themes.ajlii.search.resultsFor"
 msgstr "Search Results for <em>{$query}</em>"

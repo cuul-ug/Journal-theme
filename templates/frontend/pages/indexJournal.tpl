@@ -239,4 +239,36 @@
 	{/if}
 </div><!-- .container -->
 
+<section class="ajlii-home-links-section" aria-labelledby="ajliiHomeLinksTitle">
+	<div class="container">
+		<h2 id="ajliiHomeLinksTitle" class="visually-hidden">{translate key="plugins.themes.ajlii.homeLinks.title"}</h2>
+		<div class="ajlii-home-links-grid">
+			<article class="ajlii-home-link-card">
+				<a class="ajlii-home-link-visual ajlii-home-link-visual-open" href="{url page="about" op="submissions"}" aria-hidden="true" tabindex="-1"></a>
+				<h3>{translate key="plugins.themes.ajlii.homeLinks.publishDealsTitle"}</h3>
+				<p>{translate key="plugins.themes.ajlii.homeLinks.publishDealsText"}</p>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeLinks.publishDealsLink"}</a>
+			</article>
+			<article class="ajlii-home-link-card">
+				<a class="ajlii-home-link-visual ajlii-home-link-visual-editors" href="{url page="about" op="editorialTeam"}" aria-hidden="true" tabindex="-1"></a>
+				<h3>{translate key="plugins.themes.ajlii.homeLinks.editorsTitle"}</h3>
+				<p>{translate key="plugins.themes.ajlii.homeLinks.editorsText"}</p>
+				<a href="{url page="about" op="editorialTeam"}">{translate key="plugins.themes.ajlii.homeLinks.editorsLink"}</a>
+			</article>
+			<article class="ajlii-home-link-card">
+				<a class="ajlii-home-link-visual ajlii-home-link-visual-about" href="{url page="about"}" aria-hidden="true" tabindex="-1"></a>
+				<h3>{translate key="plugins.themes.ajlii.homeLinks.aboutTitle"}</h3>
+				<p>{translate key="plugins.themes.ajlii.homeLinks.aboutText"}</p>
+				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.homeLinks.aboutLink"}</a>
+			</article>
+			<article class="ajlii-home-link-card">
+				<a class="ajlii-home-link-visual ajlii-home-link-visual-submit" href="{url page="about" op="submissions"}" aria-hidden="true" tabindex="-1"></a>
+				<h3>{translate key="plugins.themes.ajlii.homeLinks.whyPublishTitle"}</h3>
+				<p>{translate key="plugins.themes.ajlii.homeLinks.whyPublishText"}</p>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeLinks.whyPublishLink"}</a>
+			</article>
+		</div>
+	</div>
+</section>
+
 {include file="frontend/components/footer.tpl"}
