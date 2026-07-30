@@ -26,6 +26,18 @@ msgstr "Consortium of Uganda University Libraries"
 msgid "plugins.themes.ajlii.header.aboutJournal"
 msgstr "About AJLII"
 
+msgid "plugins.themes.ajlii.header.loginGuidelines"
+msgstr "Login guidelines"
+
+msgid "plugins.themes.ajlii.header.loginGuidelineAccount"
+msgstr "Use Login to access your reader, author, reviewer, or editor account."
+
+msgid "plugins.themes.ajlii.header.loginGuidelineAuthors"
+msgstr "New authors should register first, then complete their profile before submitting."
+
+msgid "plugins.themes.ajlii.header.loginGuidelineHelp"
+msgstr "Use the password reset link on the login page if you cannot access your account."
+
 msgid "plugins.themes.ajlii.nav.menu"
 msgstr "Menu"
 
@@ -241,6 +253,81 @@ msgstr "AI and referral citation monitor endpoint"
 
 msgid "plugins.themes.ajlii.option.citationMonitorUrl.description"
 msgstr "Optional HTTPS endpoint that receives lightweight page, referrer, source, and timestamp events for AI citation tracking and omnichannel visibility monitoring."
+
+msgid "plugins.themes.ajlii.option.heroSliderEnabled.label"
+msgstr "Homepage banner slider"
+
+msgid "plugins.themes.ajlii.option.heroSliderEnabled.enabled"
+msgstr "Enable the managed homepage slider"
+
+msgid "plugins.themes.ajlii.option.heroSliderEnabled.disabled"
+msgstr "Use the standard single homepage image"
+
+msgid "plugins.themes.ajlii.option.heroSliderAutoplay.label"
+msgstr "Homepage slider autoplay"
+
+msgid "plugins.themes.ajlii.option.heroSliderAutoplay.enabled"
+msgstr "Automatically rotate slides"
+
+msgid "plugins.themes.ajlii.option.heroSliderAutoplay.disabled"
+msgstr "Let readers move slides manually"
+
+msgid "plugins.themes.ajlii.option.heroSlide.label"
+msgstr "Homepage slide {$number}"
+
+msgid "plugins.themes.ajlii.option.heroSlideImageUrl.label"
+msgstr "image URL"
+
+msgid "plugins.themes.ajlii.option.heroSlideImageUrl.description"
+msgstr "Full HTTPS or root-relative URL for the slide image, poster, paper presentation, or issue artwork."
+
+msgid "plugins.themes.ajlii.option.heroSlideTitle.label"
+msgstr "title"
+
+msgid "plugins.themes.ajlii.option.heroSlideTitle.description"
+msgstr "Short slide title shown over the image."
+
+msgid "plugins.themes.ajlii.option.heroSlideDescription.label"
+msgstr "description"
+
+msgid "plugins.themes.ajlii.option.heroSlideDescription.description"
+msgstr "Brief supporting text for the slide."
+
+msgid "plugins.themes.ajlii.option.heroSlideUrl.label"
+msgstr "link URL"
+
+msgid "plugins.themes.ajlii.option.heroSlideUrl.description"
+msgstr "Optional HTTPS or root-relative URL for the slide call to action."
+
+msgid "plugins.themes.ajlii.option.heroSlideLabel.label"
+msgstr "link label"
+
+msgid "plugins.themes.ajlii.option.heroSlideLabel.description"
+msgstr "Button text, for example View issue, Read article, View presentation, or Submit paper."
+
+msgid "plugins.themes.ajlii.slider.title"
+msgstr "Featured AJLII updates"
+
+msgid "plugins.themes.ajlii.slider.managed"
+msgstr "Featured by AJLII"
+
+msgid "plugins.themes.ajlii.slider.featured"
+msgstr "Featured"
+
+msgid "plugins.themes.ajlii.slider.about"
+msgstr "About AJLII"
+
+msgid "plugins.themes.ajlii.slider.viewIssue"
+msgstr "View issue"
+
+msgid "plugins.themes.ajlii.slider.readMore"
+msgstr "Read more"
+
+msgid "plugins.themes.ajlii.slider.previous"
+msgstr "Previous slide"
+
+msgid "plugins.themes.ajlii.slider.next"
+msgstr "Next slide"
 
 msgid "plugins.themes.ajlii.option.authorityUrl.description"
 msgstr "Optional official AJLII or CUUL URL used for brand authority, sameAs structured data, and footer profile links."

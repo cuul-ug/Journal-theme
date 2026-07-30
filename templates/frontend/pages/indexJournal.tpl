@@ -18,7 +18,81 @@
  *}
 {include file="frontend/components/header.tpl" pageTitleTranslated=$currentJournal->getLocalizedName()}
 
-{if $homepageImage}
+{if $ajliiHomepageSliderEnabled}
+	<section class="ajlii-home-slider" data-ajlii-home-slider data-autoplay="{if $ajliiHomepageSliderAutoplay}true{else}false{/if}" aria-labelledby="ajliiHomeSliderTitle">
+		<div class="container ajlii-home-slider-inner">
+			<h2 id="ajliiHomeSliderTitle" class="visually-hidden">{translate key="plugins.themes.ajlii.slider.title"}</h2>
+			<div class="ajlii-home-slider-track" data-slider-track>
+				{foreach from=$ajliiHomepageSliderSlides item=slide name=managedSlides}
+					<article class="ajlii-home-slide{if !$slide.imageUrl} ajlii-home-slide-no-image{/if}{if $smarty.foreach.managedSlides.first} is-active{/if}" data-slider-slide>
+						{if $slide.imageUrl}
+							<img src="{$slide.imageUrl|escape}" alt="{$slide.title|escape}">
+						{/if}
+						<div class="ajlii-home-slide-content">
+							<p class="ajlii-home-slide-kicker">{$slide.type|escape}</p>
+							{if $slide.title}<h3>{$slide.title|escape}</h3>{/if}
+							{if $slide.description}<p>{$slide.description|escape}</p>{/if}
+							{if $slide.url}<a class="btn btn-primary" href="{$slide.url|escape}">{$slide.label|escape}</a>{/if}
+						</div>
+					</article>
+				{/foreach}
+				{if $homepageImage}
+					<article class="ajlii-home-slide{if empty($ajliiHomepageSliderSlides)} is-active{/if}" data-slider-slide>
+						<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
+						<div class="ajlii-home-slide-content">
+							<p class="ajlii-home-slide-kicker">{translate key="plugins.themes.ajlii.slider.featured"}</p>
+							<h3>{translate key="plugins.themes.ajlii.journalTitle"}</h3>
+							<p>{translate key="plugins.themes.ajlii.seo.description"}</p>
+							<a class="btn btn-primary" href="{url page="about"}">{translate key="plugins.themes.ajlii.slider.about"}</a>
+						</div>
+					</article>
+				{/if}
+				{if $issue}
+					<article class="ajlii-home-slide{if empty($ajliiHomepageSliderSlides) && !$homepageImage} is-active{/if}" data-slider-slide>
+						{if $issue->getLocalizedCoverImageUrl()}
+							<img src="{$issue->getLocalizedCoverImageUrl()|escape}"{if $issue->getLocalizedCoverImageAltText() != ''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{else} alt="{$issue->getIssueSeries()|escape}"{/if}>
+						{/if}
+						<div class="ajlii-home-slide-content">
+							<p class="ajlii-home-slide-kicker">{translate key="journal.currentIssue"}</p>
+							<h3>{$issue->getIssueSeries()|escape}</h3>
+							{if $issue->getLocalizedTitle()}<p>{$issue->getLocalizedTitle()|escape}</p>{/if}
+							<a class="btn btn-primary" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">{translate key="plugins.themes.ajlii.slider.viewIssue"}</a>
+						</div>
+					</article>
+				{/if}
+				{if $numAnnouncementsHomepage && $announcements|@count}
+					{foreach from=$announcements item=announcement name=sliderAnnouncements}
+						{if $smarty.foreach.sliderAnnouncements.iteration <= 3}
+							<article class="ajlii-home-slide ajlii-home-slide-no-image{if empty($ajliiHomepageSliderSlides) && !$homepageImage && !$issue && $smarty.foreach.sliderAnnouncements.first} is-active{/if}" data-slider-slide>
+								<div class="ajlii-home-slide-content">
+									<p class="ajlii-home-slide-kicker">{translate key="announcement.announcements"}</p>
+									<h3>{$announcement->getLocalizedData('title')|escape}</h3>
+									<p>{$announcement->getLocalizedData('descriptionShort')|strip_tags|escape}</p>
+									<a class="btn btn-primary" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="announcement" op="view" path=$announcement->id}">{translate key="plugins.themes.ajlii.slider.readMore"}</a>
+								</div>
+							</article>
+						{/if}
+					{/foreach}
+				{/if}
+				{if empty($ajliiHomepageSliderSlides) && !$homepageImage && !$issue && !($numAnnouncementsHomepage && $announcements|@count)}
+					<article class="ajlii-home-slide ajlii-home-slide-no-image is-active" data-slider-slide>
+						<div class="ajlii-home-slide-content">
+							<p class="ajlii-home-slide-kicker">{translate key="plugins.themes.ajlii.slider.featured"}</p>
+							<h3>{translate key="plugins.themes.ajlii.journalTitle"}</h3>
+							<p>{translate key="plugins.themes.ajlii.seo.description"}</p>
+							<a class="btn btn-primary" href="{url page="about"}">{translate key="plugins.themes.ajlii.slider.about"}</a>
+						</div>
+					</article>
+				{/if}
+			</div>
+			<div class="ajlii-home-slider-controls">
+				<button type="button" data-slider-prev aria-label="{translate key="plugins.themes.ajlii.slider.previous"}">&lsaquo;</button>
+				<div class="ajlii-home-slider-dots" data-slider-dots></div>
+				<button type="button" data-slider-next aria-label="{translate key="plugins.themes.ajlii.slider.next"}">&rsaquo;</button>
+			</div>
+		</div>
+	</section>
+{elseif $homepageImage}
 	<div class="homepage-image{if $issue} homepage-image-behind-issue{/if}">
 		<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" alt="{$homepageImageAltText|escape}">
 	</div>
