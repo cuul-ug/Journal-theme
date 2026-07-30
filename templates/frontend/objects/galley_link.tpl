@@ -49,7 +49,7 @@
 
 {* Get user access flag *}
 {if !$hasAccess}
-	{if $restrictOnlyPdf && type=="pdf"}
+	{if $restrictOnlyPdf && $type=="pdf"}
 		{assign var=restricted value="1"}
 	{elseif !$restrictOnlyPdf}
 		{assign var=restricted value="1"}

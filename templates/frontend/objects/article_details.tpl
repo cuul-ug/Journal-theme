@@ -93,25 +93,20 @@
 			</div>
 
 			{* DOI only for large screens *}
-			{foreach from=$pubIdPlugins item=pubIdPlugin}
-				{if $pubIdPlugin->getPubIdType() != 'doi'}
-					{continue}
-				{/if}
-				{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-				{if $pubId}
-					{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-					<div class="article-details-doi large-screen">
-						<a href="{$doiUrl}">{$doiUrl}</a>
-					</div>
-				{/if}
-			{/foreach}
+			{assign var=doiObject value=$publication->getData('doiObject')}
+			{if $doiObject}
+				{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}
+				<div class="article-details-doi large-screen">
+					<a href="{$doiUrl}">{$doiUrl}</a>
+				</div>
+			{/if}
 
 			{* Date published & updated *}
 			{if $publication->getData('datePublished')}
 				<div class="article-details-published">
 					{translate key="submissions.published"}
 					{* If this is the original version *}
-					{if $firstPublication->getID() === $publication->getId()}
+					{if $firstPublication->getId() === $publication->getId()}
 						{$firstPublication->getData('datePublished')|date_format:$dateFormatShort}
 					{* If this is an updated version *}
 					{else}
@@ -321,7 +316,7 @@
 						</h2>
 						<ul class="article-details-categories-value">
 							{foreach from=$categories item=category}
-								<li><a href="{url router=$smarty.const.ROUTE_PAGE page="catalog" op="category" path=$category->getPath()|escape}">{$category->getLocalizedTitle()|escape}</a></li>
+								<li><a href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="catalog" op="category" path=$category->getPath()|escape}">{$category->getLocalizedTitle()|escape}</a></li>
 							{/foreach}
 						</ul>
 					</div>
@@ -345,7 +340,7 @@
 					{if $pubIdPlugin->getPubIdType() == 'doi'}
 						{continue}
 					{/if}
-					{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+						{assign var=pubId value=$publication->getStoredPubId($pubIdPlugin->getPubIdType())}
 					{if $pubId}
 						<div class="article-details-block article-details-pubid">
 							<h2 class="article-details-heading">
@@ -380,18 +375,12 @@
 				{/if}
 
 				{* DOI for small screens only *}
-				{foreach from=$pubIdPlugins item=pubIdPlugin}
-					{if $pubIdPlugin->getPubIdType() != 'doi'}
-						{continue}
-					{/if}
-					{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-					{if $pubId}
-						{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-						<div class="article-details-block article-details-doi small-screen">
-							<a href="{$doiUrl}">{$doiUrl}</a>
-						</div>
-					{/if}
-				{/foreach}
+				{if $doiObject}
+					{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}
+					<div class="article-details-block article-details-doi small-screen">
+						<a href="{$doiUrl}">{$doiUrl}</a>
+					</div>
+				{/if}
 
 				{* Article Galleys (bottom) *}
 				{if $primaryGalleys}
@@ -482,14 +471,10 @@
 	{capture assign="ajliiJournalTitle"}{translate key="plugins.themes.ajlii.journalTitle"}{/capture}
 	{capture assign="ajliiPublisher"}{translate key="plugins.themes.ajlii.publisher"}{/capture}
 	{assign var="ajliiArticleDoi" value=""}
-	{foreach from=$pubIdPlugins item=pubIdPlugin}
-		{if $pubIdPlugin->getPubIdType() == 'doi'}
-			{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-			{if $pubId}
-				{assign var="ajliiArticleDoi" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)}
-			{/if}
-		{/if}
-	{/foreach}
+	{assign var=doiObject value=$publication->getData('doiObject')}
+	{if $doiObject}
+		{assign var="ajliiArticleDoi" value=$doiObject->getData('resolvingUrl')}
+	{/if}
 	<script type="application/ld+json">
 	{ldelim}
 		"@context": "https://schema.org",

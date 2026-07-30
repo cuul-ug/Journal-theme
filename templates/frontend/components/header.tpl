@@ -15,7 +15,7 @@
 {/if}
 
 {capture assign="homeUrl"}
-	{url page="index" router=$smarty.const.ROUTE_PAGE}
+	{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
 {/capture}
 
 {* Logo or site title. Only use <h1> heading on the homepage.

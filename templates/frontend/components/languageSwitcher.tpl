@@ -20,7 +20,7 @@
 		<div class="dropdown-menu" aria-labelledby="languageToggleMenu{$id|escape}">
 			{foreach from=$languageToggleLocales item="localeName" key="localeKey"}
 				{if $localeKey !== $currentLocale}
-					<a class="dropdown-item" href="{url router=$smarty.const.ROUTE_PAGE page="user" op="setLocale" path=$localeKey}">
+					<a class="dropdown-item" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="user" op="setLocale" path=$localeKey}">
 						{$localeName}
 					</a>
 				{/if}

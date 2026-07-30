@@ -45,6 +45,10 @@ Configure authority URLs and the citation monitor endpoint in the theme settings
 4. Go to `Settings` > `Website` > `Appearance`.
 5. Select `ajlii` as the active theme and save.
 
+## Compatibility
+
+This release is prepared for OJS 3.5.0-5 LTS and PHP 8.2+ environments. It uses OJS 3.5 publication DOI objects, publication-level galleys, Bootstrap 5 data attributes/classes, and `PKPApplication::ROUTE_PAGE` route constants.
+
 ## Journal Theme Standards
 
 The theme uses a restrained scholarly layout:
