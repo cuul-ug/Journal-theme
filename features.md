@@ -472,6 +472,20 @@ The production package keeps the files OJS needs to run the theme.
 
 Static frontend assets are loaded from `libs/app.min.css`, `styles/ajlii-production.css`, and `libs/app.min.js`. The extra production stylesheet provides a stable fallback for the AJLII header, footer, WCAG panel, reader modal, AI assistant, and discovery panels when server-side LESS compilation is unavailable.
 
+## Managed Homepage Slider
+
+The theme replaces the single homepage banner position with a managed AJLII slider. Journal managers can configure up to five slides from the theme settings using an image URL, title, description, link URL, and link label.
+
+Example slide:
+
+Image URL: `/public/site/ajlii-conference-poster.jpg`
+Title: `Call for Papers: Digital Inclusion in African Universities`
+Description: `Submit research, case studies, and reviews for the next AJLII issue.`
+Link URL: `/1/about/submissions`
+Link label: `Submit paper`
+
+When no custom slide is configured, the slider can still show the configured OJS homepage image, the current issue, and recent homepage announcements.
+
 Runtime files:
 
 - `AfricanJournalThemePlugin.inc.php`

@@ -50,12 +50,29 @@
 	<div class="ajlii-publisher-bar">
 		<div class="container ajlii-publisher-inner">
 			<a class="ajlii-publisher-mark" href="{$homeUrl|escape}" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
-				<span class="ajlii-publisher-name">CUUL</span>
+				<span class="ajlii-publisher-logo" aria-hidden="true">
+					{if $displayPageHeaderLogo}
+						{$brand}
+					{else}
+						CUUL
+					{/if}
+				</span>
 				<span class="ajlii-publisher-subtitle">{translate key="plugins.themes.ajlii.publisher"}</span>
 			</a>
 			<div class="ajlii-header-tools" aria-label="{translate key="common.navigation.user"}">
-				<a class="ajlii-tool-link" href="{url page="about"}" aria-label="{translate key="plugins.themes.ajlii.header.aboutJournal"}">i</a>
-				<a class="ajlii-tool-link ajlii-tool-user" href="{url page="login"}" aria-label="{translate key="user.login"}"><span>{translate key="user.login"}</span></a>
+				<details class="ajlii-login-guidelines">
+					<summary class="ajlii-tool-link" aria-label="{translate key="plugins.themes.ajlii.header.loginGuidelines"}">i</summary>
+					<div class="ajlii-login-guidelines-panel">
+						<h2>{translate key="plugins.themes.ajlii.header.loginGuidelines"}</h2>
+						<ul>
+							<li>{translate key="plugins.themes.ajlii.header.loginGuidelineAccount"}</li>
+							<li>{translate key="plugins.themes.ajlii.header.loginGuidelineAuthors"}</li>
+							<li>{translate key="plugins.themes.ajlii.header.loginGuidelineHelp"}</li>
+						</ul>
+						<a href="{url page="about"}">{translate key="plugins.themes.ajlii.header.aboutJournal"}</a>
+					</div>
+				</details>
+				<a class="ajlii-tool-link ajlii-tool-user" href="{url page="login"}" data-ajlii-login-open data-bs-toggle="modal" data-bs-target="#loginModal" role="button" aria-haspopup="dialog" aria-controls="loginModal" aria-label="{translate key="user.login"}"><span>{translate key="user.login"}</span></a>
 			</div>
 		</div>
 	</div>

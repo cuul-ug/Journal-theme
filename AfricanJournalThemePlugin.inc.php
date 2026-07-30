@@ -93,6 +93,54 @@ class AfricanJournalThemePlugin extends ThemePlugin
             'default' => '',
         ]);
 
+        $this->addOption('heroSliderEnabled', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.ajlii.option.heroSliderEnabled.label'),
+            'options' => [
+                [
+                    'value' => '1',
+                    'label' => __('plugins.themes.ajlii.option.heroSliderEnabled.enabled'),
+                ],
+                [
+                    'value' => '0',
+                    'label' => __('plugins.themes.ajlii.option.heroSliderEnabled.disabled'),
+                ],
+            ],
+            'default' => '1',
+        ]);
+
+        $this->addOption('heroSliderAutoplay', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.ajlii.option.heroSliderAutoplay.label'),
+            'options' => [
+                [
+                    'value' => '1',
+                    'label' => __('plugins.themes.ajlii.option.heroSliderAutoplay.enabled'),
+                ],
+                [
+                    'value' => '0',
+                    'label' => __('plugins.themes.ajlii.option.heroSliderAutoplay.disabled'),
+                ],
+            ],
+            'default' => '1',
+        ]);
+
+        for ($slideIndex = 1; $slideIndex <= 5; $slideIndex++) {
+            foreach ([
+                'ImageUrl' => __('plugins.themes.ajlii.option.heroSlideImageUrl.description'),
+                'Title' => __('plugins.themes.ajlii.option.heroSlideTitle.description'),
+                'Description' => __('plugins.themes.ajlii.option.heroSlideDescription.description'),
+                'Url' => __('plugins.themes.ajlii.option.heroSlideUrl.description'),
+                'Label' => __('plugins.themes.ajlii.option.heroSlideLabel.description'),
+            ] as $fieldName => $description) {
+                $this->addOption('heroSlide' . $slideIndex . $fieldName, 'FieldText', [
+                    'label' => __('plugins.themes.ajlii.option.heroSlide.label', ['number' => $slideIndex]) . ' ' . __('plugins.themes.ajlii.option.heroSlide' . $fieldName . '.label'),
+                    'description' => $description,
+                    'default' => '',
+                ]);
+            }
+        }
+
         foreach ([
             'authorityWebsiteUrl',
             'authorityOrcidUrl',
@@ -148,6 +196,7 @@ class AfricanJournalThemePlugin extends ThemePlugin
 		';
 
         $this->addScript('app-js', 'libs/app.min.js');
+        $this->addScript('production-js', 'libs/ajlii-production.js');
 
         // Load static production stylesheets and script.
         $this->addStyle('app-css', 'libs/app.min.css');
@@ -175,6 +224,7 @@ class AfricanJournalThemePlugin extends ThemePlugin
         // Validate the base colour setting value.
         if ($name == 'baseColour' && !preg_match('/^#[0-9a-fA-F]{1,6}$/', $value)) $value = null; // pkp/pkp-lib#11974
         if (($name == 'aiProxyUrl' || $name == 'citationMonitorUrl' || preg_match('/^authority.*Url$/', $name)) && $value && !preg_match('/^https?:\/\//i', $value)) $value = null;
+        if (preg_match('/^heroSlide\d+(ImageUrl|Url)$/', $name) && $value && !preg_match('/^(https?:\/\/|\/)/i', $value)) $value = null;
         parent::saveOption($name, $value, $contextId);
     }
 
@@ -250,6 +300,9 @@ class AfricanJournalThemePlugin extends ThemePlugin
                 'languageToggleLocales' => $locales,
                 'loginUrl' => $loginUrl,
                 'brandImage' => 'templates/images/ojs_brand_white.png',
+                'ajliiHomepageSliderEnabled' => $this->getOption('heroSliderEnabled') !== '0',
+                'ajliiHomepageSliderAutoplay' => $this->getOption('heroSliderAutoplay') !== '0',
+                'ajliiHomepageSliderSlides' => $this->getHeroSliderSlides(),
                 'ajliiAiProvider' => $this->getOption('aiProvider') ?: 'openai',
                 'ajliiAiModel' => $this->getOption('aiModel') ?: '',
                 'ajliiAiProxyUrl' => $this->getOption('aiProxyUrl') ?: '',
@@ -257,5 +310,32 @@ class AfricanJournalThemePlugin extends ThemePlugin
                 'ajliiAuthorityLinks' => $authorityLinks,
             ]);
         }
+    }
+
+    private function getHeroSliderSlides(): array
+    {
+        $slides = [];
+        for ($slideIndex = 1; $slideIndex <= 5; $slideIndex++) {
+            $title = trim((string) $this->getOption('heroSlide' . $slideIndex . 'Title'));
+            $imageUrl = trim((string) $this->getOption('heroSlide' . $slideIndex . 'ImageUrl'));
+            $description = trim((string) $this->getOption('heroSlide' . $slideIndex . 'Description'));
+            $url = trim((string) $this->getOption('heroSlide' . $slideIndex . 'Url'));
+            $label = trim((string) $this->getOption('heroSlide' . $slideIndex . 'Label'));
+
+            if (!$title && !$imageUrl && !$description) {
+                continue;
+            }
+
+            $slides[] = [
+                'title' => $title,
+                'imageUrl' => $imageUrl,
+                'description' => $description,
+                'url' => $url,
+                'label' => $label ?: __('plugins.themes.ajlii.slider.readMore'),
+                'type' => __('plugins.themes.ajlii.slider.managed'),
+            ];
+        }
+
+        return $slides;
     }
 }
