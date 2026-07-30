@@ -61,7 +61,7 @@
 		<a class="navbar-brand" href="{$homeUrl}">{$brand}</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
 		        aria-controls="main-navbar" aria-expanded="false"
-		        aria-label="{translate key="plugins.themes.healthSciences.nav.toggle"}">
+		        aria-label="{translate key="plugins.themes.ajlii.nav.toggle"}">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 

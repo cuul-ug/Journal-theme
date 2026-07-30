@@ -31,7 +31,7 @@ class AfricanJournalThemePlugin extends ThemePlugin
         $this->addOption('baseColour', 'colour', [
             'label' => 'plugins.themes.ajlii.option.colour.label',
             'description' => 'plugins.themes.ajlii.option.colour.description',
-            'default' => '#DC143C',
+            'default' => '#155E63',
         ]);
 
         // Add usage stats display options
@@ -58,8 +58,8 @@ class AfricanJournalThemePlugin extends ThemePlugin
         // Update colour based on theme option
         $additionalLessVariables = [];
         $baseColour = $this->getOption('baseColour');
-        if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', (string) $baseColour)) $baseColour = '#DC143C'; // pkp/pkp-lib#11974
-        if ($baseColour !== '#DC143C') {
+        if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', (string) $baseColour)) $baseColour = '#155E63'; // pkp/pkp-lib#11974
+        if ($baseColour !== '#155E63') {
             $additionalLessVariables[] = '@primary:' . $baseColour . ';';
             $additionalLessVariables[] = '
 				@primary-light: desaturate(lighten(@primary, 41%), 15%);

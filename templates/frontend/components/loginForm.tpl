@@ -107,10 +107,10 @@
 		</div>
 		{if !$disableUserReg}
 			<div class="form-group form-group-register">
-				{translate key="plugins.themes.healthSciences.register.noAccount"}
+				{translate key="plugins.themes.ajlii.register.noAccount"}
 				{capture assign=registerUrl}{url page="user" op="register" source=$source}{/capture}
 				<a href="{$registerUrl}">
-					{translate key="plugins.themes.healthSciences.register.registerHere"}
+					{translate key="plugins.themes.ajlii.register.registerHere"}
 				</a>
 			</div>
 		{/if}

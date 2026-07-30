@@ -14,7 +14,7 @@
 {if $languageToggleLocales && $languageToggleLocales|@count > 1}
 	<div id="{$id|escape}" class="dropdown language-toggle">
 		<button class="btn dropdown-toggle" type="button" id="languageToggleMenu{$id|escape}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			<span class="visually-hidden">{translate key="plugins.themes.healthSciences.language.toggle"}</span>
+			<span class="visually-hidden">{translate key="plugins.themes.ajlii.language.toggle"}</span>
 			{$languageToggleLocales[$currentLocale]}
 		</button>
 		<div class="dropdown-menu" aria-labelledby="languageToggleMenu{$id|escape}">

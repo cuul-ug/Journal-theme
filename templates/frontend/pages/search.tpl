@@ -22,9 +22,9 @@
 	<div class="page-header">
 		<h1>
 			{if $query}
-				{translate key="plugins.themes.healthSciences.search.resultsFor" query=$query|escape}
+				{translate key="plugins.themes.ajlii.search.resultsFor" query=$query|escape}
 			{elseif $authors}
-				{translate key="plugins.themes.healthSciences.search.resultsFor" query=$authors|escape}
+				{translate key="plugins.themes.ajlii.search.resultsFor" query=$authors|escape}
 			{else}
 				{translate key="common.search"}
 			{/if}
@@ -56,7 +56,7 @@
 		</div>
 		<div class="col-lg-4 search-col-filters">
 			<div class="search-filters">
-				<h2>{translate key="plugins.themes.healthSciences.search.params"}</h2>
+				<h2>{translate key="plugins.themes.ajlii.search.params"}</h2>
 
 				{capture name="searchFormUrl"}{url escape=false}{/capture}
 				{assign var=formUrlParameters value=[]}{* Prevent Smarty warning *}

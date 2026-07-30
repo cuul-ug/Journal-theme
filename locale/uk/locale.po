@@ -11,53 +11,77 @@ msgstr ""
 "PO-Revision-Date: 2020-04-23T10:25:07+00:00\n"
 "Language: \n"
 
-msgid "plugins.themes.healthSciences.name"
-msgstr "Health Sciences Theme"
+msgid "plugins.themes.ajlii.name"
+msgstr "African Journal of Library and Information Innovations by Consortium of Uganda University Libraries"
 
-msgid "plugins.themes.healthSciences.description"
-msgstr "Тема OJS, побудована з акцентом на журнали з медичною тематикою."
+msgid "plugins.themes.ajlii.description"
+msgstr "A clean OJS journal theme for the African Journal of Library and Information Innovations, published by the Consortium of Uganda University Libraries."
 
-msgid "plugins.themes.healthSciences.option.colour.label"
+msgid "plugins.themes.ajlii.option.colour.label"
 msgstr "Основний колір"
 
-msgid "plugins.themes.healthSciences.option.colour.description"
+msgid "plugins.themes.ajlii.option.colour.description"
 msgstr "Оберіть основний колір для Вашого журналу."
 
-msgid "plugins.themes.healthSciences.nav.toggle"
+msgid "plugins.themes.ajlii.nav.toggle"
 msgstr "Показати навігацію"
 
-msgid "plugins.themes.healthSciences.language.toggle"
+msgid "plugins.themes.ajlii.language.toggle"
 msgstr "Змінити мову. Поточною мовою є:"
 
-msgid "plugins.themes.healthSciences.currentIssuePublished"
+msgid "plugins.themes.ajlii.currentIssuePublished"
 msgstr "Опубліковано {$date}"
 
-msgid "plugins.themes.healthSciences.issueDescription"
+msgid "plugins.themes.ajlii.issueDescription"
 msgstr "Опис випуску"
 
-msgid "plugins.themes.healthSciences.issuePubId"
+msgid "plugins.themes.ajlii.issuePubId"
 msgstr "{$pubIdType}: {$pubId}"
 
-msgid "plugins.themes.healthSciences.article.authorBio"
+msgid "plugins.themes.ajlii.article.authorBio"
 msgstr "Відомості про автора"
 
-msgid "plugins.themes.healthSciences.article.supplementaryFiles"
+msgid "plugins.themes.ajlii.article.supplementaryFiles"
 msgstr "Додаткові файли"
 
-msgid "plugins.themes.healthSciences.register.haveAccount"
+msgid "plugins.themes.ajlii.register.haveAccount"
 msgstr "Вже маєте обліковий запис?"
 
-msgid "plugins.themes.healthSciences.register.loginHere"
+msgid "plugins.themes.ajlii.register.loginHere"
 msgstr "Увійти"
 
-msgid "plugins.themes.healthSciences.register.noAccount"
+msgid "plugins.themes.ajlii.register.noAccount"
 msgstr "Немає облікового запису?"
 
-msgid "plugins.themes.healthSciences.register.registerHere"
+msgid "plugins.themes.ajlii.register.registerHere"
 msgstr "Зареєструватися"
 
-msgid "plugins.themes.healthSciences.search.resultsFor"
+msgid "plugins.themes.ajlii.search.resultsFor"
 msgstr "Результати пошуку по запиту <em>{$query}</em>"
 
-msgid "plugins.themes.healthSciences.search.params"
+msgid "plugins.themes.ajlii.search.params"
 msgstr "Параметри пошуку"
+
+msgid "plugins.themes.ajlii.displayStats.downloads"
+msgstr "Downloads"
+
+msgid "plugins.themes.ajlii.displayStats.monthInitials"
+msgstr "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
+
+msgid "plugins.themes.ajlii.displayStats.noStats"
+msgstr "Download data is not yet available."
+
+msgid "plugins.themes.ajlii.more"
+msgstr "{$text}…"
+
+msgid "plugins.themes.ajlii.option.displayStats.bar"
+msgstr "Use bar type of the chart for usage statistics display."
+
+msgid "plugins.themes.ajlii.option.displayStats.label"
+msgstr "Usage statistics display options"
+
+msgid "plugins.themes.ajlii.option.displayStats.line"
+msgstr "Use line type of the chart for usage statistics display."
+
+msgid "plugins.themes.ajlii.option.displayStats.none"
+msgstr "Do not display submission usage statistics chart for reader."

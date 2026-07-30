@@ -33,7 +33,7 @@
 			{$issue->getIssueSeries()|escape}
 		</div>
 		<div class="h6 homepage-issue-published">
-			{translate key="plugins.themes.healthSciences.currentIssuePublished" date=$issue->getDatePublished()|date_format:$dateFormatLong}
+			{translate key="plugins.themes.ajlii.currentIssuePublished" date=$issue->getDatePublished()|date_format:$dateFormatLong}
 		</div>
 
 		{* make the entire block conditional if there aren't any additional issue data *}
@@ -55,7 +55,7 @@
 										{if $issue->getLocalizedTitle()}
 											{$issue->getLocalizedTitle()|escape}
 										{else}
-											{translate key="plugins.themes.healthSciences.issueDescription"}
+											{translate key="plugins.themes.ajlii.issueDescription"}
 										{/if}
 									</div>
 									{$issue->getLocalizedDescription()|strip_unsafe_html}
@@ -101,7 +101,7 @@
 					<br>
 					<a href="{url router=$smarty.const.ROUTE_PAGE page="announcement" op="view" path=$announcement->id}">
 						{capture name="more" assign="more"}{translate key="common.more"}{/capture}
-						{translate key="plugins.themes.healthSciences.more" text=$more}
+						{translate key="plugins.themes.ajlii.more" text=$more}
 					</a>
 				</p>
 				<footer>

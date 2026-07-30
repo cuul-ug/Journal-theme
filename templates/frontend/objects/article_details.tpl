@@ -172,7 +172,7 @@
 							{/if}
 							{if $author->getLocalizedBiography()}
 								<button type="button" class="article-details-bio-toggle" data-bs-toggle="modal" data-bs-target="#authorBiographyModal{$authorKey+1}">
-									{translate key="plugins.themes.healthSciences.article.authorBio"}
+									{translate key="plugins.themes.ajlii.article.authorBio"}
 								</button>
 								{* Store author biographies to print as modals in the footer *}
 								{capture append="authorBiographyModalsTemp"}
@@ -282,7 +282,7 @@
 				{* Supplementary galleys *}
 				{if $supplementaryGalleys}
 					<div class="article-details-block article-details-galleys-supplementary">
-						<h2 class="article-details-heading">{translate key="plugins.themes.healthSciences.article.supplementaryFiles"}</h2>
+						<h2 class="article-details-heading">{translate key="plugins.themes.ajlii.article.supplementaryFiles"}</h2>
 						{foreach from=$supplementaryGalleys item=galley}
 							<div class="article-details-galley">
 								{include file="frontend/objects/galley_link.tpl" parent=$article publication=$publication galley=$galley isSupplementary="1"}
@@ -450,12 +450,12 @@
 					{$activeTheme->displayUsageStatsGraph($article->getId())}
 					<section class="item downloads_chart">
 						<h2 class="label">
-							{translate key="plugins.themes.healthSciences.displayStats.downloads"}
+							{translate key="plugins.themes.ajlii.displayStats.downloads"}
 						</h2>
 						<div class="value">
 							<canvas class="usageStatsGraph" data-object-type="Submission" data-object-id="{$article->getId()|escape}"></canvas>
 							<div class="usageStatsUnavailable" data-object-type="Submission" data-object-id="{$article->getId()|escape}">
-								{translate key="plugins.themes.healthSciences.displayStats.noStats"}
+								{translate key="plugins.themes.ajlii.displayStats.noStats"}
 							</div>
 						</div>
 					</section>

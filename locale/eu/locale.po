@@ -12,77 +12,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
 
-msgid "plugins.themes.healthSciences.name"
-msgstr "Health Sciences itxura"
+msgid "plugins.themes.ajlii.name"
+msgstr "African Journal of Library and Information Innovations by Consortium of Uganda University Libraries"
 
-msgid "plugins.themes.healthSciences.description"
-msgstr "OJS itxura bat, testuaren irakurgarritasunari eta edukiaren argitasunari begira diseinatua. Osasun zientzitako aldizkariei begirako itxura"
+msgid "plugins.themes.ajlii.description"
+msgstr "A clean OJS journal theme for the African Journal of Library and Information Innovations, published by the Consortium of Uganda University Libraries."
 
-msgid "plugins.themes.healthSciences.option.colour.label"
+msgid "plugins.themes.ajlii.option.colour.label"
 msgstr "Kolore nagusia"
 
-msgid "plugins.themes.healthSciences.option.colour.description"
+msgid "plugins.themes.ajlii.option.colour.description"
 msgstr "Haukeratu zure aldizkariaren kolore nagusia."
 
-msgid "plugins.themes.healthSciences.nav.toggle"
+msgid "plugins.themes.ajlii.nav.toggle"
 msgstr "Gaitu/ezgaitu nabigazioa"
 
-msgid "plugins.themes.healthSciences.language.toggle"
+msgid "plugins.themes.ajlii.language.toggle"
 msgstr "Aldatu hizkuntza. Uneko hizkuntza:"
 
-msgid "plugins.themes.healthSciences.currentIssuePublished"
+msgid "plugins.themes.ajlii.currentIssuePublished"
 msgstr "{$date} datan argitaratua"
 
-msgid "plugins.themes.healthSciences.issueDescription"
+msgid "plugins.themes.ajlii.issueDescription"
 msgstr "Zenbakiaren deskribapena"
 
-msgid "plugins.themes.healthSciences.issuePubId"
+msgid "plugins.themes.ajlii.issuePubId"
 msgstr "{$pubIdType}: {$pubId}"
 
-msgid "plugins.themes.healthSciences.more"
+msgid "plugins.themes.ajlii.more"
 msgstr "{$text}…"
 
-msgid "plugins.themes.healthSciences.article.authorBio"
+msgid "plugins.themes.ajlii.article.authorBio"
 msgstr "Bio"
 
-msgid "plugins.themes.healthSciences.article.supplementaryFiles"
+msgid "plugins.themes.ajlii.article.supplementaryFiles"
 msgstr "Fitxategi gehigarriak"
 
-msgid "plugins.themes.healthSciences.register.haveAccount"
+msgid "plugins.themes.ajlii.register.haveAccount"
 msgstr "Dagoeneko kontu bat duzu?"
 
-msgid "plugins.themes.healthSciences.register.loginHere"
+msgid "plugins.themes.ajlii.register.loginHere"
 msgstr "Saioa hasi hemen"
 
-msgid "plugins.themes.healthSciences.register.noAccount"
+msgid "plugins.themes.ajlii.register.noAccount"
 msgstr "Konturik ez?"
 
-msgid "plugins.themes.healthSciences.register.registerHere"
+msgid "plugins.themes.ajlii.register.registerHere"
 msgstr "Erregistratu hemen"
 
-msgid "plugins.themes.healthSciences.search.resultsFor"
+msgid "plugins.themes.ajlii.search.resultsFor"
 msgstr "Bilaketa emaitzak <em>{$query}</em> bilakerarako"
 
-msgid "plugins.themes.healthSciences.search.params"
+msgid "plugins.themes.ajlii.search.params"
 msgstr "Bilaketa-parametroak"
 
-msgid "plugins.themes.healthSciences.option.displayStats.label"
+msgid "plugins.themes.ajlii.option.displayStats.label"
 msgstr "Erabilera-estatistikak bistaratzeko aukerak"
 
-msgid "plugins.themes.healthSciences.option.displayStats.none"
+msgid "plugins.themes.ajlii.option.displayStats.none"
 msgstr "Ez erakutsi bidalketako erabilera estatistikak grafikak erabiltzaileentzat."
 
-msgid "plugins.themes.healthSciences.option.displayStats.bar"
+msgid "plugins.themes.ajlii.option.displayStats.bar"
 msgstr "Erabili diagramaren barra mota erabilera-estatistikak bistaratzeko."
 
-msgid "plugins.themes.healthSciences.option.displayStats.line"
+msgid "plugins.themes.ajlii.option.displayStats.line"
 msgstr "Erabili diagramaren lerro mota erabilera-estatistikak bistaratzeko. "
 
-msgid "plugins.themes.healthSciences.displayStats.monthInitials"
+msgid "plugins.themes.ajlii.displayStats.monthInitials"
 msgstr "Urt Ots Mar Api Maiatza Eka Uzt Abu Ira Urr Aza Abe"
 
-msgid "plugins.themes.healthSciences.displayStats.downloads"
+msgid "plugins.themes.ajlii.displayStats.downloads"
 msgstr "Deskargak"
 
-msgid "plugins.themes.healthSciences.displayStats.noStats"
+msgid "plugins.themes.ajlii.displayStats.noStats"
 msgstr "Deskargen datuak ez daude oraindik eskuragarri."

@@ -49,101 +49,87 @@
 @import "components/sidebar";
 @import "components/footer";
 
-// African Journal Theme Enhancements
-// Red, Black, Yellow palette with minimal white space
+// AJLII journal-standard refinements
 
 body {
-	background-color: @black;
+	background-color: @light-grey;
 	color: @primary-text;
+	line-height: 1.65;
 }
 
-// Increase logo visibility
 .navbar-logo img,
 .navbar-brand img {
-	max-height: 100px !important;
+	max-height: 88px !important;
 	width: auto;
-	border: 2px solid @primary;
-	padding: 5px;
-	background-color: @black;
+	padding: 4px 0;
 }
 
-// Enhanced footer branding
 .footer-brand-image {
-	max-width: 120px !important;
-	max-height: 120px !important;
-	border: 3px solid @primary;
-	padding: 8px;
-	background-color: @accent-black;
+	max-width: 112px !important;
+	max-height: 112px !important;
 }
 
-// Remove excessive white space padding
 html, body {
 	margin: 0;
 	padding: 0;
 }
 
-// Dark theme implementation
 .container {
-	background-color: @accent-black;
+	background-color: @contrast;
 }
 
-// Text readability with yellow/gold on dark backgrounds
 a {
-	color: @primary-light;
+	color: @primary-link;
 
 	&:hover,
 	&:focus {
-		color: @contrast;
-		background-color: @primary;
-		padding: 2px 4px;
+		color: darken(@primary-link, 12%);
 		text-decoration: underline;
 	}
 }
 
-// Emphasize headings
 h1, h2, h3, h4, h5, h6 {
-	color: @primary-light;
+	color: @black;
 	font-weight: 700;
-	text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+	line-height: 1.25;
 }
 
-// Card styling
 .card {
-	background-color: @accent-black;
-	border: 2px solid @primary;
-	border-left: 5px solid @primary-light;
+	background-color: @contrast;
+	border: 1px solid @faded-grey;
+	border-left: 4px solid @primary;
+	box-shadow: 0 8px 24px rgba(16, 32, 38, 0.06);
 }
 
-// Button styling
 .btn {
 	font-weight: 700;
-	border: 2px solid @primary-light;
+	border: 1px solid @btn-border-colour;
 
 	&:hover,
 	&:focus {
-		background-color: @primary;
-		border-color: @contrast;
+		background-color: darken(@primary, 6%);
+		border-color: darken(@primary, 6%);
 		color: @contrast;
 	}
 }
 
 .btn-primary {
 	background-color: @primary;
-	border-color: @primary-light;
+	border-color: @primary;
 	color: @contrast;
 }
 
-// Alert boxes
 .alert {
-	border-left: 5px solid @primary-light;
-	background-color: @accent-black;
+	border-left: 4px solid @warning;
+	background-color: lighten(@warning, 42%);
 	color: @primary-text;
-	border: 2px solid @primary;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 0;
 }
 
-// Remove excessive white space
 .main-container,
 .main-content {
-	background-color: @black;
+	background-color: @contrast;
 	color: @primary-text;
 }

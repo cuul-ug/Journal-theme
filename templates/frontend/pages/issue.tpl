@@ -34,7 +34,7 @@
 
 			<h1>{$issue->getIssueSeries()|escape}</h1>
 			<div class="page-issue-date">
-				{translate key="plugins.themes.healthSciences.currentIssuePublished" date=$issue->getDatePublished()|date_format:$dateFormatLong}
+				{translate key="plugins.themes.ajlii.currentIssuePublished" date=$issue->getDatePublished()|date_format:$dateFormatLong}
 			</div>
 
 			{* PUb IDs (eg - DOI) *}
@@ -53,7 +53,7 @@
 						{if $pubIdPlugin->getPubIdType() == 'doi'}
 							{$pubId}
 						{else}
-							{translate key="plugins.themes.healthSciences.issuePubId" pubIdType=$pubIdPlugin->getPubIdDisplayType()|escape pubId=$pubId}
+							{translate key="plugins.themes.ajlii.issuePubId" pubIdType=$pubIdPlugin->getPubIdDisplayType()|escape pubId=$pubId}
 						{/if}
 					</div>
 				{/if}
@@ -70,7 +70,7 @@
 									{if $issue->getLocalizedTitle()}
 										{$issue->getLocalizedTitle()}
 									{else}
-										{translate key="plugins.themes.healthSciences.issueDescription"}
+										{translate key="plugins.themes.ajlii.issueDescription"}
 									{/if}
 								</div>
 								{$issue->getLocalizedDescription()|strip_unsafe_html}

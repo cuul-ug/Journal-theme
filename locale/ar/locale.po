@@ -11,56 +11,77 @@ msgstr ""
 "PO-Revision-Date: 2020-04-23T10:23:19+00:00\n"
 "Language: \n"
 
-msgid "plugins.themes.healthSciences.name"
-msgstr "نمط العلوم الصحية"
+msgid "plugins.themes.ajlii.name"
+msgstr "African Journal of Library and Information Innovations by Consortium of Uganda University Libraries"
 
-msgid "plugins.themes.healthSciences.description"
-msgstr "نمط لنظام المجلات المفتوحة مبني بحيث يركز على المجلات العاملة في مجال العلوم الصحية."
+msgid "plugins.themes.ajlii.description"
+msgstr "A clean OJS journal theme for the African Journal of Library and Information Innovations, published by the Consortium of Uganda University Libraries."
 
-msgid "plugins.themes.healthSciences.option.colour.label"
+msgid "plugins.themes.ajlii.option.colour.label"
 msgstr "اللون الأولي"
 
-msgid "plugins.themes.healthSciences.option.colour.description"
+msgid "plugins.themes.ajlii.option.colour.description"
 msgstr "إختر اللون الأساسي لواجهة مجلتك."
 
-msgid "plugins.themes.healthSciences.nav.toggle"
+msgid "plugins.themes.ajlii.nav.toggle"
 msgstr "تقليب التنقل"
 
-msgid "plugins.themes.healthSciences.language.toggle"
+msgid "plugins.themes.ajlii.language.toggle"
 msgstr "تغيير اللغة. اللغة حالياً هي:"
 
-msgid "plugins.themes.healthSciences.currentIssuePublished"
+msgid "plugins.themes.ajlii.currentIssuePublished"
 msgstr "منشورة بتاريخ {$date}"
 
-msgid "plugins.themes.healthSciences.issueDescription"
+msgid "plugins.themes.ajlii.issueDescription"
 msgstr "وصف العدد"
 
-msgid "plugins.themes.healthSciences.issuePubId"
+msgid "plugins.themes.ajlii.issuePubId"
 msgstr "{$pubIdType}: {$pubId}"
 
-msgid "plugins.themes.healthSciences.more"
+msgid "plugins.themes.ajlii.more"
 msgstr "{$text}…"
 
-msgid "plugins.themes.healthSciences.article.authorBio"
+msgid "plugins.themes.ajlii.article.authorBio"
 msgstr "السيرة الشخصية"
 
-msgid "plugins.themes.healthSciences.article.supplementaryFiles"
+msgid "plugins.themes.ajlii.article.supplementaryFiles"
 msgstr "الملفات التكميلية"
 
-msgid "plugins.themes.healthSciences.register.haveAccount"
+msgid "plugins.themes.ajlii.register.haveAccount"
 msgstr "هل لديك حساب مسبقاً؟"
 
-msgid "plugins.themes.healthSciences.register.loginHere"
+msgid "plugins.themes.ajlii.register.loginHere"
 msgstr "سجل دخولك هنا"
 
-msgid "plugins.themes.healthSciences.register.noAccount"
+msgid "plugins.themes.ajlii.register.noAccount"
 msgstr "أليس لديك حساب؟"
 
-msgid "plugins.themes.healthSciences.register.registerHere"
+msgid "plugins.themes.ajlii.register.registerHere"
 msgstr "سجل نفسك هنا"
 
-msgid "plugins.themes.healthSciences.search.resultsFor"
+msgid "plugins.themes.ajlii.search.resultsFor"
 msgstr "نتائج البحث عن <em>{$query}</em>"
 
-msgid "plugins.themes.healthSciences.search.params"
+msgid "plugins.themes.ajlii.search.params"
 msgstr "معايير البحث"
+
+msgid "plugins.themes.ajlii.displayStats.downloads"
+msgstr "Downloads"
+
+msgid "plugins.themes.ajlii.displayStats.monthInitials"
+msgstr "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
+
+msgid "plugins.themes.ajlii.displayStats.noStats"
+msgstr "Download data is not yet available."
+
+msgid "plugins.themes.ajlii.option.displayStats.bar"
+msgstr "Use bar type of the chart for usage statistics display."
+
+msgid "plugins.themes.ajlii.option.displayStats.label"
+msgstr "Usage statistics display options"
+
+msgid "plugins.themes.ajlii.option.displayStats.line"
+msgstr "Use line type of the chart for usage statistics display."
+
+msgid "plugins.themes.ajlii.option.displayStats.none"
+msgstr "Do not display submission usage statistics chart for reader."

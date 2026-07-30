@@ -12,16 +12,16 @@ msgstr ""
 "Language: en\n"
 
 msgid "plugins.themes.ajlii.name"
-msgstr "African Journal of Library and Information Innovations"
+msgstr "African Journal of Library and Information Innovations by Consortium of Uganda University Libraries"
 
 msgid "plugins.themes.ajlii.description"
-msgstr "An OJS theme designed for African journals focused on library science and information innovations. Features a vibrant blend of red, black, and yellow colors with bold typography and minimal white space for maximum visual impact."
+msgstr "A clean OJS journal theme for the African Journal of Library and Information Innovations, published by the Consortium of Uganda University Libraries."
 
 msgid "plugins.themes.ajlii.option.colour.label"
 msgstr "Primary Colour"
 
 msgid "plugins.themes.ajlii.option.colour.description"
-msgstr "Select the primary colour for your journal brand. Default is Crimson Red."
+msgstr "Select the primary colour for your journal brand. Default is a scholarly teal."
 
 msgid "plugins.themes.ajlii.nav.toggle"
 msgstr "Toggle Navigation"

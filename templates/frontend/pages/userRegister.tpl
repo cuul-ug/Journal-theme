@@ -58,10 +58,10 @@
 						</button>
 					</div>
 					<div class="form-group form-group-login">
-						{translate key="plugins.themes.healthSciences.register.haveAccount"}
+						{translate key="plugins.themes.ajlii.register.haveAccount"}
 						{capture assign="rolesProfileUrl"}{url page="user" op="profile" path="roles"}{/capture}
 						<a href="{url page="login" source=$rolesProfileUrl}" class="login">
-							{translate key="plugins.themes.healthSciences.register.loginHere"}
+							{translate key="plugins.themes.ajlii.register.loginHere"}
 						</a>
 					</div>
 				</form>
