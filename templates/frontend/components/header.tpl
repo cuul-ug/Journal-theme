@@ -49,7 +49,7 @@
 <header class="main-header">
 	<div class="ajlii-publisher-bar">
 		<div class="container ajlii-publisher-inner">
-			<a class="ajlii-publisher-mark" href="{$homeUrl|escape}" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
+			<a class="ajlii-publisher-mark" href="https://cuul.or.ug" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
 				<span class="ajlii-publisher-logo" aria-hidden="true">
 					{if $displayPageHeaderLogo}
 						{$brand}

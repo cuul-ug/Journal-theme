@@ -262,7 +262,7 @@
 			<section>
 				<h2>{translate key="plugins.themes.ajlii.footer.journalLinks"}</h2>
 				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.aboutJournal"}</a>
-				<a href="{url page="about" op="editorialTeam"}">{translate key="plugins.themes.ajlii.footer.editorialBoard"}</a>
+				<a href="{url page="about" op="editorialMasthead"}">{translate key="plugins.themes.ajlii.footer.editorialBoard"}</a>
 				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a>
 				<a href="{url page="issue" op="archive"}">{translate key="journal.archives"}</a>
 				<a href="{url page="announcements"}">{translate key="announcement.announcements"}</a>
@@ -290,10 +290,10 @@
 				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeLinks.publishDealsLink"}</a>
 			</article>
 			<article class="ajlii-home-link-card">
-				<a class="ajlii-home-link-visual ajlii-home-link-visual-editors" href="{url page="about" op="editorialTeam"}" aria-hidden="true" tabindex="-1"></a>
+				<a class="ajlii-home-link-visual ajlii-home-link-visual-editors" href="{url page="about" op="editorialMasthead"}" aria-hidden="true" tabindex="-1"></a>
 				<h3>{translate key="plugins.themes.ajlii.homeLinks.editorsTitle"}</h3>
 				<p>{translate key="plugins.themes.ajlii.homeLinks.editorsText"}</p>
-				<a href="{url page="about" op="editorialTeam"}">{translate key="plugins.themes.ajlii.homeLinks.editorsLink"}</a>
+				<a href="{url page="about" op="editorialMasthead"}">{translate key="plugins.themes.ajlii.homeLinks.editorsLink"}</a>
 			</article>
 			<article class="ajlii-home-link-card">
 				<a class="ajlii-home-link-visual ajlii-home-link-visual-about" href="{url page="about"}" aria-hidden="true" tabindex="-1"></a>

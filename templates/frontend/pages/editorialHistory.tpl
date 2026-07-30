@@ -10,19 +10,22 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="common.editorialHistory"}
 
-<div class="container page page-masthead">
-	<div class="page-header">
+<div class="container page page-masthead page-editorial-history">
+	<header class="page-header ajlii-editorial-hero">
+		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.editorial.kicker"}</p>
 		<h1>{translate key="common.editorialHistory.page"}</h1>
-	</div>
+		<p>{translate key="plugins.themes.ajlii.editorial.historyIntro"}</p>
+	</header>
 
-	<div class="row justify-content-md-center">
-		<div class="col-md-6">
-			<div class="page-content">
-				<p>{translate key="common.editorialHistory.page.description"}</p>
+	<div class="ajlii-editorial-layout">
+		<main class="page-content ajlii-editorial-main" aria-labelledby="ajliiEditorialHistoryTitle">
+			<h2 id="ajliiEditorialHistoryTitle">{translate key="plugins.themes.ajlii.editorial.serviceTitle"}</h2>
+			<p>{translate key="common.editorialHistory.page.description"}</p>
 
-				{foreach from=$mastheadRoles item="mastheadRole"}
-					{if array_key_exists($mastheadRole->id, $mastheadUsers)}
-						<h2>{$mastheadRole->getLocalizedData('name')|escape}</h2>
+			{foreach from=$mastheadRoles item="mastheadRole"}
+				{if array_key_exists($mastheadRole->id, $mastheadUsers)}
+					<section class="ajlii-masthead-role" aria-labelledby="historyRole{$mastheadRole->id|escape}">
+						<h3 id="historyRole{$mastheadRole->id|escape}">{$mastheadRole->getLocalizedData('name')|escape}</h3>
 						<ul class="user_listing" role="list">
 							{foreach from=$mastheadUsers[$mastheadRole->id] item="mastheadUser"}
 								<li>
@@ -50,13 +53,31 @@
 								</li>
 							{/foreach}
 						</ul>
-					{/if}
-				{/foreach}
-			</div>
+					</section>
+				{/if}
+			{/foreach}
 
-			{$currentContext->getLocalizedData('editorialHistory')}
+			{if $currentContext->getLocalizedData('editorialHistory')}
+				<section class="ajlii-editorial-managed-history">
+					<h2>{translate key="plugins.themes.ajlii.editorial.contextHistoryTitle"}</h2>
+					{$currentContext->getLocalizedData('editorialHistory')}
+				</section>
+			{/if}
 			{include file="frontend/components/editLink.tpl" page="management" op="settings" path="context" anchor="masthead" sectionTitleKey="common.editorialHistory"}
-		</div>
+		</main>
+
+		<aside class="ajlii-editorial-aside" aria-label="{translate|escape key="plugins.themes.ajlii.editorial.sideTitle"}">
+			<section>
+				<h2>{translate key="plugins.themes.ajlii.editorial.sideTitle"}</h2>
+				<p>{translate key="plugins.themes.ajlii.editorial.historySideText"}</p>
+			</section>
+			<nav aria-label="{translate|escape key="plugins.themes.ajlii.editorial.relatedLinks"}">
+				<h2>{translate key="plugins.themes.ajlii.editorial.relatedLinks"}</h2>
+				<a href="{url page="about" op="editorialMasthead" router=\PKP\core\PKPApplication::ROUTE_PAGE}">{translate key="common.editorialMasthead"}</a>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a>
+				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
+			</nav>
+		</aside>
 	</div>
 </div>
 
