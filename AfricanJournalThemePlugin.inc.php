@@ -31,7 +31,7 @@ class AfricanJournalThemePlugin extends ThemePlugin
         $this->addOption('baseColour', 'colour', [
             'label' => 'plugins.themes.ajlii.option.colour.label',
             'description' => 'plugins.themes.ajlii.option.colour.description',
-            'default' => '#155E63',
+            'default' => '#38BDF8',
         ]);
 
         // Add usage stats display options
@@ -55,11 +55,66 @@ class AfricanJournalThemePlugin extends ThemePlugin
             'default' => 'none',
         ]);
 
+        $this->addOption('aiProvider', 'FieldOptions', [
+            'type' => 'radio',
+            'label' => __('plugins.themes.ajlii.option.aiProvider.label'),
+            'options' => [
+                [
+                    'value' => 'openai',
+                    'label' => __('plugins.themes.ajlii.option.aiProvider.openai'),
+                ],
+                [
+                    'value' => 'anthropic',
+                    'label' => __('plugins.themes.ajlii.option.aiProvider.anthropic'),
+                ],
+                [
+                    'value' => 'custom',
+                    'label' => __('plugins.themes.ajlii.option.aiProvider.custom'),
+                ],
+            ],
+            'default' => 'openai',
+        ]);
+
+        $this->addOption('aiModel', 'FieldText', [
+            'label' => __('plugins.themes.ajlii.option.aiModel.label'),
+            'description' => __('plugins.themes.ajlii.option.aiModel.description'),
+            'default' => '',
+        ]);
+
+        $this->addOption('aiProxyUrl', 'FieldText', [
+            'label' => __('plugins.themes.ajlii.option.aiProxyUrl.label'),
+            'description' => __('plugins.themes.ajlii.option.aiProxyUrl.description'),
+            'default' => '',
+        ]);
+
+        $this->addOption('citationMonitorUrl', 'FieldText', [
+            'label' => __('plugins.themes.ajlii.option.citationMonitorUrl.label'),
+            'description' => __('plugins.themes.ajlii.option.citationMonitorUrl.description'),
+            'default' => '',
+        ]);
+
+        foreach ([
+            'authorityWebsiteUrl',
+            'authorityOrcidUrl',
+            'authorityDoajUrl',
+            'authorityCrossrefUrl',
+            'authorityGoogleScholarUrl',
+            'authorityLinkedInUrl',
+            'authorityYouTubeUrl',
+            'authorityRepositoryUrl',
+        ] as $authorityUrlOption) {
+            $this->addOption($authorityUrlOption, 'FieldText', [
+                'label' => __('plugins.themes.ajlii.option.' . $authorityUrlOption . '.label'),
+                'description' => __('plugins.themes.ajlii.option.authorityUrl.description'),
+                'default' => '',
+            ]);
+        }
+
         // Update colour based on theme option
         $additionalLessVariables = [];
         $baseColour = $this->getOption('baseColour');
-        if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', (string) $baseColour)) $baseColour = '#155E63'; // pkp/pkp-lib#11974
-        if ($baseColour !== '#155E63') {
+        if (!preg_match('/^#[0-9a-fA-F]{1,6}$/', (string) $baseColour)) $baseColour = '#38BDF8'; // pkp/pkp-lib#11974
+        if ($baseColour !== '#38BDF8') {
             $additionalLessVariables[] = '@primary:' . $baseColour . ';';
             $additionalLessVariables[] = '
 				@primary-light: desaturate(lighten(@primary, 41%), 15%);
@@ -120,6 +175,7 @@ class AfricanJournalThemePlugin extends ThemePlugin
     public function saveOption($name, $value, $contextId = null) {
         // Validate the base colour setting value.
         if ($name == 'baseColour' && !preg_match('/^#[0-9a-fA-F]{1,6}$/', $value)) $value = null; // pkp/pkp-lib#11974
+        if (($name == 'aiProxyUrl' || $name == 'citationMonitorUrl' || preg_match('/^authority.*Url$/', $name)) && $value && !preg_match('/^https?:\/\//i', $value)) $value = null;
         parent::saveOption($name, $value, $contextId);
     }
 
@@ -171,10 +227,35 @@ class AfricanJournalThemePlugin extends ThemePlugin
                 $loginUrl = preg_replace('/^http:/u', 'https:', $loginUrl);
             }
 
+            $authorityLinks = [];
+            foreach ([
+                'authorityWebsiteUrl' => __('plugins.themes.ajlii.authority.website'),
+                'authorityOrcidUrl' => __('plugins.themes.ajlii.authority.orcid'),
+                'authorityDoajUrl' => __('plugins.themes.ajlii.authority.doaj'),
+                'authorityCrossrefUrl' => __('plugins.themes.ajlii.authority.crossref'),
+                'authorityGoogleScholarUrl' => __('plugins.themes.ajlii.authority.googleScholar'),
+                'authorityLinkedInUrl' => __('plugins.themes.ajlii.authority.linkedIn'),
+                'authorityYouTubeUrl' => __('plugins.themes.ajlii.authority.youtube'),
+                'authorityRepositoryUrl' => __('plugins.themes.ajlii.authority.repository'),
+            ] as $optionName => $label) {
+                $url = $this->getOption($optionName);
+                if ($url) {
+                    $authorityLinks[] = [
+                        'label' => $label,
+                        'url' => $url,
+                    ];
+                }
+            }
+
             $templateMgr->assign([
                 'languageToggleLocales' => $locales,
                 'loginUrl' => $loginUrl,
                 'brandImage' => 'templates/images/ojs_brand_white.png',
+                'ajliiAiProvider' => $this->getOption('aiProvider') ?: 'openai',
+                'ajliiAiModel' => $this->getOption('aiModel') ?: '',
+                'ajliiAiProxyUrl' => $this->getOption('aiProxyUrl') ?: '',
+                'ajliiCitationMonitorUrl' => $this->getOption('citationMonitorUrl') ?: '',
+                'ajliiAuthorityLinks' => $authorityLinks,
             ]);
         }
     }

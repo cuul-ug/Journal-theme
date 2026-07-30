@@ -15,8 +15,8 @@
  * @uses $hideGalleys bool Hide the article galleys for this article?
  * @uses $primaryGenreIds array List of file genre ids for primary file types
  *}
-{assign var="articlePath" value=$article->getBestId()}
 {assign var="publication" value=$article->getCurrentPublication()}
+{assign var="articlePath" value=$publication->getData('urlPath')|default:$article->getId()}
 
 {if (!$section.hideAuthor && $publication->getData('hideAuthor') == \APP\submission\Submission::AUTHOR_TOC_DEFAULT) || $publication->getData('hideAuthor') == \APP\submission\Submission::AUTHOR_TOC_SHOW}
 	{assign var="showAuthor" value=true}
@@ -57,31 +57,15 @@
 		</div>
 	{/if}
 
-	{* Get DOI from DOIPubIdPlugin object *}
-	{if $requestedPage === 'issue'}
-		{foreach from=$pubIdPlugins item=pubIdPlugin}
-			{if $pubIdPlugin->getPubIdType() != 'doi'}
-				{continue}
-			{/if}
-			{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
-			{if $pubId}
-				{assign var="doiUrl" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}
-				<div class="article-summary-doi">
-					<a href="{$doiUrl}">{$doiUrl}</a>
-				</div>
-			{/if}
-		{/foreach}
-	{* Get DOI from PublishedArticle object ($pubIdPlugin isn't assigned to indexJournal template) *}
-	{elseif ($requestedPage === "search" || $requestedPage === "catalog") && $article->getStoredPubId('doi')}
-		{assign var="doiUrl" value=$article->getStoredPubId('doi')|substr_replace:'https://doi.org/':0:0|escape}
-		{if $doiUrl}
-			<div class="article-summary-doi">
-				<a href="{$doiUrl}">{$doiUrl}</a>
-			</div>
-		{/if}
+	{assign var=doiObject value=$publication->getData('doiObject')}
+	{if $doiObject}
+		{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}
+		<div class="article-summary-doi">
+			<a href="{$doiUrl}">{$doiUrl}</a>
+		</div>
 	{/if}
 
-	{assign var="galleys" value=$article->getGalleys()}
+	{assign var="galleys" value=$publication->getData('galleys')}
 	{if !$hideGalleys && $galleys}
 		<div class="article-summary-galleys">
 			{foreach from=$galleys item=galley}

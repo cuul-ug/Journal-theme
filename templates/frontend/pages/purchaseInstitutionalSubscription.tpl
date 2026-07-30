@@ -80,7 +80,7 @@
 					</div>
 
 					<div class="buttons">
-						<button class="btn btn-default" type="submit">
+						<button class="btn btn-secondary" type="submit">
 							{translate key="common.continue"}
 						</button>
 						<a class="btn btn-link" href="{url page="user" op="subscriptions"}">

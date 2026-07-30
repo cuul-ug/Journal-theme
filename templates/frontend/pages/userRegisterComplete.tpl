@@ -37,7 +37,7 @@
 						</li>
 					{/if}
 					<li>
-						<a href="{url router=$smarty.const.ROUTE_PAGE page="user" op="profile"}">
+						<a href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="user" op="profile"}">
 							{translate key="user.editMyProfile"}
 						</a>
 					</li>

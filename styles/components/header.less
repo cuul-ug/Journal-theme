@@ -1,9 +1,162 @@
 .main-header {
-	background-color: @black;
-	border-bottom: 3px solid @primary;
+	background-color: @contrast;
+	border-top: 3px solid @dark-grey;
+	border-bottom: 0;
+}
 
-	.container {
-		position: relative;
+.ajlii-publisher-bar {
+	background: @contrast;
+	border-bottom: 1px solid @faded-grey;
+}
+
+.ajlii-publisher-inner,
+.ajlii-journal-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.ajlii-publisher-inner {
+	min-height: 52px;
+}
+
+.ajlii-publisher-mark {
+	display: inline-flex;
+	flex-direction: column;
+	color: @dark-grey;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: @primary-link;
+		text-decoration: none;
+	}
+}
+
+.ajlii-publisher-name {
+	font-family: @font-sans;
+	font-size: 1.55rem;
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: 0.12em;
+}
+
+.ajlii-publisher-subtitle {
+	font-size: 0.65rem;
+	font-weight: 700;
+	line-height: 1.1;
+	text-transform: uppercase;
+}
+
+.ajlii-header-tools {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+}
+
+.ajlii-tool-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	background: @dark-grey;
+	color: @contrast;
+	font-weight: 700;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		background: @primary-link;
+		color: @contrast;
+		text-decoration: none;
+	}
+}
+
+.ajlii-tool-user {
+	position: relative;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		background: @contrast;
+	}
+
+	&:before {
+		top: 7px;
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+	}
+
+	&:after {
+		bottom: 7px;
+		width: 17px;
+		height: 9px;
+		border-radius: 10px 10px 5px 5px;
+	}
+}
+
+.ajlii-journal-band {
+	background: @primary;
+	border-bottom: 6px solid @accent-yellow;
+}
+
+.ajlii-journal-inner {
+	min-height: 110px;
+}
+
+.ajlii-journal-title {
+	margin: 0;
+	font-family: @font-sans;
+	font-size: clamp(1.7rem, 3.2vw, 3rem);
+	font-weight: 700;
+	line-height: 1.08;
+	text-transform: uppercase;
+
+	a {
+		color: @black;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: @dark-grey;
+			text-decoration: underline;
+		}
+	}
+}
+
+.ajlii-cuul-badge {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-width: 86px;
+	min-height: 86px;
+	padding: 0.7rem;
+	background: @black;
+	color: @accent-yellow;
+	border: 2px solid @black;
+
+	span {
+		display: block;
+		font-size: 1.75rem;
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	small {
+		display: block;
+		margin-top: 0.4rem;
+		color: @primary-light;
+		font-size: 0.68rem;
+		font-weight: 700;
+		line-height: 1.05;
 	}
 }
 
@@ -13,120 +166,142 @@
 	display: none;
 }
 
+.ajlii-nav-container {
+	background: @black;
+}
+
+.navbar {
+	padding: 0;
+	background: @black;
+}
+
 .navbar-nav {
 
 	.nav-link,
 	.dropdown-item {
-		padding: 0.5em;
-		font-size: 14px;
+		padding: 0.85rem 1rem;
+		font-size: 0.95rem;
 		font-weight: 700;
-		text-transform: uppercase;
-		color: @primary-text;
+		color: @contrast;
 	}
 
 	.dropdown-menu {
 		padding: 0;
-		background-color: @accent-black;
-		border: 2px solid @primary;
+		background-color: @contrast;
+		border: 1px solid @faded-grey;
+		border-radius: 0;
 	}
 
 	.dropdown-item {
-		padding-left: 1.5em;
 		color: @primary-text;
-		background-color: @accent-black;
+		background-color: @contrast;
 	}
 }
 
 .navbar-brand {
-	max-width: 75%;
+	max-width: 70%;
+	padding: 0.75rem 0;
 
 	img {
 		width: auto;
 		height: auto;
-		max-height: 1em;
+		max-height: 48px;
 		max-width: 100%;
-		border: 2px solid @primary-text;
-		padding: 2px;
 	}
 }
 
-// Journals without a logo
 .navbar-logo-text {
 	display: block;
 	width: 100%;
 	white-space: normal;
-	margin-left: -0.5em;
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-	border: 2px solid @primary;
-	font-family: @font-serif;
+	font-family: @font-sans;
 	font-size: 14px;
-	color: @primary-text;
-	background-color: @accent-black;
+	color: @contrast;
 	font-weight: 700;
-
-	&:hover {
-		color: @contrast;
-		background-color: @primary;
-	}
 }
 
 #languageSmallNav {
-	margin-top: 1em;
+	margin: 0.75rem 0;
 
 	.btn,
 	.dropdown-item {
 		font-size: 12px;
 	}
-
-	.dropdown-item {
-
-		&:hover,
-		&:focus {
-			color: @contrast;
-			background-color: @primary;
-		}
-	}
 }
 
 .navbar-light .navbar-nav {
 
-	.nav-link,
-	.dropdown-item {
-		color: @primary-text;
+	.nav-link {
+		color: @contrast;
 
 		&:hover,
 		&:focus {
 			outline: 0;
 			background: @primary;
-			color: @contrast;
-			border-left: 3px solid @primary-text;
+			color: @black;
 		}
 	}
 
-	.dropdown-menu {
-		background: @accent-black;
-		border: 2px solid @primary;
+	.dropdown-item {
+
+		&:hover,
+		&:focus {
+			background: @primary-light;
+			color: @black;
+		}
 	}
+}
+
+.ajlii-header-search {
+	display: none;
+}
+
+.ajlii-ai-discovery {
+	display: none;
 }
 
 .badge {
 	font-size: 0.85em;
-	background-color: @primary;
+	background-color: @primary-link;
 	color: @contrast;
+}
+
+@media (max-width: 575px) {
+
+	.ajlii-journal-inner {
+		align-items: flex-start;
+		min-height: 120px;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.ajlii-cuul-badge {
+		min-width: 68px;
+		min-height: 68px;
+		padding: 0.5rem;
+
+		span {
+			font-size: 1.25rem;
+		}
+
+		small {
+			font-size: 0.56rem;
+		}
+	}
 }
 
 @media (min-width: 992px) {
 
-	.main-header .container {
-		padding: 2rem 1rem 0 1rem;
+	.ajlii-publisher-inner,
+	.ajlii-journal-inner,
+	.ajlii-nav-container {
+		max-width: 1320px;
 	}
 
 	.navbar {
-		padding-top: 0;
-		padding-bottom: 0;
-		background-color: @accent-black;
-		border-bottom: 3px solid @primary;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(260px, 400px) auto;
+		align-items: stretch;
 	}
 
 	#userNav,
@@ -137,127 +312,119 @@
 
 	.navbar-brand,
 	#primaryNav-userNav,
-	#languageSmallNav {
+	#languageSmallNav,
+	.navbar-toggler {
 		display: none;
 	}
 
-	.navbar-logo {
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		padding-top: 1rem;
-		padding-bottom: 1.5rem;
-		max-width: 60%;
-		text-align: center;
-		border-bottom: 2px solid @primary;
-
-		img {
-			max-height: 75px;
-			border: 2px solid @primary-text;
-			padding: 5px;
-		}
-
-		a {
-			color: @primary-text;
-
-			&:hover {
-				color: @contrast;
-				text-decoration: none;
-			}
-		}
-	}
-
-	.navbar-logo-text {
-		font-size: 25px;
-		color: @primary-text;
-		border: 2px solid @primary;
-		padding: 10px;
-		margin: 10px;
+	#main-navbar {
+		display: flex !important;
 	}
 
 	#primaryNav {
-		justify-content: space-around;
-		position: relative;
+		display: flex;
+		align-items: stretch;
 		width: 100%;
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-		background-color: @black;
-		border-top: 3px solid @primary;
 
 		.nav-item {
 			position: static;
 			white-space: nowrap;
 		}
 
-		.nav-link,
-		.dropdown-item {
-			line-height: 1.5rem;
-			text-transform: uppercase;
-			vertical-align: middle;
-			border: 2px solid transparent;
-			color: @primary-text;
-			font-weight: 700;
-		}
-
 		.nav-link {
-			padding: 1rem;
-
-			&:hover,
-			&:focus {
-				background: @primary;
-				color: @contrast;
-				border-color: @primary-text;
-			}
-		}
-
-		.dropdown-item {
-			padding: 0.5rem;
-			background-color: @black;
-			color: @primary-text;
-
-			&:hover,
-			&:focus {
-				background: @primary;
-				color: @contrast;
-				border-color: @primary-light;
-			}
+			display: flex;
+			align-items: center;
+			height: 100%;
+			padding: 0.95rem 1rem;
+			line-height: 1.25;
+			color: @contrast;
 		}
 
 		.dropdown-menu.show {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			align-content: center;
 			position: absolute;
 			top: 100%;
 			left: 0;
 			width: 100%;
 			margin: 0;
 			padding: 1rem;
-			background-color: @accent-black;
-			border: 2px solid @primary;
+			background-color: @contrast;
+			border: 1px solid @faded-grey;
 			border-radius: 0;
+			box-shadow: 0 18px 40px rgba(7, 25, 35, 0.16);
+		}
+	}
+
+	.ajlii-header-search {
+		display: flex;
+		align-items: center;
+		margin: 0.45rem 0;
+		background: @contrast;
+		border: 1px solid @mid-grey;
+
+		input {
+			width: 100%;
+			min-width: 0;
+			border: 0;
+			padding: 0.55rem 0.7rem;
+			font-size: 0.9rem;
+			color: @primary-text;
 		}
 
-		.dropdown-item {
-			font-size: 17px;
-			color: @primary-text;
-			text-align: center;
-			width: initial;
-			background-color: @accent-black;
+		button {
+			flex: 0 0 42px;
+			position: relative;
+			height: 100%;
+			border: 0;
+			background: @contrast;
 
-			&:focus,
-			&:hover {
-				color: @contrast;
-				background-color: @primary;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 14px;
+				height: 14px;
+				border: 2px solid @dark-grey;
+				border-radius: 50%;
+				transform: translate(-60%, -60%);
 			}
 
+			&:after {
+				content: '';
+				position: absolute;
+				top: 58%;
+				left: 58%;
+				width: 9px;
+				height: 2px;
+				background: @dark-grey;
+				transform: rotate(45deg);
+			}
+
+			&:hover,
+			&:focus {
+				background: @primary-light;
+			}
+		}
+	}
+
+	.ajlii-ai-discovery {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0 0.9rem;
+		color: @contrast;
+		font-size: 0.88rem;
+		line-height: 1.1;
+
+		span {
+			color: @primary;
+			font-size: 1.25rem;
 		}
 	}
 
 	#userNav {
 		position: absolute;
-		top: 1rem;
+		top: 0.6rem;
 		right: 1rem;
 
 		.nav-item {
@@ -267,47 +434,7 @@
 
 	.language-toggle {
 		position: absolute;
-		top: 1rem;
-		left: 1rem;
-	}
-
-	#userNav .dropdown-menu,
-	.language-toggle .dropdown-menu {
-		padding: 0.5em;
-		background-color: @accent-black;
-		border: 2px solid @primary;
-	}
-
-	#userNav .nav-link,
-	.language-toggle .dropdown-toggle {
-		color: @primary-text;
-		border: 2px solid @primary-text;
-		font-size: 12px;
-		font-weight: 700;
-		line-height: 1.5em;
-		text-transform: none;
-
-		&:hover,
-		&:focus {
-			outline: 0;
-			border-color: @primary;
-			background-color: @primary;
-			color: @contrast;
-		}
-	}
-
-	#userNav .dropdown-item,
-	.language-toggle .dropdown-item {
-		padding-left: 0.5em;
-		font-size: 14px;
-		color: @primary-text;
-		text-transform: none;
-		background-color: @accent-black;
-
-		&:hover,
-		&:focus {
-			color: @contrast;
-			background-color: @primary;
-		}
+		top: 0.6rem;
+		right: 5.5rem;
 	}
 }
