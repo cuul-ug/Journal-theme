@@ -605,6 +605,11 @@ a:focus {
 	padding-bottom: 2.5rem;
 }
 
+.container-homepage-issue {
+	width: min(100% - 2rem, 1540px);
+	max-width: 1540px;
+}
+
 .page,
 .page-about,
 .page-contact,
@@ -1593,8 +1598,8 @@ a:focus {
 
 .ajlii-home-content-grid {
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
-	gap: clamp(1.25rem, 3vw, 2rem);
+	grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+	gap: clamp(1rem, 2vw, 1.75rem);
 	align-items: start;
 	margin-top: 0;
 }
