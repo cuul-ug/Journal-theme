@@ -1745,6 +1745,12 @@ a:focus {
 	text-decoration: none;
 }
 
+.ajlii-home-link-visual-managed-image {
+	background-color: #e2e8f0;
+	background-size: cover;
+	background-position: center;
+}
+
 .ajlii-home-link-visual-open {
 	background:
 		linear-gradient(135deg, rgba(6, 24, 38, 0.08), rgba(185, 28, 28, 0.18)),
@@ -1770,6 +1776,10 @@ a:focus {
 	font-size: clamp(1.5rem, 2.8vw, 2.4rem);
 	font-weight: 800;
 	letter-spacing: 0;
+}
+
+.ajlii-home-link-visual-managed-image::before {
+	content: none;
 }
 
 .ajlii-home-link-visual-submit {
