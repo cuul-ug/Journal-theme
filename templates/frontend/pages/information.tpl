@@ -25,7 +25,7 @@
 			<h2><a href="{url page="about"}">{translate key="plugins.themes.ajlii.information.aboutTitle"}</a></h2>
 			<ul>
 				<li><a href="{url page="about"}">{translate key="plugins.themes.ajlii.information.aboutJournal"}</a></li>
-				<li><a href="{url page="about" op="editorialTeam"}">{translate key="plugins.themes.ajlii.information.editorialBoard"}</a></li>
+				<li><a href="{url page="about" op="editorialMasthead"}">{translate key="plugins.themes.ajlii.information.editorialBoard"}</a></li>
 				<li><a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.information.contactOffice"}</a></li>
 				<li><a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.information.privacy"}</a></li>
 				<li><a href="{url page="about" op="aboutThisPublishingSystem"}">{translate key="plugins.themes.ajlii.information.platform"}</a></li>

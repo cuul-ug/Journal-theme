@@ -219,7 +219,7 @@ msgid "plugins.themes.ajlii.homeLinks.editorsText"
 msgstr "AJLII is guided by African library and information science scholars, methodological experts, and international knowledge partners."
 
 msgid "plugins.themes.ajlii.homeLinks.editorsLink"
-msgstr "View Editorial Board"
+msgstr "View Editorial Masthead"
 
 msgid "plugins.themes.ajlii.homeLinks.aboutTitle"
 msgstr "About the Journal"
@@ -931,3 +931,33 @@ msgstr "Make a Submission"
 
 msgid "journal.archives"
 msgstr "Archives"
+
+msgid "plugins.themes.ajlii.editorial.kicker"
+msgstr "AJLII editorial governance"
+
+msgid "plugins.themes.ajlii.editorial.mastheadIntro"
+msgstr "AJLII is guided by African library and information science scholars, methodological experts, and international knowledge partners who support rigorous, ethical, and inclusive open-access publishing."
+
+msgid "plugins.themes.ajlii.editorial.historyIntro"
+msgstr "AJLII records editorial service transparently so readers, authors, and reviewers can understand the journal’s governance, stewardship, and scholarly continuity."
+
+msgid "plugins.themes.ajlii.editorial.rolesTitle"
+msgstr "Editorial roles and members"
+
+msgid "plugins.themes.ajlii.editorial.serviceTitle"
+msgstr "Editorial service history"
+
+msgid "plugins.themes.ajlii.editorial.contextHistoryTitle"
+msgstr "Journal editorial history"
+
+msgid "plugins.themes.ajlii.editorial.sideTitle"
+msgstr "Editorial standards"
+
+msgid "plugins.themes.ajlii.editorial.sideText"
+msgstr "The masthead supports AJLII’s double-blind peer review model, methodological scrutiny, Pan-African representation, and open-access publishing ethics."
+
+msgid "plugins.themes.ajlii.editorial.historySideText"
+msgstr "Editorial history records past and continuing service to AJLII and supports transparent scholarly governance for the Consortium of Uganda University Libraries."
+
+msgid "plugins.themes.ajlii.editorial.relatedLinks"
+msgstr "Related editorial pages"

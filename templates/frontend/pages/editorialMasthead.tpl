@@ -10,17 +10,20 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="common.editorialMasthead"}
 
-<div class="container page page-masthead">
-	<div class="page-header">
+<div class="container page page-masthead page-editorial-masthead">
+	<header class="page-header ajlii-editorial-hero">
+		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.editorial.kicker"}</p>
 		<h1>{translate key="common.editorialMasthead"}</h1>
-	</div>
+		<p>{translate key="plugins.themes.ajlii.editorial.mastheadIntro"}</p>
+	</header>
 
-	<div class="row justify-content-md-center">
-		<div class="col-md-6">
-			<div class="page-content">
-				{foreach from=$mastheadRoles item="mastheadRole"}
-					{if array_key_exists($mastheadRole->id, $mastheadUsers)}
-						<h2>{$mastheadRole->getLocalizedData('name')|escape}</h2>
+	<div class="ajlii-editorial-layout">
+		<main class="page-content ajlii-editorial-main" aria-labelledby="ajliiEditorialRolesTitle">
+			<h2 id="ajliiEditorialRolesTitle">{translate key="plugins.themes.ajlii.editorial.rolesTitle"}</h2>
+			{foreach from=$mastheadRoles item="mastheadRole"}
+				{if array_key_exists($mastheadRole->id, $mastheadUsers)}
+					<section class="ajlii-masthead-role" aria-labelledby="mastheadRole{$mastheadRole->id|escape}">
+						<h3 id="mastheadRole{$mastheadRole->id|escape}">{$mastheadRole->getLocalizedData('name')|escape}</h3>
 						<ul class="user_listing" role="list">
 						{foreach from=$mastheadUsers[$mastheadRole->id] item="mastheadUser"}
 							<li>
@@ -43,15 +46,12 @@
 							</li>
 						{/foreach}
 						</ul>
-					{/if}
-				{/foreach}
-				<p>
-					{capture assign=editorialHistoryUrl}{url page="about" op="editorialHistory" router=\PKP\core\PKPApplication::ROUTE_PAGE}{/capture}
-					{translate key="about.editorialMasthead.linkToEditorialHistory" url=$editorialHistoryUrl}
-				</p>
-				<hr>
+					</section>
+				{/if}
+			{/foreach}
 
-				{if !empty($reviewers)}
+			{if !empty($reviewers)}
+				<section class="ajlii-masthead-role">
 					<h2>{translate key="common.editorialMasthead.peerReviewers"}</h2>
 					<p>{translate key="common.editorialMasthead.peerReviewers.description" year=$previousYear}</p>
 					<ul class="user_listing" role="list">
@@ -75,9 +75,22 @@
 						</li>
 					{/foreach}
 					</ul>
-				{/if}
-			</div>
-		</div>
+				</section>
+			{/if}
+		</main>
+
+		<aside class="ajlii-editorial-aside" aria-label="{translate|escape key="plugins.themes.ajlii.editorial.sideTitle"}">
+			<section>
+				<h2>{translate key="plugins.themes.ajlii.editorial.sideTitle"}</h2>
+				<p>{translate key="plugins.themes.ajlii.editorial.sideText"}</p>
+			</section>
+			<nav aria-label="{translate|escape key="plugins.themes.ajlii.editorial.relatedLinks"}">
+				<h2>{translate key="plugins.themes.ajlii.editorial.relatedLinks"}</h2>
+				<a href="{url page="about" op="editorialHistory" router=\PKP\core\PKPApplication::ROUTE_PAGE}">{translate key="common.editorialHistory"}</a>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a>
+				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
+			</nav>
+		</aside>
 	</div>
 </div>
 
