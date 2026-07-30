@@ -48,9 +48,33 @@
 
 {* Header *}
 <header class="main-header">
-	<div class="container">
+	<div class="ajlii-publisher-bar">
+		<div class="container ajlii-publisher-inner">
+			<a class="ajlii-publisher-mark" href="{$homeUrl}" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
+				<span class="ajlii-publisher-name">CUUL</span>
+				<span class="ajlii-publisher-subtitle">{translate key="plugins.themes.ajlii.publisher"}</span>
+			</a>
+			<div class="ajlii-header-tools" aria-label="{translate key="common.navigation.user"}">
+				<a class="ajlii-tool-link" href="{url page="about"}" aria-label="{translate key="about.aboutTheJournal"}">i</a>
+				<a class="ajlii-tool-link ajlii-tool-user" href="{url page="login"}" aria-label="{translate key="user.login"}"></a>
+			</div>
+		</div>
+	</div>
 
-		<{$siteNameTag} class="visually-hidden">{$pageTitleTranslated|escape}</{$siteNameTag}>
+	<div class="ajlii-journal-band">
+		<div class="container ajlii-journal-inner">
+			<{$siteNameTag} class="ajlii-journal-title">
+				<a href="{$homeUrl}">{translate key="plugins.themes.ajlii.journalTitle"}</a>
+			</{$siteNameTag}>
+			<div class="ajlii-cuul-badge" aria-label="{translate key="plugins.themes.ajlii.publisher"}">
+				<span>CUUL</span>
+				<small>Open Access<br>Knowledge</small>
+			</div>
+		</div>
+	</div>
+
+	<div class="container ajlii-nav-container">
+		<div class="visually-hidden">{$pageTitleTranslated|escape}</div>
 
 	<div class="navbar-logo">
 		<a href="{$homeUrl}">{$brand}</a>
@@ -76,6 +100,15 @@
 			{* user menu *}
 			{load_menu name="user" id="primaryNav-userNav" ulClass="navbar-nav" liClass="nav-item"}
 			{include file="frontend/components/languageSwitcher.tpl" id="languageSmallNav"}
+		</div>
+		<form class="ajlii-header-search" action="{url page="search" op="search"}" method="get" role="search">
+			<label class="visually-hidden" for="ajliiHeaderSearch">{translate key="common.search"}</label>
+			<input id="ajliiHeaderSearch" name="query" type="search" placeholder="{translate key="common.search"}">
+			<button type="submit" aria-label="{translate key="common.search"}"></button>
+		</form>
+		<div class="ajlii-ai-discovery" aria-label="{translate key="plugins.themes.ajlii.aiDiscovery"}">
+			<span aria-hidden="true">AI</span>
+			<strong>{translate key="plugins.themes.ajlii.aiDiscovery"}</strong>
 		</div>
 	</nav>
 

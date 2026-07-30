@@ -57,7 +57,8 @@
 {/if}
 
 {* Don't be frightened. This is just a link *}
-<a class="btn{if !$isSupplementary} btn-primary{/if}" href="{url page=$page op="view" path=$path}">
+{capture assign="galleyViewUrl"}{url page=$page op="view" path=$path}{/capture}
+<a class="btn{if !$isSupplementary} btn-primary{/if} ajlii-reader-link" href="{$galleyViewUrl}" data-ajlii-reader data-reader-label="{$galley->getGalleyLabel()|escape}">
 
 	{* Add some screen reader text to indicate if a galley is restricted *}
 	{if $restricted}

@@ -36,7 +36,7 @@
  * @hook Templates::Article::Details []
  * @hook Templates::Article::Details::Reference []
  *}
-<div class="article-details">
+<div class="article-details" data-ajlii-article data-article-title="{$publication->getLocalizedFullTitle(null, 'text')|escape}" data-article-abstract="{$publication->getLocalizedData('abstract')|strip_tags|escape}">
 	<div class="page-header row">
 		<div class="col-lg article-meta-mobile">
 			{* Indicate if this is only a preview *}
@@ -82,6 +82,15 @@
 			{if $section}
 				<div class="article-details-issue-section large-screen">{$section->getLocalizedTitle()|escape}</div>
 			{/if}
+
+			<div class="ajlii-article-tools">
+				<button type="button" class="btn btn-primary ajlii-ai-open" data-ajlii-ai-open>
+					{translate key="plugins.themes.ajlii.ai.open"}
+				</button>
+				<button type="button" class="btn ajlii-discovery-open" data-ajlii-discovery-open>
+					{translate key="plugins.themes.ajlii.discovery.open"}
+				</button>
+			</div>
 
 			{* DOI only for large screens *}
 			{foreach from=$pubIdPlugins item=pubIdPlugin}
@@ -469,4 +478,82 @@
 		</div>
 
 	</div>
+	{capture assign="ajliiArticleUrl"}{url page="article" op="view" path=$article->getBestId()}{/capture}
+	{capture assign="ajliiJournalTitle"}{translate key="plugins.themes.ajlii.journalTitle"}{/capture}
+	{capture assign="ajliiPublisher"}{translate key="plugins.themes.ajlii.publisher"}{/capture}
+	{assign var="ajliiArticleDoi" value=""}
+	{foreach from=$pubIdPlugins item=pubIdPlugin}
+		{if $pubIdPlugin->getPubIdType() == 'doi'}
+			{assign var=pubId value=$article->getStoredPubId($pubIdPlugin->getPubIdType())}
+			{if $pubId}
+				{assign var="ajliiArticleDoi" value=$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)}
+			{/if}
+		{/if}
+	{/foreach}
+	<script type="application/ld+json">
+	{ldelim}
+		"@context": "https://schema.org",
+		"@type": "ScholarlyArticle",
+		"headline": "{$publication->getLocalizedFullTitle(null, 'text')|escape:"javascript"}",
+		"name": "{$publication->getLocalizedFullTitle(null, 'text')|escape:"javascript"}",
+		"description": "{$publication->getLocalizedData('abstract')|strip_tags|escape:"javascript"}",
+		"abstract": "{$publication->getLocalizedData('abstract')|strip_tags|escape:"javascript"}",
+		"url": "{$ajliiArticleUrl|escape:"javascript"}",
+		{if $publication->getData('datePublished')}
+		"datePublished": "{$publication->getData('datePublished')|date_format:"%Y-%m-%d"}",
+		"dateModified": "{$publication->getData('datePublished')|date_format:"%Y-%m-%d"}",
+		{/if}
+		{if $ajliiArticleDoi}
+		"identifier": "{$ajliiArticleDoi|escape:"javascript"}",
+		"sameAs": "{$ajliiArticleDoi|escape:"javascript"}",
+		{/if}
+		"isPartOf": {ldelim}
+			"@type": "Periodical",
+			"name": "{$ajliiJournalTitle|escape:"javascript"}",
+			"publisher": {ldelim}
+				"@type": "Organization",
+				"name": "{$ajliiPublisher|escape:"javascript"}"
+			{rdelim}
+		{rdelim},
+		"publisher": {ldelim}
+			"@type": "Organization",
+			"name": "{$ajliiPublisher|escape:"javascript"}",
+			"alternateName": "CUUL"
+		{rdelim},
+		"license": "{$publication->getData('licenseUrl')|default:"https://creativecommons.org/licenses/by/4.0/"|escape:"javascript"}",
+		"isAccessibleForFree": true,
+		"inLanguage": "{$currentLocale|replace:"_":"-"|escape:"javascript"}",
+		{if $publication->getData('authors')}
+		"author": [
+			{foreach from=$publication->getData('authors') item=author name=ajliiArticleAuthors}
+				{ldelim}
+					"@type": "Person",
+					"name": "{$author->getFullName()|escape:"javascript"}"
+					{if $author->getData('orcid')},
+					"sameAs": "{$author->getData('orcid')|escape:"javascript"}"
+					{/if}
+				{rdelim}{if !$smarty.foreach.ajliiArticleAuthors.last},{/if}
+			{/foreach}
+		],
+		{/if}
+		{if !empty($publication->getLocalizedData('keywords'))}
+		"keywords": [
+			{foreach name=ajliiArticleKeywords from=$publication->getLocalizedData('keywords') item=keyword}
+				"{$keyword.name|escape:"javascript"}"{if !$smarty.foreach.ajliiArticleKeywords.last},{/if}
+			{/foreach}
+		],
+		{/if}
+		{if count($parsedCitations)}
+		"citation": [
+			{foreach from=$parsedCitations item=parsedCitation name=ajliiArticleReferences}
+				"{$parsedCitation->getCitationWithLinks()|strip_tags|escape:"javascript"}"{if !$smarty.foreach.ajliiArticleReferences.last},{/if}
+			{/foreach}
+		]
+		{elseif (string) $publication->getData('citationsRaw')}
+		"citation": "{$publication->getData('citationsRaw')|escape:"javascript"}"
+		{else}
+		"citation": []
+		{/if}
+	{rdelim}
+	</script>
 </div>

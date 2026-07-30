@@ -16,7 +16,7 @@ msgid "plugins.themes.ajlii.name"
 msgstr "African Journal of Library and Information Innovations by Consortium of Uganda University Libraries"
 
 msgid "plugins.themes.ajlii.description"
-msgstr "A clean OJS journal theme for the African Journal of Library and Information Innovations, published by the Consortium of Uganda University Libraries."
+msgstr "A scholarly OJS theme for the African Journal of Library and Information Innovations, a peer-reviewed, gold open-access publication of the Consortium of Uganda University Libraries."
 
 msgid "plugins.themes.ajlii.option.colour.label"
 msgstr "Kolore nagusia"
@@ -86,3 +86,342 @@ msgstr "Deskargak"
 
 msgid "plugins.themes.ajlii.displayStats.noStats"
 msgstr "Deskargen datuak ez daude oraindik eskuragarri."
+
+msgid "plugins.themes.ajlii.aiDiscovery"
+msgstr "AI Discovery Assistant"
+
+msgid "plugins.themes.ajlii.footer.ccby"
+msgstr "Articles are published as open access under the Creative Commons Attribution 4.0 International License, supporting reading, sharing, adaptation, and reuse with appropriate attribution."
+
+msgid "plugins.themes.ajlii.footer.contact"
+msgstr "Journal Contact"
+
+msgid "plugins.themes.ajlii.footer.copyright"
+msgstr "Unless otherwise stated, journal content is licensed under CC BY 4.0 International to support open access publishing."
+
+msgid "plugins.themes.ajlii.footer.openAccess"
+msgstr "Open Access"
+
+msgid "plugins.themes.ajlii.footer.platform"
+msgstr "Hosted on"
+
+msgid "plugins.themes.ajlii.footer.publisher"
+msgstr "Published by the Consortium of Uganda University Libraries for scholars, librarians, information professionals, and higher education institutions."
+
+msgid "plugins.themes.ajlii.footer.scope"
+msgstr "AJLII provides a continental platform for peer-reviewed library and information science research that fosters innovation, collaboration, equity, and knowledge access across Africa."
+
+msgid "plugins.themes.ajlii.journalTitle"
+msgstr "African Journal of Library and Information Innovations"
+
+msgid "plugins.themes.ajlii.publisher"
+msgstr "Consortium of Uganda University Libraries"
+
+msgid "plugins.themes.ajlii.seo.description"
+msgstr "African Journal of Library and Information Innovations (AJLII) is a peer-reviewed, gold open-access publication of the Consortium of Uganda University Libraries (CUUL), providing a continental platform for library and information science research that advances innovation, collaboration, equity, and knowledge access across Africa."
+
+msgid "plugins.themes.ajlii.seo.keywords"
+msgstr "African Journal of Library and Information Innovations, AJLII, Consortium of Uganda University Libraries, CUUL, peer reviewed library journal Africa, gold open access journal Uganda, library and information science Africa, academic libraries Africa, digital inclusion, scholarly communication Africa, open access Africa, consortia collaboration, indigenous knowledge, decolonizing libraries, research data management, AI in libraries, archival management, digital transformation African universities"
+
+msgid "plugins.themes.ajlii.wcag.contrast"
+msgstr "High contrast"
+
+msgid "plugins.themes.ajlii.wcag.links"
+msgstr "Underline links"
+
+msgid "plugins.themes.ajlii.wcag.open"
+msgstr "Open accessibility tools"
+
+msgid "plugins.themes.ajlii.wcag.reset"
+msgstr "Reset"
+
+msgid "plugins.themes.ajlii.wcag.text"
+msgstr "Larger text"
+
+msgid "plugins.themes.ajlii.wcag.title"
+msgstr "Accessibility Tools"
+
+msgid "plugins.themes.ajlii.footer.contactPage"
+msgstr "Contact the AJLII editorial office"
+
+msgid "plugins.themes.ajlii.ai.askButton"
+msgstr "Ask assistant"
+
+msgid "plugins.themes.ajlii.ai.askLabel"
+msgstr "Ask a question"
+
+msgid "plugins.themes.ajlii.ai.askPlaceholder"
+msgstr "Ask about the article argument, findings, methods, implications, or terms..."
+
+msgid "plugins.themes.ajlii.ai.keyPoints"
+msgstr "Key points"
+
+msgid "plugins.themes.ajlii.ai.methods"
+msgstr "Methods and evidence"
+
+msgid "plugins.themes.ajlii.ai.open"
+msgstr "Ask AI about this article"
+
+msgid "plugins.themes.ajlii.ai.providerLabel"
+msgstr "Provider"
+
+msgid "plugins.themes.ajlii.ai.references"
+msgstr "Reading guide"
+
+msgid "plugins.themes.ajlii.ai.securityNote"
+msgstr "AI answers are generated through the configured server-side proxy. Verify important claims against the article text."
+
+msgid "plugins.themes.ajlii.ai.summarize"
+msgstr "Summarize article"
+
+msgid "plugins.themes.ajlii.ai.title"
+msgstr "AJLII Article Assistant"
+
+msgid "plugins.themes.ajlii.option.aiModel.description"
+msgstr "Optional model identifier passed to your server-side proxy, for example an OpenAI or Claude model configured by your institution."
+
+msgid "plugins.themes.ajlii.option.aiModel.label"
+msgstr "AI model name"
+
+msgid "plugins.themes.ajlii.option.aiProvider.anthropic"
+msgstr "Claude / Anthropic"
+
+msgid "plugins.themes.ajlii.option.aiProvider.custom"
+msgstr "Custom compatible proxy"
+
+msgid "plugins.themes.ajlii.option.aiProvider.label"
+msgstr "AI assistant provider"
+
+msgid "plugins.themes.ajlii.option.aiProvider.openai"
+msgstr "OpenAI"
+
+msgid "plugins.themes.ajlii.option.aiProxyUrl.description"
+msgstr "HTTPS endpoint on your server that stores API keys securely and calls OpenAI, Claude, or another model provider. Do not expose API keys in browser JavaScript."
+
+msgid "plugins.themes.ajlii.option.aiProxyUrl.label"
+msgstr "AI proxy endpoint URL"
+
+msgid "plugins.themes.ajlii.reader.newTab"
+msgstr "Open in new tab"
+
+msgid "plugins.themes.ajlii.reader.title"
+msgstr "AJLII in-browser reader"
+
+msgid "plugins.themes.ajlii.wcag.bigCursor"
+msgstr "Big cursor"
+
+msgid "plugins.themes.ajlii.wcag.colorAdjustments"
+msgstr "Colour adjustments"
+
+msgid "plugins.themes.ajlii.wcag.contentAdjustments"
+msgstr "Content adjustments"
+
+msgid "plugins.themes.ajlii.wcag.darkContrast"
+msgstr "Dark contrast"
+
+msgid "plugins.themes.ajlii.wcag.dyslexiaFont"
+msgstr "Dyslexia font"
+
+msgid "plugins.themes.ajlii.wcag.fontDown"
+msgstr "Decrease font size"
+
+msgid "plugins.themes.ajlii.wcag.fontSize"
+msgstr "Adjust font size"
+
+msgid "plugins.themes.ajlii.wcag.fontUp"
+msgstr "Increase font size"
+
+msgid "plugins.themes.ajlii.wcag.fontWeight"
+msgstr "Font weight"
+
+msgid "plugins.themes.ajlii.wcag.highContrast"
+msgstr "High contrast"
+
+msgid "plugins.themes.ajlii.wcag.highlightLinks"
+msgstr "Highlight links"
+
+msgid "plugins.themes.ajlii.wcag.highlightTitles"
+msgstr "Highlight titles"
+
+msgid "plugins.themes.ajlii.wcag.highSaturation"
+msgstr "High saturation"
+
+msgid "plugins.themes.ajlii.wcag.language"
+msgstr "English (English)"
+
+msgid "plugins.themes.ajlii.wcag.letterSpacing"
+msgstr "Letter spacing"
+
+msgid "plugins.themes.ajlii.wcag.lightContrast"
+msgstr "Light contrast"
+
+msgid "plugins.themes.ajlii.wcag.lineHeight"
+msgstr "Line height"
+
+msgid "plugins.themes.ajlii.wcag.lowSaturation"
+msgstr "Low saturation"
+
+msgid "plugins.themes.ajlii.wcag.monochrome"
+msgstr "Monochrome"
+
+msgid "plugins.themes.ajlii.wcag.muteSounds"
+msgstr "Mute sounds"
+
+msgid "plugins.themes.ajlii.wcag.navigationAdjustments"
+msgstr "Navigation adjustments"
+
+msgid "plugins.themes.ajlii.wcag.pauseAnimations"
+msgstr "Pause animations"
+
+msgid "plugins.themes.ajlii.wcag.profiles"
+msgstr "Accessibility profiles"
+
+msgid "plugins.themes.ajlii.wcag.readingGuide"
+msgstr "Reading guide"
+
+msgid "plugins.themes.ajlii.wcag.readPage"
+msgstr "Page read"
+
+msgid "plugins.themes.ajlii.wcag.textAlign"
+msgstr "Text align"
+
+msgid "plugins.themes.ajlii.discovery.map"
+msgstr "Knowledge map"
+
+msgid "plugins.themes.ajlii.discovery.note"
+msgstr "Signals are automated reading aids from visible article metadata and text. They do not replace peer review or editorial judgement."
+
+msgid "plugins.themes.ajlii.discovery.open"
+msgstr "Smart discovery"
+
+msgid "plugins.themes.ajlii.discovery.signals"
+msgstr "Research signals"
+
+msgid "plugins.themes.ajlii.discovery.subtitle"
+msgstr "Article knowledge map and research signals"
+
+msgid "plugins.themes.ajlii.discovery.title"
+msgstr "AJLII Smart Discovery"
+
+msgid "plugins.themes.ajlii.seo.ethics"
+msgstr "AJLII upholds strict ethics and integrity standards, requiring transparency in funding, AI-assisted tool use, and ethics approval for human or community-based research."
+
+msgid "plugins.themes.ajlii.seo.focus"
+msgstr "Open access and scholarly communication in Africa; digital transformation in African universities; consortia collaboration; indigenous knowledge and decolonizing libraries; library impact on African higher education; policy and advocacy; Africa-focused library challenges; research data management; innovation in user services and user experience design; preservation and digitization of African heritage resources; artificial intelligence and automation in libraries; records and archival management."
+
+msgid "plugins.themes.ajlii.seo.mission"
+msgstr "To advance Pan-African scholarship by publishing high-quality, practical research on academic libraries, digital inclusion, consortia partnerships, and emerging areas while amplifying underrepresented voices in the global knowledge ecosystem."
+
+msgid "plugins.themes.ajlii.seo.publicationModel"
+msgstr "Gold Open Access; Article Processing Charge USD 25; biannual publication in June and December; English language; publisher: Consortium of Uganda University Libraries."
+
+msgid "plugins.themes.ajlii.seo.researcherSupport"
+msgstr "AJLII supports early-career scholars through mentorship, pre-submission consultations, writing workshops, and fee waivers for CUUL conference presenters."
+
+msgid "plugins.themes.ajlii.seo.review"
+msgstr "AJLII uses double-blind peer review with subject specialists and methodological experts, supported by African scholars and global partners including EIFL and COAR."
+
+msgid "plugins.themes.ajlii.seo.vision"
+msgstr "To be the leading platform for transformative library and information science research that drives innovation, collaboration, and equitable knowledge access across Africa."
+
+msgid "plugins.themes.ajlii.aeo.apcAnswer"
+msgstr "AJLII is a gold open-access journal with an Article Processing Charge of USD 25. The journal also supports eligible emerging researchers through fee waivers for CUUL conference presenters."
+
+msgid "plugins.themes.ajlii.aeo.apcQuestion"
+msgstr "What is the AJLII Article Processing Charge?"
+
+msgid "plugins.themes.ajlii.aeo.focusAnswer"
+msgstr "AJLII publishes research, case studies, and reviews on open access, scholarly communication, digital transformation, consortia collaboration, indigenous knowledge, research data management, user services, heritage digitization, AI in libraries, records, and archives."
+
+msgid "plugins.themes.ajlii.aeo.focusQuestion"
+msgstr "What topics does AJLII publish?"
+
+msgid "plugins.themes.ajlii.aeo.frequencyAnswer"
+msgstr "AJLII is published biannually in English, with issues released in June and December."
+
+msgid "plugins.themes.ajlii.aeo.frequencyQuestion"
+msgstr "How often is AJLII published?"
+
+msgid "plugins.themes.ajlii.aeo.openAccessAnswer"
+msgstr "Yes. AJLII follows a gold open-access model and publishes content under the Creative Commons Attribution 4.0 International License so readers can access, share, adapt, and reuse articles with attribution."
+
+msgid "plugins.themes.ajlii.aeo.openAccessQuestion"
+msgstr "Is AJLII open access?"
+
+msgid "plugins.themes.ajlii.aeo.peerReviewAnswer"
+msgstr "AJLII uses double-blind peer review with subject specialists and methodological experts, supported by African scholars and global partners including EIFL and COAR."
+
+msgid "plugins.themes.ajlii.aeo.peerReviewQuestion"
+msgstr "What peer review model does AJLII use?"
+
+msgid "plugins.themes.ajlii.aeo.title"
+msgstr "AJLII at a glance"
+
+msgid "plugins.themes.ajlii.aeo.updated"
+msgstr "Journal profile freshness signal:"
+
+msgid "plugins.themes.ajlii.aeo.whatAnswer"
+msgstr "AJLII is a peer-reviewed, gold open-access African library and information science journal published by the Consortium of Uganda University Libraries. It advances practical research on innovation, collaboration, equity, and knowledge access across Africa."
+
+msgid "plugins.themes.ajlii.aeo.whatQuestion"
+msgstr "What is AJLII?"
+
+msgid "plugins.themes.ajlii.authority.crossref"
+msgstr "Crossref"
+
+msgid "plugins.themes.ajlii.authority.doaj"
+msgstr "DOAJ"
+
+msgid "plugins.themes.ajlii.authority.googleScholar"
+msgstr "Google Scholar"
+
+msgid "plugins.themes.ajlii.authority.linkedIn"
+msgstr "LinkedIn"
+
+msgid "plugins.themes.ajlii.authority.orcid"
+msgstr "ORCID"
+
+msgid "plugins.themes.ajlii.authority.repository"
+msgstr "Repository"
+
+msgid "plugins.themes.ajlii.authority.title"
+msgstr "AJLII authority links"
+
+msgid "plugins.themes.ajlii.authority.website"
+msgstr "Website"
+
+msgid "plugins.themes.ajlii.authority.youtube"
+msgstr "YouTube"
+
+msgid "plugins.themes.ajlii.option.authorityCrossrefUrl.label"
+msgstr "Crossref member or prefix URL"
+
+msgid "plugins.themes.ajlii.option.authorityDoajUrl.label"
+msgstr "DOAJ profile URL"
+
+msgid "plugins.themes.ajlii.option.authorityGoogleScholarUrl.label"
+msgstr "Google Scholar profile URL"
+
+msgid "plugins.themes.ajlii.option.authorityLinkedInUrl.label"
+msgstr "LinkedIn page URL"
+
+msgid "plugins.themes.ajlii.option.authorityOrcidUrl.label"
+msgstr "ORCID profile URL"
+
+msgid "plugins.themes.ajlii.option.authorityRepositoryUrl.label"
+msgstr "Repository or archive URL"
+
+msgid "plugins.themes.ajlii.option.authorityUrl.description"
+msgstr "Optional official AJLII or CUUL URL used for brand authority, sameAs structured data, and footer profile links."
+
+msgid "plugins.themes.ajlii.option.authorityWebsiteUrl.label"
+msgstr "Official website URL"
+
+msgid "plugins.themes.ajlii.option.authorityYouTubeUrl.label"
+msgstr "YouTube channel URL"
+
+msgid "plugins.themes.ajlii.option.citationMonitorUrl.description"
+msgstr "Optional HTTPS endpoint that receives lightweight page, referrer, source, and timestamp events for AI citation tracking and omnichannel visibility monitoring."
+
+msgid "plugins.themes.ajlii.option.citationMonitorUrl.label"
+msgstr "AI and referral citation monitor endpoint"

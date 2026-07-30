@@ -25,6 +25,35 @@
 {/if}
 
 <div class="container container-homepage-issue page-content">
+	<section class="ajlii-answer-capsules" aria-labelledby="ajliiAnswerCapsulesTitle">
+		<h2 id="ajliiAnswerCapsulesTitle">{translate key="plugins.themes.ajlii.aeo.title"}</h2>
+		<div class="ajlii-answer-capsule is-primary">
+			<h3>{translate key="plugins.themes.ajlii.aeo.whatQuestion"}</h3>
+			<p>{translate key="plugins.themes.ajlii.aeo.whatAnswer"}</p>
+		</div>
+		<div class="ajlii-answer-grid">
+			<article class="ajlii-answer-capsule">
+				<h3>{translate key="plugins.themes.ajlii.aeo.openAccessQuestion"}</h3>
+				<p>{translate key="plugins.themes.ajlii.aeo.openAccessAnswer"}</p>
+			</article>
+			<article class="ajlii-answer-capsule">
+				<h3>{translate key="plugins.themes.ajlii.aeo.peerReviewQuestion"}</h3>
+				<p>{translate key="plugins.themes.ajlii.aeo.peerReviewAnswer"}</p>
+			</article>
+			<article class="ajlii-answer-capsule">
+				<h3>{translate key="plugins.themes.ajlii.aeo.frequencyQuestion"}</h3>
+				<p>{translate key="plugins.themes.ajlii.aeo.frequencyAnswer"}</p>
+			</article>
+			<article class="ajlii-answer-capsule">
+				<h3>{translate key="plugins.themes.ajlii.aeo.focusQuestion"}</h3>
+				<p>{translate key="plugins.themes.ajlii.aeo.focusAnswer"}</p>
+			</article>
+		</div>
+		<p class="ajlii-freshness-signal">
+			{translate key="plugins.themes.ajlii.aeo.updated"} {$smarty.now|date_format:"%Y-%m-%d"}.
+		</p>
+	</section>
+
 	{if $issue}
 		<h2 class="h5 homepage-issue-current">
 			{translate key="journal.currentIssue"}
