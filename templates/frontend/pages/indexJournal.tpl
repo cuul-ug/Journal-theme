@@ -282,30 +282,14 @@
 	<div class="container">
 		<h2 id="ajliiHomeLinksTitle" class="visually-hidden">{translate key="plugins.themes.ajlii.homeLinks.title"}</h2>
 		<div class="ajlii-home-links-grid">
-			<article class="ajlii-home-link-card">
-				<a class="ajlii-home-link-visual ajlii-home-link-visual-open" href="{url page="about" op="submissions"}" aria-hidden="true" tabindex="-1"></a>
-				<h3>{translate key="plugins.themes.ajlii.homeLinks.publishDealsTitle"}</h3>
-				<p>{translate key="plugins.themes.ajlii.homeLinks.publishDealsText"}</p>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeLinks.publishDealsLink"}</a>
-			</article>
-			<article class="ajlii-home-link-card">
-				<a class="ajlii-home-link-visual ajlii-home-link-visual-editors" href="{url page="about" op="editorialMasthead"}" aria-hidden="true" tabindex="-1"></a>
-				<h3>{translate key="plugins.themes.ajlii.homeLinks.editorsTitle"}</h3>
-				<p>{translate key="plugins.themes.ajlii.homeLinks.editorsText"}</p>
-				<a href="{url page="about" op="editorialMasthead"}">{translate key="plugins.themes.ajlii.homeLinks.editorsLink"}</a>
-			</article>
-			<article class="ajlii-home-link-card">
-				<a class="ajlii-home-link-visual ajlii-home-link-visual-about" href="{url page="about"}" aria-hidden="true" tabindex="-1"></a>
-				<h3>{translate key="plugins.themes.ajlii.homeLinks.aboutTitle"}</h3>
-				<p>{translate key="plugins.themes.ajlii.homeLinks.aboutText"}</p>
-				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.homeLinks.aboutLink"}</a>
-			</article>
-			<article class="ajlii-home-link-card">
-				<a class="ajlii-home-link-visual ajlii-home-link-visual-submit" href="{url page="about" op="submissions"}" aria-hidden="true" tabindex="-1"></a>
-				<h3>{translate key="plugins.themes.ajlii.homeLinks.whyPublishTitle"}</h3>
-				<p>{translate key="plugins.themes.ajlii.homeLinks.whyPublishText"}</p>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeLinks.whyPublishLink"}</a>
-			</article>
+			{foreach from=$ajliiHomepageFeatureCards item=homeFeature}
+				<article class="ajlii-home-link-card">
+					<a class="ajlii-home-link-visual {$homeFeature.visualClass|escape}{if $homeFeature.imageUrl} ajlii-home-link-visual-managed-image{/if}" href="{$homeFeature.url|escape}" aria-hidden="true" tabindex="-1"{if $homeFeature.imageUrl} style="background-image: url('{$homeFeature.imageUrl|escape}');"{/if}></a>
+					<h3>{$homeFeature.title|escape}</h3>
+					<p>{$homeFeature.description|escape}</p>
+					<a href="{$homeFeature.url|escape}">{$homeFeature.label|escape}</a>
+				</article>
+			{/foreach}
 		</div>
 	</div>
 </section>

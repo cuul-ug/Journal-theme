@@ -512,6 +512,39 @@ msgstr "link label"
 msgid "plugins.themes.ajlii.option.heroSlideLabel.description"
 msgstr "Button text, for example View issue, Read article, View presentation, or Submit paper."
 
+msgid "plugins.themes.ajlii.option.homeFeature.label"
+msgstr "Homepage feature card {$number}"
+
+msgid "plugins.themes.ajlii.option.homeFeatureImageUrl.label"
+msgstr "image URL"
+
+msgid "plugins.themes.ajlii.option.homeFeatureImageUrl.description"
+msgstr "Full HTTPS or root-relative URL for this card image. Leave blank to use the AJLII fallback artwork."
+
+msgid "plugins.themes.ajlii.option.homeFeatureTitle.label"
+msgstr "title"
+
+msgid "plugins.themes.ajlii.option.homeFeatureTitle.description"
+msgstr "Card heading shown below the image."
+
+msgid "plugins.themes.ajlii.option.homeFeatureDescription.label"
+msgstr "description"
+
+msgid "plugins.themes.ajlii.option.homeFeatureDescription.description"
+msgstr "Brief card text shown on the homepage."
+
+msgid "plugins.themes.ajlii.option.homeFeatureUrl.label"
+msgstr "link URL"
+
+msgid "plugins.themes.ajlii.option.homeFeatureUrl.description"
+msgstr "HTTPS or root-relative URL for the card link."
+
+msgid "plugins.themes.ajlii.option.homeFeatureLabel.label"
+msgstr "link label"
+
+msgid "plugins.themes.ajlii.option.homeFeatureLabel.description"
+msgstr "Visible link text, for example View Editorial Masthead or Submit your research."
+
 msgid "plugins.themes.ajlii.slider.title"
 msgstr "Featured AJLII updates"
 
