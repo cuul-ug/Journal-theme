@@ -1383,11 +1383,30 @@ a:focus {
 	grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
 	gap: clamp(1.25rem, 3vw, 2rem);
 	align-items: start;
-	margin-top: 1.5rem;
+	margin-top: 0;
 }
 
 .ajlii-home-content-main {
 	min-width: 0;
+}
+
+.ajlii-home-content-main .ajlii-answer-grid {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ajlii-home-content-main .ajlii-current-issue-showcase {
+	grid-template-columns: minmax(170px, 230px) minmax(0, 1fr);
+	align-items: stretch;
+}
+
+.ajlii-home-content-main .ajlii-current-issue-metrics {
+	grid-column: 1 / -1;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ajlii-home-content-main .issue-wrapper > .col-lg-9 {
+	flex: 0 0 100%;
+	max-width: 100%;
 }
 
 .ajlii-home-utility-panel {
@@ -3078,6 +3097,11 @@ body.ajlii-wcag-bigCursor * {
 	}
 
 	.ajlii-wcag-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ajlii-answer-grid,
+	.ajlii-home-content-main .ajlii-answer-grid {
 		grid-template-columns: 1fr;
 	}
 

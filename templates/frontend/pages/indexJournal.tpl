@@ -99,6 +99,8 @@
 {/if}
 
 <div class="container container-homepage-issue page-content">
+	<div class="ajlii-home-content-grid">
+		<div class="ajlii-home-content-main">
 	<section class="ajlii-answer-capsules" aria-labelledby="ajliiAnswerCapsulesTitle">
 		<h2 id="ajliiAnswerCapsulesTitle">{translate key="plugins.themes.ajlii.aeo.title"}</h2>
 		<div class="ajlii-answer-capsule is-primary">
@@ -194,9 +196,6 @@
 		</section>
 
 	{/if}
-
-	<div class="ajlii-home-content-grid">
-		<div class="ajlii-home-content-main">
 	{* display announcements before full issue *}
 	{if $numAnnouncementsHomepage && $announcements|@count}
 	<section class="row homepage-announcements">
