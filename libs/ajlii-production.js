@@ -64,6 +64,32 @@
 		});
 	};
 
+	const initHeaderSearch = function () {
+		document.querySelectorAll('[data-ajlii-header-search]').forEach(function (form) {
+			if (form.dataset.productionSearch === 'true') return;
+			form.dataset.productionSearch = 'true';
+			const scope = form.querySelector('[data-ajlii-search-scope]');
+			const query = form.querySelector('[data-ajlii-search-query]');
+			if (!scope || !query) return;
+
+			form.addEventListener('submit', function () {
+				form.querySelectorAll('[data-ajlii-generated-search-field]').forEach(function (input) {
+					input.remove();
+				});
+				const field = scope.value || 'query';
+				query.name = field === 'authors' || field === 'discipline' || field === 'subject' || field === 'indexTerms' ? field : 'query';
+				if (field === 'issues') {
+					const issueHint = document.createElement('input');
+					issueHint.type = 'hidden';
+					issueHint.name = 'title';
+					issueHint.value = query.value;
+					issueHint.setAttribute('data-ajlii-generated-search-field', 'true');
+					form.appendChild(issueHint);
+				}
+			});
+		});
+	};
+
 	const initCookieConsent = function () {
 		const widget = document.querySelector('[data-ajlii-cookie-consent]');
 		const settingsButtons = document.querySelectorAll('[data-cookie-settings]');
@@ -534,6 +560,7 @@
 		initHomepageSlider();
 		initLoginGuidelines();
 		initLoginModal();
+		initHeaderSearch();
 		initCookieConsent();
 		initWcag();
 		initReader();

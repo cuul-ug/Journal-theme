@@ -102,9 +102,19 @@
 			{load_menu name="user" id="primaryNav-userNav" ulClass="navbar-nav" liClass="nav-item"}
 			{include file="frontend/components/languageSwitcher.tpl" id="languageSmallNav"}
 		</div>
-		<form class="ajlii-header-search" action="{url page="search" op="search"}" method="get" role="search">
+		<form class="ajlii-header-search" action="{url page="search" op="search"}" method="get" role="search" data-ajlii-header-search>
+			<label class="visually-hidden" for="ajliiHeaderSearchScope">{translate key="plugins.themes.ajlii.search.scopeLabel"}</label>
+			<select id="ajliiHeaderSearchScope" class="ajlii-header-search-scope" data-ajlii-search-scope aria-label="{translate|escape key="plugins.themes.ajlii.search.scopeLabel"}">
+				<option value="query">{translate key="plugins.themes.ajlii.search.scopeAll"}</option>
+				<option value="articles">{translate key="plugins.themes.ajlii.search.scopeArticles"}</option>
+				<option value="issues">{translate key="plugins.themes.ajlii.search.scopeIssues"}</option>
+				<option value="authors">{translate key="plugins.themes.ajlii.search.scopeAuthors"}</option>
+				<option value="discipline">{translate key="plugins.themes.ajlii.search.scopeTopic"}</option>
+				<option value="subject">{translate key="plugins.themes.ajlii.search.scopeSubject"}</option>
+				<option value="indexTerms">{translate key="plugins.themes.ajlii.search.scopeKeywords"}</option>
+			</select>
 			<label class="visually-hidden" for="ajliiHeaderSearch">{translate key="common.search"}</label>
-			<input id="ajliiHeaderSearch" name="query" type="search" placeholder="{translate key="common.search"}">
+			<input id="ajliiHeaderSearch" name="query" type="search" placeholder="{translate key="plugins.themes.ajlii.search.placeholder"}" data-ajlii-search-query>
 			<button type="submit" aria-label="{translate key="common.search"}"></button>
 		</form>
 		<div class="ajlii-ai-discovery" aria-label="{translate key="plugins.themes.ajlii.aiDiscovery"}">

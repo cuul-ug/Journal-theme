@@ -10,15 +10,16 @@
  *}
 {include file="frontend/components/header.tpl" pageTitle="user.login"}
 
-<div class="container page-login">
-	<div class="row page-header justify-content-md-center">
-		<div class="col-md-8">
-			<h1>{translate key="user.login"}</h1>
-		</div>
-	</div>
-	<div class="row justify-content-md-center">
-		<div class="col-md-8">
-			<div class="page-content">
+<div class="container page-login page-user-login">
+	<header class="page-header ajlii-login-hero">
+		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.login.kicker"}</p>
+		<h1>{translate key="plugins.themes.ajlii.login.title"}</h1>
+		<p>{translate key="plugins.themes.ajlii.login.intro"}</p>
+	</header>
+
+	<div class="ajlii-login-layout">
+		<main class="page-content ajlii-login-card" aria-labelledby="ajliiLoginFormTitle">
+			<h2 id="ajliiLoginFormTitle">{translate key="user.login"}</h2>
 
 				{* A login message may be displayed if the user was redireceted to the
 				   login page from another request. Examples include if login is required
@@ -37,8 +38,25 @@
 
 				{include file="frontend/components/loginForm.tpl" formType = "loginPage"}
 
-			</div>
-		</div>
+		</main>
+		<aside class="ajlii-login-support" aria-label="{translate|escape key="plugins.themes.ajlii.login.supportTitle"}">
+			<section>
+				<h2>{translate key="plugins.themes.ajlii.login.supportTitle"}</h2>
+				<ul>
+					<li>{translate key="plugins.themes.ajlii.login.readerSupport"}</li>
+					<li>{translate key="plugins.themes.ajlii.login.authorSupport"}</li>
+					<li>{translate key="plugins.themes.ajlii.login.editorSupport"}</li>
+				</ul>
+			</section>
+			<nav aria-label="{translate|escape key="plugins.themes.ajlii.login.accountLinks"}">
+				<h2>{translate key="plugins.themes.ajlii.login.accountLinks"}</h2>
+				{if !$disableUserReg}
+					<a href="{url page="user" op="register" source=$source}">{translate key="plugins.themes.ajlii.register.registerHere"}</a>
+				{/if}
+				<a href="{url page="login" op="lostPassword"}">{translate key="user.login.forgotPassword"}</a>
+				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
+			</nav>
+		</aside>
 	</div>
 </div>
 {include file="frontend/components/footer.tpl"}
