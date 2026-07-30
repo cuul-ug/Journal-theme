@@ -129,67 +129,69 @@
 	</section>
 
 	{if $issue}
-		<h2 class="h5 homepage-issue-current">
-			{translate key="journal.currentIssue"}
-		</h2>
-		<div class="h1 homepage-issue-identifier">
-			{$issue->getIssueSeries()|escape}
-		</div>
-		<div class="h6 homepage-issue-published">
-			{translate key="plugins.themes.ajlii.currentIssuePublished" date=$issue->getDatePublished()|date_format:$dateFormatLong}
-		</div>
-
-		{* make the entire block conditional if there aren't any additional issue data *}
-		{if $issue->getLocalizedCoverImageUrl() || $issue->hasDescription() || $issueGalleys}
-			<div class="row justify-content-center homepage-issue-header">
-				{if $issue->getLocalizedCoverImageUrl()}
-					<div class="col-lg-3">
-						<a href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
-							<img class="img-fluid homepage-issue-cover" src="{$issue->getLocalizedCoverImageUrl()|escape}"{if $issue->getLocalizedCoverImageAltText() != ''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{/if}>
-						</a>
-					</div>
-				{/if}
-				{if $issue->hasDescription() || $journalDescription || $issueGalleys}
-					<div class="col-lg-9">
-						<div class="homepage-issue-description-wrapper">
-							{if $issue->hasDescription()}
-								<div class="homepage-issue-description">
-									<div class="h2">
-										{if $issue->getLocalizedTitle()}
-											{$issue->getLocalizedTitle()|escape}
-										{else}
-											{translate key="plugins.themes.ajlii.issueDescription"}
-										{/if}
-									</div>
-									{$issue->getLocalizedDescription()|strip_unsafe_html}
-									<div class="homepage-issue-description-more">
-										<a href="{url op="view" page="issue" path=$issue->getBestIssueId()}">{translate key="common.more"}</a>
-									</div>
-								</div>
-							{elseif $journalDescription}
-								<div class="homepage-journal-description long-text" id="homepageDescription">
-									{$journalDescription|strip_unsafe_html}
-								</div>
-								<div class="homepage-description-buttons hidden" id="homepageDescriptionButtons">
-									<a class="homepage-journal-description-more hidden" id="homepageDescriptionMore">{translate key="common.more"}</a>
-									<a class="homepage-journal-description-less hidden" id="homepageDescriptionLess">{translate key="common.less"}</a>
-								</div>
-							{/if}
-							{if $issueGalleys}
-								<div class="homepage-issue-galleys">
-									<div class="h3">
-										{translate key="issue.fullIssue"}
-									</div>
-									{foreach from=$issueGalleys item=galley}
-										{include file="frontend/objects/galley_link.tpl" parent=$issue purchaseFee=$currentJournal->getSetting('purchaseIssueFee') purchaseCurrency=$currentJournal->getSetting('currency')}
-									{/foreach}
-								</div>
-							{/if}
-						</div>
-					</div>
-				{/if}
+		<section class="ajlii-current-issue-showcase" aria-labelledby="ajliiCurrentIssueTitle">
+			<div class="ajlii-current-issue-cover-card">
+				<a href="{url op="view" page="issue" path=$issue->getBestIssueId()}">
+					{if $issue->getLocalizedCoverImageUrl()}
+						<img class="homepage-issue-cover" src="{$issue->getLocalizedCoverImageUrl()|escape}"{if $issue->getLocalizedCoverImageAltText() != ''} alt="{$issue->getLocalizedCoverImageAltText()|escape}"{else} alt="{$issue->getIssueSeries()|escape}"{/if}>
+					{else}
+						<span class="homepage-issue-cover-placeholder" aria-hidden="true">
+							<strong>AJLII</strong>
+							<small>{translate key="journal.currentIssue"}</small>
+						</span>
+					{/if}
+				</a>
+				<h2 class="homepage-issue-current">{translate key="journal.currentIssue"}</h2>
+				<p class="homepage-issue-identifier">{$issue->getIssueSeries()|escape}</p>
+				<p class="homepage-issue-published">{translate key="plugins.themes.ajlii.currentIssuePublished" date=$issue->getDatePublished()|date_format:$dateFormatLong}</p>
 			</div>
-		{/if}
+			<div class="ajlii-current-issue-summary">
+				<p class="ajlii-home-slide-kicker">{translate key="plugins.themes.ajlii.currentIssueLabel"}</p>
+				<h2 id="ajliiCurrentIssueTitle">
+					{if $issue->getLocalizedTitle()}
+						{$issue->getLocalizedTitle()|escape}
+					{else}
+						{$issue->getIssueSeries()|escape}
+					{/if}
+				</h2>
+				{if $issue->hasDescription()}
+					<div class="homepage-issue-description">
+						{$issue->getLocalizedDescription()|strip_unsafe_html}
+					</div>
+				{elseif $journalDescription}
+					<div class="homepage-journal-description long-text" id="homepageDescription">
+						{$journalDescription|strip_unsafe_html}
+					</div>
+				{else}
+					<p>{translate key="plugins.themes.ajlii.currentIssueFallback"}</p>
+				{/if}
+				<div class="ajlii-current-issue-actions">
+					<a class="btn btn-primary" href="{url op="view" page="issue" path=$issue->getBestIssueId()}">{translate key="plugins.themes.ajlii.slider.viewIssue"}</a>
+					{if $issueGalleys}
+						<div class="homepage-issue-galleys" aria-label="{translate|escape key="issue.fullIssue"}">
+							{foreach from=$issueGalleys item=galley}
+								{include file="frontend/objects/galley_link.tpl" parent=$issue purchaseFee=$currentJournal->getSetting('purchaseIssueFee') purchaseCurrency=$currentJournal->getSetting('currency')}
+							{/foreach}
+						</div>
+					{/if}
+				</div>
+			</div>
+			<aside class="ajlii-current-issue-metrics" aria-label="{translate|escape key="plugins.themes.ajlii.currentIssueStandards"}">
+				<div>
+					<strong>{translate key="plugins.themes.ajlii.metric.openAccessValue"}</strong>
+					<span>{translate key="plugins.themes.ajlii.metric.openAccessLabel"}</span>
+				</div>
+				<div>
+					<strong>{translate key="plugins.themes.ajlii.metric.reviewValue"}</strong>
+					<span>{translate key="plugins.themes.ajlii.metric.reviewLabel"}</span>
+				</div>
+				<div>
+					<strong>{translate key="plugins.themes.ajlii.metric.frequencyValue"}</strong>
+					<span>{translate key="plugins.themes.ajlii.metric.frequencyLabel"}</span>
+				</div>
+				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.metric.about"}</a>
+			</aside>
+		</section>
 
 	{/if}
 

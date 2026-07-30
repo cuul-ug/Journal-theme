@@ -36,6 +36,127 @@
 		});
 	};
 
+	const initLoginModal = function () {
+		const modalElement = document.getElementById('loginModal');
+		const modalApi = window.bootstrap && window.bootstrap.Modal;
+		if (!modalElement || !modalApi) return;
+
+		const openers = document.querySelectorAll('[data-ajlii-login-open], .nmi_type_user_login > a, .nmi_type_user_login a');
+		const open = function (event) {
+			event.preventDefault();
+			event.stopImmediatePropagation();
+			const modal = modalApi.getOrCreateInstance ? modalApi.getOrCreateInstance(modalElement) : new modalApi(modalElement);
+			modal.show();
+			const username = modalElement.querySelector('input[name="username"], input[type="text"], input[type="email"]');
+			if (username) {
+				window.setTimeout(function () {
+					username.focus();
+				}, 200);
+			}
+		};
+
+		openers.forEach(function (opener) {
+			if (opener.dataset.productionLoginModal === 'true') return;
+			opener.dataset.productionLoginModal = 'true';
+			opener.setAttribute('aria-haspopup', 'dialog');
+			opener.setAttribute('aria-controls', 'loginModal');
+			opener.addEventListener('click', open, true);
+		});
+	};
+
+	const initCookieConsent = function () {
+		const widget = document.querySelector('[data-ajlii-cookie-consent]');
+		const settingsButtons = document.querySelectorAll('[data-cookie-settings]');
+		const storageKey = 'ajliiCookieConsent.v1';
+		const defaults = { necessary: true, performance: false, functional: false, updatedAt: null };
+		if (!widget) return;
+
+		const storedValue = function () {
+			try {
+				return localStorage.getItem(storageKey);
+			} catch (error) {
+				return null;
+			}
+		};
+
+		const read = function () {
+			try {
+				return Object.assign({}, defaults, JSON.parse(storedValue()) || {});
+			} catch (error) {
+				return Object.assign({}, defaults);
+			}
+		};
+
+		let state = read();
+
+		const syncInputs = function () {
+			widget.querySelectorAll('[data-cookie-category]').forEach(function (input) {
+				input.checked = Boolean(state[input.getAttribute('data-cookie-category')]);
+			});
+		};
+
+		const publish = function () {
+			document.documentElement.dataset.ajliiPerformanceCookies = state.performance ? 'accepted' : 'declined';
+			document.documentElement.dataset.ajliiFunctionalCookies = state.functional ? 'accepted' : 'declined';
+			window.dispatchEvent(new CustomEvent('ajlii:cookieConsent', { detail: Object.assign({}, state) }));
+		};
+
+		const save = function (nextState) {
+			state = Object.assign({}, defaults, nextState, { necessary: true, updatedAt: new Date().toISOString() });
+			try {
+				localStorage.setItem(storageKey, JSON.stringify(state));
+			} catch (error) {}
+			syncInputs();
+			publish();
+			widget.hidden = true;
+		};
+
+		const open = function () {
+			syncInputs();
+			widget.hidden = false;
+			const firstInput = widget.querySelector('[data-cookie-category]');
+			if (firstInput) firstInput.focus();
+		};
+
+		widget.querySelectorAll('[data-cookie-action]').forEach(function (button) {
+			button.addEventListener('click', function () {
+				const action = button.getAttribute('data-cookie-action');
+				if (action === 'accept') {
+					save({ performance: true, functional: true });
+					return;
+				}
+				if (action === 'reject') {
+					save({ performance: false, functional: false });
+					return;
+				}
+				const choices = {};
+				widget.querySelectorAll('[data-cookie-category]').forEach(function (input) {
+					choices[input.getAttribute('data-cookie-category')] = input.checked;
+				});
+				save(choices);
+			});
+		});
+
+		settingsButtons.forEach(function (button) {
+			button.addEventListener('click', open);
+		});
+
+		window.ajliiCookieConsent = {
+			get: function () {
+				return Object.assign({}, state);
+			},
+			open: open,
+			save: save
+		};
+
+		if (!storedValue()) {
+			open();
+		} else {
+			syncInputs();
+			publish();
+		}
+	};
+
 	const initWcag = function () {
 		const widget = document.querySelector('[data-wcag-widget]');
 		if (!widget || widget.dataset.productionReady === 'true') return;
@@ -377,6 +498,8 @@
 	ready(function () {
 		initHomepageSlider();
 		initLoginGuidelines();
+		initLoginModal();
+		initCookieConsent();
 		initWcag();
 		initReader();
 		initAi();

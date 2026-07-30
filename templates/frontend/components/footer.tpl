@@ -53,6 +53,7 @@
 		<div class="site-footer-bottom">
 			<p>&copy; {$smarty.now|date_format:"Y"} {translate key="plugins.themes.ajlii.publisher"}. {translate key="plugins.themes.ajlii.footer.copyright"}</p>
 			<p>{translate key="plugins.themes.ajlii.footer.platform"} <a href="{url page="about" op="aboutThisPublishingSystem"}">Open Journal Systems</a>.</p>
+			<p><button class="ajlii-footer-cookie-link" type="button" data-cookie-settings>{translate key="plugins.themes.ajlii.cookie.settings"}</button></p>
 		</div>
 	</div>
 </footer><!-- pkp_structure_footer_wrapper -->
@@ -60,6 +61,50 @@
 {if $ajliiCitationMonitorUrl}
 	<div data-ajlii-citation-monitor data-monitor-url="{$ajliiCitationMonitorUrl|escape}" hidden></div>
 {/if}
+
+<div class="ajlii-cookie-consent" data-ajlii-cookie-consent hidden role="dialog" aria-modal="false" aria-labelledby="ajliiCookieTitle">
+	<div class="ajlii-cookie-panel">
+		<div class="ajlii-cookie-copy">
+			<p class="ajlii-cookie-kicker">{translate key="plugins.themes.ajlii.cookie.kicker"}</p>
+			<h2 id="ajliiCookieTitle">{translate key="plugins.themes.ajlii.cookie.title"}</h2>
+			<p>{translate key="plugins.themes.ajlii.cookie.summary"}</p>
+			<p>{translate key="plugins.themes.ajlii.cookie.lawNote"}</p>
+		</div>
+		<div class="ajlii-cookie-options" aria-label="{translate|escape key="plugins.themes.ajlii.cookie.options"}">
+			<label class="ajlii-cookie-option is-required">
+				<input type="checkbox" checked disabled>
+				<span>
+					<strong>{translate key="plugins.themes.ajlii.cookie.necessaryTitle"}</strong>
+					<small>{translate key="plugins.themes.ajlii.cookie.necessaryText"}</small>
+				</span>
+			</label>
+			<label class="ajlii-cookie-option">
+				<input type="checkbox" data-cookie-category="performance">
+				<span>
+					<strong>{translate key="plugins.themes.ajlii.cookie.performanceTitle"}</strong>
+					<small>{translate key="plugins.themes.ajlii.cookie.performanceText"}</small>
+				</span>
+			</label>
+			<label class="ajlii-cookie-option">
+				<input type="checkbox" data-cookie-category="functional">
+				<span>
+					<strong>{translate key="plugins.themes.ajlii.cookie.functionalTitle"}</strong>
+					<small>{translate key="plugins.themes.ajlii.cookie.functionalText"}</small>
+				</span>
+			</label>
+		</div>
+		<details class="ajlii-cookie-details">
+			<summary>{translate key="plugins.themes.ajlii.cookie.detailsTitle"}</summary>
+			<p>{translate key="plugins.themes.ajlii.cookie.detailsText"}</p>
+			<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.cookie.privacyLink"}</a>
+		</details>
+		<div class="ajlii-cookie-actions">
+			<button type="button" class="btn" data-cookie-action="reject">{translate key="plugins.themes.ajlii.cookie.reject"}</button>
+			<button type="button" class="btn" data-cookie-action="save">{translate key="plugins.themes.ajlii.cookie.save"}</button>
+			<button type="button" class="btn btn-primary" data-cookie-action="accept">{translate key="plugins.themes.ajlii.cookie.accept"}</button>
+		</div>
+	</div>
+</div>
 
 <div class="ajlii-wcag-widget" data-wcag-widget>
 	<button class="ajlii-wcag-toggle" type="button" aria-expanded="false" aria-controls="ajliiWcagPanel">

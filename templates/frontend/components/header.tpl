@@ -72,7 +72,7 @@
 						<a href="{url page="about"}">{translate key="plugins.themes.ajlii.header.aboutJournal"}</a>
 					</div>
 				</details>
-				<a class="ajlii-tool-link ajlii-tool-user" href="{url page="login"}" aria-label="{translate key="user.login"}"><span>{translate key="user.login"}</span></a>
+				<a class="ajlii-tool-link ajlii-tool-user" href="{url page="login"}" data-ajlii-login-open data-bs-toggle="modal" data-bs-target="#loginModal" role="button" aria-haspopup="dialog" aria-controls="loginModal" aria-label="{translate key="user.login"}"><span>{translate key="user.login"}</span></a>
 			</div>
 		</div>
 	</div>
