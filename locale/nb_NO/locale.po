@@ -90,7 +90,7 @@ msgid "plugins.themes.ajlii.aiDiscovery"
 msgstr "AI Discovery Assistant"
 
 msgid "plugins.themes.ajlii.footer.ccby"
-msgstr "Articles are published as open access under the Creative Commons Attribution 4.0 International License, supporting reading, sharing, adaptation, and reuse with appropriate attribution."
+msgstr "Articles are published as open access under the Creative Commons Attribution 4.0 International Licence, supporting reading, sharing, adaptation, and reuse with appropriate attribution."
 
 msgid "plugins.themes.ajlii.footer.contact"
 msgstr "Journal Contact"
@@ -120,7 +120,7 @@ msgid "plugins.themes.ajlii.seo.description"
 msgstr "African Journal of Library and Information Innovations (AJLII) is a peer-reviewed, gold open-access publication of the Consortium of Uganda University Libraries (CUUL), providing a continental platform for library and information science research that advances innovation, collaboration, equity, and knowledge access across Africa."
 
 msgid "plugins.themes.ajlii.seo.keywords"
-msgstr "African Journal of Library and Information Innovations, AJLII, Consortium of Uganda University Libraries, CUUL, peer reviewed library journal Africa, gold open access journal Uganda, library and information science Africa, academic libraries Africa, digital inclusion, scholarly communication Africa, open access Africa, consortia collaboration, indigenous knowledge, decolonizing libraries, research data management, AI in libraries, archival management, digital transformation African universities"
+msgstr "African Journal of Library and Information Innovations, AJLII, Consortium of Uganda University Libraries, CUUL, peer-reviewed library journal Africa, gold open-access journal Uganda, library and information science Africa, academic libraries Africa, digital inclusion, scholarly communication Africa, open access Africa, consortia collaboration, indigenous knowledge, decolonising libraries, research data management, AI in libraries, archival management, digital transformation African universities"
 
 msgid "plugins.themes.ajlii.wcag.contrast"
 msgstr "High contrast"
@@ -171,7 +171,7 @@ msgid "plugins.themes.ajlii.ai.securityNote"
 msgstr "AI answers are generated through the configured server-side proxy. Verify important claims against the article text."
 
 msgid "plugins.themes.ajlii.ai.summarize"
-msgstr "Summarize article"
+msgstr "Summarise article"
 
 msgid "plugins.themes.ajlii.ai.title"
 msgstr "AJLII Article Assistant"
@@ -246,7 +246,7 @@ msgid "plugins.themes.ajlii.wcag.highSaturation"
 msgstr "High saturation"
 
 msgid "plugins.themes.ajlii.wcag.language"
-msgstr "English (English)"
+msgstr "English (British English)"
 
 msgid "plugins.themes.ajlii.wcag.letterSpacing"
 msgstr "Letter spacing"
@@ -306,7 +306,7 @@ msgid "plugins.themes.ajlii.seo.ethics"
 msgstr "AJLII upholds strict ethics and integrity standards, requiring transparency in funding, AI-assisted tool use, and ethics approval for human or community-based research."
 
 msgid "plugins.themes.ajlii.seo.focus"
-msgstr "Open access and scholarly communication in Africa; digital transformation in African universities; consortia collaboration; indigenous knowledge and decolonizing libraries; library impact on African higher education; policy and advocacy; Africa-focused library challenges; research data management; innovation in user services and user experience design; preservation and digitization of African heritage resources; artificial intelligence and automation in libraries; records and archival management."
+msgstr "Open access and scholarly communication in Africa; digital transformation in African universities; consortia collaboration; indigenous knowledge and decolonising libraries; library impact on African higher education; policy and advocacy; Africa-focused library challenges; research data management; innovation in user services and user experience design; preservation and digitisation of African heritage resources; artificial intelligence and automation in libraries; records and archival management."
 
 msgid "plugins.themes.ajlii.seo.mission"
 msgstr "To advance Pan-African scholarship by publishing high-quality, practical research on academic libraries, digital inclusion, consortia partnerships, and emerging areas while amplifying underrepresented voices in the global knowledge ecosystem."
@@ -330,7 +330,7 @@ msgid "plugins.themes.ajlii.aeo.apcQuestion"
 msgstr "What is the AJLII Article Processing Charge?"
 
 msgid "plugins.themes.ajlii.aeo.focusAnswer"
-msgstr "AJLII publishes research, case studies, and reviews on open access, scholarly communication, digital transformation, consortia collaboration, indigenous knowledge, research data management, user services, heritage digitization, AI in libraries, records, and archives."
+msgstr "AJLII publishes research, case studies, and reviews on open access, scholarly communication, digital transformation, consortia collaboration, indigenous knowledge, research data management, user services, heritage digitisation, AI in libraries, records, and archives."
 
 msgid "plugins.themes.ajlii.aeo.focusQuestion"
 msgstr "What topics does AJLII publish?"
@@ -342,7 +342,7 @@ msgid "plugins.themes.ajlii.aeo.frequencyQuestion"
 msgstr "How often is AJLII published?"
 
 msgid "plugins.themes.ajlii.aeo.openAccessAnswer"
-msgstr "Yes. AJLII follows a gold open-access model and publishes content under the Creative Commons Attribution 4.0 International License so readers can access, share, adapt, and reuse articles with attribution."
+msgstr "Yes. AJLII follows a gold open-access model and publishes content under the Creative Commons Attribution 4.0 International Licence so readers can access, share, adapt, and reuse articles with attribution."
 
 msgid "plugins.themes.ajlii.aeo.openAccessQuestion"
 msgstr "Is AJLII open access?"

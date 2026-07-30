@@ -59,7 +59,7 @@
 	<meta name="DC.Type" content="Text.Serial.Journal">
 	<meta name="DC.Language" content="English">
 	<meta name="DC.Coverage" content="Africa; Uganda; Kampala">
-	<meta name="DC.Rights" content="Creative Commons Attribution 4.0 International">
+	<meta name="DC.Rights" content="Creative Commons Attribution 4.0 International Licence">
 	<meta name="citation_journal_title" content="{$ajliiJournalTitle|escape}">
 	<meta name="citation_publisher" content="{$ajliiPublisher|escape}">
 	<meta name="citation_language" content="en">
@@ -118,7 +118,7 @@
 			{ldelim}"@type": "Thing", "name": "Open Access and Scholarly Communication in Africa"{rdelim},
 			{ldelim}"@type": "Thing", "name": "Digital Transformation in African Universities"{rdelim},
 			{ldelim}"@type": "Thing", "name": "Consortia Collaboration and Best Practices"{rdelim},
-			{ldelim}"@type": "Thing", "name": "Indigenous Knowledge and Decolonizing Libraries"{rdelim},
+			{ldelim}"@type": "Thing", "name": "Indigenous Knowledge and Decolonising Libraries"{rdelim},
 			{ldelim}"@type": "Thing", "name": "Research Data Management"{rdelim},
 			{ldelim}"@type": "Thing", "name": "Artificial Intelligence and Automation in Libraries"{rdelim},
 			{ldelim}"@type": "Thing", "name": "Records and Archival Management"{rdelim}

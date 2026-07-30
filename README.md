@@ -12,7 +12,7 @@ The plugin identity, translation namespace, asset paths, visible journal brandin
 - Mission: to advance Pan-African scholarship in academic libraries, digital inclusion, consortia partnerships, and emerging areas while amplifying underrepresented voices.
 - Publication model: gold open access, USD 25 Article Processing Charge, biannual publication in June and December, English language.
 - Editorial process: double-blind peer review by subject specialists and methodological experts, with African scholars and global partners including EIFL and COAR.
-- Focus areas: open access, scholarly communication, digital transformation, consortia collaboration, indigenous knowledge, decolonizing libraries, higher education impact, policy, advocacy, research data management, user services, heritage digitization, AI and automation in libraries, records, and archival management.
+- Focus areas: open access, scholarly communication, digital transformation, consortia collaboration, indigenous knowledge, decolonising libraries, higher education impact, policy, advocacy, research data management, user services, heritage digitisation, AI and automation in libraries, records, and archival management.
 - Researcher support: mentorship, pre-submission consultations, writing workshops, and fee waivers for CUUL conference presenters.
 - Ethics: transparency in funding, AI-assisted tool use, and ethics approval for human or community-based research.
 
@@ -23,7 +23,7 @@ The theme supports generative and answer engine discovery through:
 - visible 40-60 word answer capsules on the journal homepage;
 - FAQPage JSON-LD for common AI/search questions about AJLII;
 - journal-level Periodical JSON-LD with mission, focus areas, ethics, access model, publisher, audience, and sameAs authority links;
-- article-level ScholarlyArticle JSON-LD with title, abstract, authors, ORCID links, DOI, publication date, keywords, references, license, and publisher;
+- article-level ScholarlyArticle JSON-LD with title, abstract, authors, ORCID links, DOI, publication date, keywords, references, licence, and publisher;
 - freshness signals through visible update text and dateModified metadata;
 - configurable official profile links for website, ORCID, DOAJ, Crossref, Google Scholar, LinkedIn, YouTube, and repository/archive pages;
 - an optional AI and referral citation monitor endpoint that receives lightweight page, referrer, source, timestamp, and user-agent events.
@@ -59,6 +59,10 @@ The theme uses a restrained scholarly layout:
 - serif article typography and sans-serif interface text;
 - simple cards, alerts, buttons, and navigation treatment;
 - accessible link and focus states.
+
+## English Standard
+
+All AJLII-authored English interface text, documentation, SEO copy, GEO copy, AEO answer capsules, and structured-data prose should use British English spelling, grammar, and punctuation. Preserve technical identifiers, schema.org property names, file names, code symbols, and official licence URLs exactly as required by OJS, JSON-LD, Creative Commons, and related standards.
 
 ## AI Assistant
 
@@ -101,8 +105,8 @@ npm run build
 
 The source LESS styles live in `styles/`. The compiled vendor bundle lives in `libs/`.
 
-## License
+## Licence
 
-This plugin is licensed under the GNU General Public License. See `LICENSE` for complete terms.
+This plugin is licensed under the GNU General Public Licence. See `LICENSE` for complete terms.
 
-The PT Serif and Fira Sans fonts are distributed under the Open Font License.
+The PT Serif and Fira Sans fonts are distributed under the Open Font Licence.
