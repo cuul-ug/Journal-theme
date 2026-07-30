@@ -68,8 +68,10 @@
 		const widget = document.querySelector('[data-ajlii-cookie-consent]');
 		const settingsButtons = document.querySelectorAll('[data-cookie-settings]');
 		const storageKey = 'ajliiCookieConsent.v1';
-		const defaults = { necessary: true, performance: false, functional: false, updatedAt: null };
+		const defaults = { necessary: true, performance: false, functional: false, targeting: false, updatedAt: null };
 		if (!widget) return;
+		const banner = widget.querySelector('.ajlii-cookie-banner');
+		const modal = widget.querySelector('[data-cookie-modal]');
 
 		const storedValue = function () {
 			try {
@@ -98,6 +100,7 @@
 		const publish = function () {
 			document.documentElement.dataset.ajliiPerformanceCookies = state.performance ? 'accepted' : 'declined';
 			document.documentElement.dataset.ajliiFunctionalCookies = state.functional ? 'accepted' : 'declined';
+			document.documentElement.dataset.ajliiTargetingCookies = state.targeting ? 'accepted' : 'declined';
 			window.dispatchEvent(new CustomEvent('ajlii:cookieConsent', { detail: Object.assign({}, state) }));
 		};
 
@@ -108,25 +111,50 @@
 			} catch (error) {}
 			syncInputs();
 			publish();
+			if (banner) banner.hidden = true;
+			if (modal) modal.hidden = true;
 			widget.hidden = true;
 		};
 
-		const open = function () {
+		const openBanner = function () {
 			syncInputs();
 			widget.hidden = false;
+			if (banner) banner.hidden = false;
+			if (modal) modal.hidden = true;
+		};
+
+		const openSettings = function () {
+			syncInputs();
+			widget.hidden = false;
+			if (banner && !storedValue()) banner.hidden = false;
+			if (modal) modal.hidden = false;
 			const firstInput = widget.querySelector('[data-cookie-category]');
 			if (firstInput) firstInput.focus();
+		};
+
+		const closeSettings = function () {
+			if (modal) modal.hidden = true;
+			if (storedValue() && banner) {
+				banner.hidden = true;
+				widget.hidden = true;
+			}
 		};
 
 		widget.querySelectorAll('[data-cookie-action]').forEach(function (button) {
 			button.addEventListener('click', function () {
 				const action = button.getAttribute('data-cookie-action');
 				if (action === 'accept') {
-					save({ performance: true, functional: true });
+					save({ performance: true, functional: true, targeting: true });
 					return;
 				}
 				if (action === 'reject') {
-					save({ performance: false, functional: false });
+					save({ performance: false, functional: false, targeting: false });
+					return;
+				}
+				if (action === 'close') {
+					if (banner) banner.hidden = true;
+					if (modal) modal.hidden = true;
+					widget.hidden = true;
 					return;
 				}
 				const choices = {};
@@ -138,20 +166,27 @@
 		});
 
 		settingsButtons.forEach(function (button) {
-			button.addEventListener('click', open);
+			button.addEventListener('click', openSettings);
+		});
+
+		widget.querySelectorAll('[data-cookie-settings-close]').forEach(function (button) {
+			button.addEventListener('click', closeSettings);
 		});
 
 		window.ajliiCookieConsent = {
 			get: function () {
 				return Object.assign({}, state);
 			},
-			open: open,
+			open: openSettings,
 			save: save
 		};
 
 		if (!storedValue()) {
-			open();
+			openBanner();
 		} else {
+			widget.hidden = true;
+			if (banner) banner.hidden = true;
+			if (modal) modal.hidden = true;
 			syncInputs();
 			publish();
 		}

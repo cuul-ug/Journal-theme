@@ -8,30 +8,28 @@
  * @brief Common site frontend footer.
  *}
 <footer class="site-footer">
-	<div class="container site-footer-sidebar" role="complementary"
-	     aria-label="{translate|escape key="common.navigation.sidebar"}">
-		<div class="row">
-			{call_hook name="Templates::Common::Sidebar"}
-		</div>
-	</div>
-	<div class="site-footer-primary">
-		<div class="container site-footer-primary-grid">
-			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.journalLinks"}">
-				<h2>{translate key="plugins.themes.ajlii.footer.journalLinks"}</h2>
-				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.aboutJournal"}</a>
-				<a href="{url page="about" op="editorialTeam"}">{translate key="plugins.themes.ajlii.footer.editorialBoard"}</a>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a>
-				<a href="{url page="issue" op="archive"}">{translate key="journal.archives"}</a>
-				<a href="{url page="announcements"}">{translate key="announcement.announcements"}</a>
+	<div class="site-footer-secondary">
+		<div class="container site-footer-secondary-grid">
+			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.openAccess"}">
+				<h2>{translate key="plugins.themes.ajlii.footer.openAccess"}</h2>
+				<a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0 International</a>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.publishWithUs"}</a>
+				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.apcAndWaivers"}</a>
+				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.ethicsIntegrity"}</a>
 			</nav>
-			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.publisherLinks"}">
-				<h2>{translate key="plugins.themes.ajlii.footer.publisherLinks"}</h2>
-				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contactPage"}</a>
-				<a href="{url page="search"}">{translate key="common.search"}</a>
-				<a href="{url page="information" op="authors"}">{translate key="plugins.themes.ajlii.footer.forAuthors"}</a>
-				<a href="{url page="information" op="readers"}">{translate key="plugins.themes.ajlii.footer.forReaders"}</a>
-				<a href="{url page="information" op="librarians"}">{translate key="plugins.themes.ajlii.footer.forLibrarians"}</a>
+			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.supportLinks"}">
+				<h2>{translate key="plugins.themes.ajlii.footer.supportLinks"}</h2>
+				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
+				<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.footer.privacyPolicy"}</a>
+				<details class="site-footer-legal-note">
+					<summary>{translate key="plugins.themes.ajlii.footer.legalNotice"}</summary>
+					<p>{translate key="plugins.themes.ajlii.footer.legalNoticeText"}</p>
+				</details>
 			</nav>
+			<div class="site-footer-statement">
+				<h2>{translate key="plugins.themes.ajlii.footer.publisherStatementTitle"}</h2>
+				<p>{translate key="plugins.themes.ajlii.footer.publisherStatement"}</p>
+			</div>
 			<div class="site-footer-brand-block">
 				<a class="site-footer-publisher-mark" href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}" aria-label="{translate|escape key="plugins.themes.ajlii.footer.cuulPublishing"}">
 					<span class="site-footer-publisher-logo" aria-hidden="true">
@@ -47,32 +45,6 @@
 				</a>
 				<p>{translate key="plugins.themes.ajlii.footer.scope"}</p>
 				<p>{translate key="plugins.themes.ajlii.footer.openAccessStatement"}</p>
-			</div>
-		</div>
-	</div>
-	<div class="site-footer-secondary">
-		<div class="container site-footer-secondary-grid">
-			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.openAccess"}">
-				<h2>{translate key="plugins.themes.ajlii.footer.openAccess"}</h2>
-				<a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0 International</a>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.publishWithUs"}</a>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.apcAndWaivers"}</a>
-				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.ethicsIntegrity"}</a>
-			</nav>
-			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.supportLinks"}">
-				<h2>{translate key="plugins.themes.ajlii.footer.supportLinks"}</h2>
-				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
-				<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.footer.privacyPolicy"}</a>
-				<button class="ajlii-footer-cookie-link" type="button" data-cookie-settings>{translate key="plugins.themes.ajlii.footer.cookiePolicy"}</button>
-				<button class="ajlii-footer-cookie-link" type="button" data-cookie-settings>{translate key="plugins.themes.ajlii.cookie.settings"}</button>
-				<details class="site-footer-legal-note">
-					<summary>{translate key="plugins.themes.ajlii.footer.legalNotice"}</summary>
-					<p>{translate key="plugins.themes.ajlii.footer.legalNoticeText"}</p>
-				</details>
-			</nav>
-			<div class="site-footer-statement">
-				<h2>{translate key="plugins.themes.ajlii.footer.publisherStatementTitle"}</h2>
-				<p>{translate key="plugins.themes.ajlii.footer.publisherStatement"}</p>
 			</div>
 			{if $ajliiAuthorityLinks}
 				<nav class="site-footer-link-column ajlii-authority-links" aria-label="{translate|escape key="plugins.themes.ajlii.authority.title"}">
@@ -99,49 +71,72 @@
 	<div data-ajlii-citation-monitor data-monitor-url="{$ajliiCitationMonitorUrl|escape}" hidden></div>
 {/if}
 
-<div class="ajlii-cookie-consent" data-ajlii-cookie-consent hidden role="dialog" aria-modal="false" aria-labelledby="ajliiCookieTitle">
-	<div class="ajlii-cookie-panel">
-		<div class="ajlii-cookie-copy">
-			<p class="ajlii-cookie-kicker">{translate key="plugins.themes.ajlii.cookie.kicker"}</p>
-			<h2 id="ajliiCookieTitle">{translate key="plugins.themes.ajlii.cookie.title"}</h2>
-			<p>{translate key="plugins.themes.ajlii.cookie.summary"}</p>
-			<p>{translate key="plugins.themes.ajlii.cookie.lawNote"}</p>
+<div class="ajlii-cookie-consent" data-ajlii-cookie-consent hidden>
+	<div class="ajlii-cookie-banner" role="region" aria-labelledby="ajliiCookieBannerTitle">
+		<div class="ajlii-cookie-banner-copy">
+			<h2 id="ajliiCookieBannerTitle">{translate key="plugins.themes.ajlii.cookie.bannerTitle"}</h2>
+			<p>{translate key="plugins.themes.ajlii.cookie.bannerText"} <a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.cookie.noticeLink"}</a></p>
 		</div>
-		<div class="ajlii-cookie-options" aria-label="{translate|escape key="plugins.themes.ajlii.cookie.options"}">
-			<label class="ajlii-cookie-option is-required">
-				<input type="checkbox" checked disabled>
-				<span>
-					<strong>{translate key="plugins.themes.ajlii.cookie.necessaryTitle"}</strong>
-					<small>{translate key="plugins.themes.ajlii.cookie.necessaryText"}</small>
-				</span>
-			</label>
-			<label class="ajlii-cookie-option">
-				<input type="checkbox" data-cookie-category="performance">
-				<span>
-					<strong>{translate key="plugins.themes.ajlii.cookie.performanceTitle"}</strong>
-					<small>{translate key="plugins.themes.ajlii.cookie.performanceText"}</small>
-				</span>
-			</label>
-			<label class="ajlii-cookie-option">
-				<input type="checkbox" data-cookie-category="functional">
-				<span>
-					<strong>{translate key="plugins.themes.ajlii.cookie.functionalTitle"}</strong>
-					<small>{translate key="plugins.themes.ajlii.cookie.functionalText"}</small>
-				</span>
-			</label>
+		<div class="ajlii-cookie-banner-actions">
+			<button type="button" class="btn" data-cookie-action="reject">{translate key="plugins.themes.ajlii.cookie.rejectAll"}</button>
+			<button type="button" class="btn btn-primary" data-cookie-action="accept">{translate key="plugins.themes.ajlii.cookie.acceptAll"}</button>
+			<button type="button" class="ajlii-cookie-dismiss" data-cookie-action="close" aria-label="{translate key="common.close"}">x</button>
 		</div>
-		<details class="ajlii-cookie-details">
-			<summary>{translate key="plugins.themes.ajlii.cookie.detailsTitle"}</summary>
-			<p>{translate key="plugins.themes.ajlii.cookie.detailsText"}</p>
-			<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.cookie.privacyLink"}</a>
-		</details>
-		<div class="ajlii-cookie-actions">
-			<button type="button" class="btn" data-cookie-action="reject">{translate key="plugins.themes.ajlii.cookie.reject"}</button>
-			<button type="button" class="btn" data-cookie-action="save">{translate key="plugins.themes.ajlii.cookie.save"}</button>
-			<button type="button" class="btn btn-primary" data-cookie-action="accept">{translate key="plugins.themes.ajlii.cookie.accept"}</button>
+	</div>
+	<div class="ajlii-cookie-modal" data-cookie-modal hidden>
+		<div class="ajlii-cookie-modal-backdrop" data-cookie-settings-close></div>
+		<div class="ajlii-cookie-panel" role="dialog" aria-modal="true" aria-labelledby="ajliiCookieTitle">
+			<div class="ajlii-cookie-panel-header">
+				<strong>{translate key="plugins.themes.ajlii.footer.cuulPublishing"}</strong>
+				<button type="button" class="ajlii-cookie-modal-close" data-cookie-settings-close aria-label="{translate key="common.close"}">x</button>
+			</div>
+			<div class="ajlii-cookie-panel-body">
+				<div class="ajlii-cookie-copy">
+					<h2 id="ajliiCookieTitle">{translate key="plugins.themes.ajlii.cookie.title"}</h2>
+					<p>{translate key="plugins.themes.ajlii.cookie.summary"}</p>
+					<p>{translate key="plugins.themes.ajlii.cookie.lawNote"}</p>
+					<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.cookie.privacyLink"}</a>
+				</div>
+				<div class="ajlii-cookie-options" aria-label="{translate|escape key="plugins.themes.ajlii.cookie.options"}">
+					<label class="ajlii-cookie-option is-required">
+						<input type="checkbox" checked disabled>
+						<span>
+							<strong>{translate key="plugins.themes.ajlii.cookie.necessaryTitle"}</strong>
+							<small>{translate key="plugins.themes.ajlii.cookie.alwaysActive"}</small>
+						</span>
+					</label>
+					<label class="ajlii-cookie-option">
+						<input type="checkbox" data-cookie-category="functional">
+						<span>
+							<strong>{translate key="plugins.themes.ajlii.cookie.functionalTitle"}</strong>
+							<small>{translate key="plugins.themes.ajlii.cookie.functionalText"}</small>
+						</span>
+					</label>
+					<label class="ajlii-cookie-option">
+						<input type="checkbox" data-cookie-category="performance">
+						<span>
+							<strong>{translate key="plugins.themes.ajlii.cookie.performanceTitle"}</strong>
+							<small>{translate key="plugins.themes.ajlii.cookie.performanceText"}</small>
+						</span>
+					</label>
+					<label class="ajlii-cookie-option">
+						<input type="checkbox" data-cookie-category="targeting">
+						<span>
+							<strong>{translate key="plugins.themes.ajlii.cookie.targetingTitle"}</strong>
+							<small>{translate key="plugins.themes.ajlii.cookie.targetingText"}</small>
+						</span>
+					</label>
+				</div>
+			</div>
+			<div class="ajlii-cookie-actions">
+				<button type="button" class="btn btn-primary" data-cookie-action="save">{translate key="plugins.themes.ajlii.cookie.confirmChoices"}</button>
+			</div>
 		</div>
 	</div>
 </div>
+<button type="button" class="ajlii-cookie-floating-button" data-cookie-settings aria-label="{translate|escape key="plugins.themes.ajlii.cookie.settings"}">
+	<span class="ajlii-cookie-floating-icon" aria-hidden="true"><span></span></span>
+</button>
 
 <div class="ajlii-wcag-widget" data-wcag-widget>
 	<button class="ajlii-wcag-toggle" type="button" aria-expanded="false" aria-controls="ajliiWcagPanel">
