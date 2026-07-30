@@ -89,21 +89,13 @@ The selected futuristic feature for AJLII is an AI and smart-discovery reading l
 
 These signals are reading aids generated from visible page content. They do not replace peer review, editorial assessment, or author-provided research statements.
 
-## Development
+## Production Package
 
-Install dependencies:
+This repository is trimmed for production deployment. It keeps only the files OJS needs to run the AJLII theme, plus documentation and licence files.
 
-```bash
-npm install
-```
+Runtime assets are in `templates/`, `styles/`, `fonts/`, `locale/`, and `libs/`. The compiled browser bundle is `libs/app.min.js`, and the compiled CSS bundle is `libs/app.min.css`.
 
-Build the bundled assets:
-
-```bash
-npm run build
-```
-
-The source LESS styles live in `styles/`. The compiled vendor bundle lives in `libs/`.
+See `features.md` for a comprehensive feature list with examples.
 
 ## Licence
 
