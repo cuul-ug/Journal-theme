@@ -284,6 +284,15 @@ msgstr "{$text}…"
 msgid "plugins.themes.ajlii.article.authorBio"
 msgstr "Bio"
 
+msgid "plugins.themes.ajlii.article.authorBiographies"
+msgstr "Author Biographies"
+
+msgid "plugins.themes.ajlii.article.information"
+msgstr "Article information"
+
+msgid "plugins.themes.ajlii.article.pdfReader"
+msgstr "Read PDF in browser"
+
 msgid "plugins.themes.ajlii.article.supplementaryFiles"
 msgstr "Supplementary Files"
 

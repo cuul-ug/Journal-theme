@@ -383,10 +383,12 @@
 			link.addEventListener('click', function (event) {
 				event.preventDefault();
 				const href = link.getAttribute('href');
-				if (!href) return;
+				const readerSrc = link.getAttribute('data-reader-src') || href;
+				const downloadHref = link.getAttribute('data-reader-download') || href;
+				if (!readerSrc) return;
 				if (title) title.textContent = link.getAttribute('data-reader-label') || link.textContent.trim();
-				if (frame) frame.setAttribute('src', href);
-				if (openLink) openLink.setAttribute('href', href);
+				if (frame) frame.setAttribute('src', readerSrc);
+				if (openLink) openLink.setAttribute('href', downloadHref || readerSrc);
 				modal.hidden = false;
 				document.body.classList.add('ajlii-modal-open');
 			}, true);

@@ -247,6 +247,40 @@
 					{/foreach}
 				{/capture}
 
+				{if $publication->getData('datePublished') || $issue || $section}
+					<div class="article-details-block article-details-publication-data">
+						<h2 class="article-details-heading">
+							{translate key="plugins.themes.ajlii.article.information"}
+						</h2>
+						<dl>
+							{if $publication->getData('datePublished')}
+								<div>
+									<dt>{translate key="submissions.published"}</dt>
+									<dd>
+										{if $firstPublication->getId() === $publication->getId()}
+											{$firstPublication->getData('datePublished')|date_format:$dateFormatShort}
+										{else}
+											{translate key="submission.updatedOn" datePublished=$firstPublication->getData('datePublished')|date_format:$dateFormatShort dateUpdated=$publication->getData('datePublished')|date_format:$dateFormatShort}
+										{/if}
+									</dd>
+								</div>
+							{/if}
+							{if $issue}
+								<div>
+									<dt>{translate key="issue.issue"}</dt>
+									<dd><a href="{url page="issue" op="view" path=$issue->getBestIssueId()}">{$issue->getIssueSeries()|escape}</a></dd>
+								</div>
+							{/if}
+							{if $section}
+								<div>
+									<dt>{translate key="section.section"}</dt>
+									<dd>{$section->getLocalizedTitle()|escape}</dd>
+								</div>
+							{/if}
+						</dl>
+					</div>
+				{/if}
+
         		{* Display other versions *}
         		{if $publication->getData('datePublished')}
           			{if count($article->getPublishedPublications()) > 1}
@@ -391,6 +425,52 @@
 							</div>
 						{/foreach}
 					</div>
+
+					{assign var="articlePdfReaderPrinted" value=0}
+					{foreach from=$primaryGalleys item=galley name=ajliiPdfReader}
+						{if !$articlePdfReaderPrinted && $galley->isPdfGalley()}
+							{assign var="articleReaderParentId" value=$article->getBestId()}
+							{if $publication && $publication->getId() !== $article->getData('currentPublicationId')}
+								{assign var="articleReaderPath" value=$articleReaderParentId|to_array:"version":$publication->getId():$galley->getBestGalleyId()}
+							{else}
+								{assign var="articleReaderPath" value=$articleReaderParentId|to_array:$galley->getBestGalleyId()}
+							{/if}
+							{capture assign="articlePdfViewUrl"}{url page="article" op="view" path=$articleReaderPath}{/capture}
+							{capture assign="articlePdfDownloadUrl"}{url page="article" op="download" path=$articleReaderPath}{/capture}
+							<div class="article-details-block article-details-inline-reader">
+								<div class="article-details-inline-reader-header">
+									<h2 class="article-details-heading">{translate key="plugins.themes.ajlii.article.pdfReader"}</h2>
+									<a href="{$articlePdfDownloadUrl|escape}" target="_blank" rel="noopener">{translate key="common.open"}</a>
+								</div>
+								<iframe src="{$articlePdfViewUrl|escape}" title="{$publication->getLocalizedFullTitle(null, 'text')|escape} {$galley->getGalleyLabel()|escape}"></iframe>
+							</div>
+							{assign var="articlePdfReaderPrinted" value=1}
+						{/if}
+					{/foreach}
+				{/if}
+
+				{if $publication->getData('authors')}
+					{assign var="hasAuthorBiography" value=0}
+					{foreach from=$publication->getData('authors') item=author}
+						{if $author->getLocalizedBiography()}
+							{assign var="hasAuthorBiography" value=1}
+						{/if}
+					{/foreach}
+					{if $hasAuthorBiography}
+						<div class="article-details-block article-details-author-bios">
+							<h2 class="article-details-heading">{translate key="plugins.themes.ajlii.article.authorBiographies"}</h2>
+							<ul>
+								{foreach from=$publication->getData('authors') item=author}
+									{if $author->getLocalizedBiography()}
+										<li>
+											<h3>{$author->getFullName()|escape}</h3>
+											{$author->getLocalizedBiography()|strip_unsafe_html}
+										</li>
+									{/if}
+								{/foreach}
+							</ul>
+						</div>
+					{/if}
 				{/if}
 
 				{* References *}
