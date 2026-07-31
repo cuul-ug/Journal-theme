@@ -1385,6 +1385,187 @@ a:focus {
 	color: var(--ajlii-text);
 }
 
+.page-article {
+	width: min(100% - 2rem, 1540px);
+	max-width: 1540px;
+}
+
+.article-details > .page-header.row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	margin: 0 0 1.5rem;
+	padding: clamp(1.2rem, 3vw, 2.2rem);
+	border: 1px solid var(--ajlii-line);
+	border-left: 6px solid var(--ajlii-sky);
+	border-radius: 8px;
+	background:
+		linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(255, 205, 0, 0.08) 42%, rgba(185, 28, 28, 0.06)),
+		#f8fbfd;
+	box-shadow: 0 18px 42px rgba(6, 24, 38, 0.08);
+}
+
+.article-details .article-meta-mobile {
+	display: grid;
+	gap: 0.85rem;
+	min-width: 0;
+}
+
+.article-details .small-screen {
+	display: none;
+}
+
+.article-details .large-screen {
+	display: block;
+}
+
+.article-details-issue-identifier,
+.article-details-issue-section {
+	margin: 0;
+	color: var(--ajlii-muted) !important;
+	font-size: 0.95rem;
+	font-weight: 700;
+	line-height: 1.45;
+	text-transform: none;
+}
+
+.article-details-issue-identifier a,
+.article-details-issue-section a {
+	color: var(--ajlii-sky-dark) !important;
+	font-weight: 800;
+	text-decoration: underline;
+	text-underline-offset: 0.18em;
+}
+
+.article-details-issue-section.large-screen {
+	justify-self: start;
+	display: inline-flex;
+	align-items: center;
+	min-height: 2rem;
+	padding: 0.2rem 0.65rem;
+	border: 1px solid rgba(56, 189, 248, 0.35);
+	border-radius: 999px;
+	background: rgba(56, 189, 248, 0.12);
+	color: var(--ajlii-ink) !important;
+	font-size: 0.86rem;
+	font-weight: 800;
+}
+
+.article-details-fulltitle {
+	max-width: 34ch;
+	margin: 0;
+	color: var(--ajlii-ink) !important;
+	font-size: clamp(2rem, 4vw, 4.1rem);
+	font-weight: 900;
+	line-height: 1.06;
+	letter-spacing: 0;
+	overflow-wrap: anywhere;
+}
+
+.ajlii-article-tools {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.55rem;
+	align-items: center;
+	margin: 0.2rem 0;
+}
+
+.ajlii-article-tools .btn {
+	min-height: var(--ajlii-touch-target);
+	border-radius: 6px;
+	font-weight: 800;
+}
+
+.article-details-published {
+	display: inline-flex;
+	align-items: center;
+	justify-self: start;
+	min-height: 2rem;
+	margin: 0;
+	padding: 0.2rem 0.65rem;
+	border: 1px solid #d6e4ee;
+	border-radius: 999px;
+	background: #fff;
+	color: var(--ajlii-text) !important;
+	font-size: 0.92rem;
+	font-weight: 700;
+	line-height: 1.45;
+}
+
+.authors-string {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.authors-string li {
+	margin: 0;
+}
+
+.authors-string a,
+.authors-string span {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.15rem;
+	min-height: 2rem;
+	color: var(--ajlii-sky-dark) !important;
+	font-weight: 800;
+}
+
+.authors-string .author-symbol {
+	color: var(--ajlii-muted);
+	font-size: 0.85em;
+}
+
+.article-details-authors {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 0.75rem;
+	margin-top: 0.2rem;
+}
+
+.article-details-author {
+	display: grid;
+	gap: 0.35rem;
+	padding: 0.85rem;
+	border: 1px solid var(--ajlii-line);
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.86);
+}
+
+.article-details-author-name {
+	color: var(--ajlii-ink) !important;
+	font-weight: 800;
+}
+
+.article-details-author-affiliation,
+.article-details-author-orcid {
+	color: var(--ajlii-text) !important;
+	font-size: 0.92rem;
+	line-height: 1.45;
+}
+
+.article-details-bio-toggle {
+	justify-self: start;
+	min-height: 2rem;
+	border: 1px solid var(--ajlii-sky-dark);
+	border-radius: 4px;
+	background: #fff;
+	color: var(--ajlii-sky-dark);
+	padding: 0.2rem 0.6rem;
+	font: inherit;
+	font-weight: 800;
+	cursor: pointer;
+}
+
+.article-details-bio-toggle:hover,
+.article-details-bio-toggle:focus {
+	background: var(--ajlii-sky-dark);
+	color: #fff;
+}
+
 .user_listing {
 	list-style: none;
 	padding: 0;
@@ -3279,6 +3460,43 @@ body.ajlii-wcag-bigCursor * {
 	.article-details-block,
 	.article-details-sidebar {
 		padding: 0.85rem;
+	}
+
+	.article-details > .page-header.row {
+		padding: 1rem;
+		border-left-width: 4px;
+		box-shadow: none;
+	}
+
+	.article-details .small-screen {
+		display: block;
+	}
+
+	.article-details .large-screen {
+		display: none;
+	}
+
+	.article-details-fulltitle {
+		max-width: none;
+		font-size: clamp(1.65rem, 9vw, 2.45rem);
+		line-height: 1.12;
+	}
+
+	.article-details-published {
+		align-self: start;
+	}
+
+	.ajlii-article-tools .btn {
+		flex: 1 1 100%;
+		justify-content: center;
+	}
+
+	.authors-string {
+		display: none;
+	}
+
+	.article-details-authors {
+		grid-template-columns: 1fr;
 	}
 
 	.ajlii-reader-header,
