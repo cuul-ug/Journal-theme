@@ -69,31 +69,31 @@ msgid "plugins.themes.ajlii.seo.ethics"
 msgstr "AJLII upholds strict ethics and integrity standards, requiring transparency in funding, AI-assisted tool use, and ethics approval for human or community-based research."
 
 msgid "plugins.themes.ajlii.aeo.title"
-msgstr "AJLII at a glance"
+msgstr "Journal at a glance"
 
 msgid "plugins.themes.ajlii.aeo.whatQuestion"
 msgstr "What is AJLII?"
 
 msgid "plugins.themes.ajlii.aeo.whatAnswer"
-msgstr "AJLII is a peer-reviewed, gold open-access African library and information science journal published by the Consortium of Uganda University Libraries. It advances practical research on innovation, collaboration, equity, and knowledge access across Africa."
+msgstr "AJLII publishes peer-reviewed library and information science research with a practical African focus."
 
 msgid "plugins.themes.ajlii.aeo.openAccessQuestion"
 msgstr "Is AJLII open access?"
 
 msgid "plugins.themes.ajlii.aeo.openAccessAnswer"
-msgstr "Yes. AJLII follows a gold open-access model and publishes content under the Creative Commons Attribution 4.0 International Licence so readers can access, share, adapt, and reuse articles with attribution."
+msgstr "Yes. Articles are published open access under the Creative Commons Attribution 4.0 International Licence."
 
 msgid "plugins.themes.ajlii.aeo.peerReviewQuestion"
-msgstr "What peer review model does AJLII use?"
+msgstr "How are articles reviewed?"
 
 msgid "plugins.themes.ajlii.aeo.peerReviewAnswer"
-msgstr "AJLII uses double-blind peer review with subject specialists and methodological experts, supported by African scholars and global partners including EIFL and COAR."
+msgstr "Submissions use double-blind peer review by subject and methodological experts."
 
 msgid "plugins.themes.ajlii.aeo.frequencyQuestion"
 msgstr "How often is AJLII published?"
 
 msgid "plugins.themes.ajlii.aeo.frequencyAnswer"
-msgstr "AJLII is published biannually in English, with issues released in June and December."
+msgstr "AJLII is published twice a year, in June and December."
 
 msgid "plugins.themes.ajlii.aeo.apcQuestion"
 msgstr "What is the AJLII Article Processing Charge?"
@@ -102,13 +102,13 @@ msgid "plugins.themes.ajlii.aeo.apcAnswer"
 msgstr "AJLII is a gold open-access journal with an Article Processing Charge of USD 25. The journal also supports eligible emerging researchers through fee waivers for CUUL conference presenters."
 
 msgid "plugins.themes.ajlii.aeo.focusQuestion"
-msgstr "What topics does AJLII publish?"
+msgstr "What does AJLII publish?"
 
 msgid "plugins.themes.ajlii.aeo.focusAnswer"
-msgstr "AJLII publishes research, case studies, and reviews on open access, scholarly communication, digital transformation, consortia collaboration, indigenous knowledge, research data management, user services, heritage digitisation, AI in libraries, records, and archives."
+msgstr "Research articles, case studies, and reviews in library and information science."
 
 msgid "plugins.themes.ajlii.aeo.updated"
-msgstr "Journal profile freshness signal:"
+msgstr "Updated:"
 
 msgid "plugins.themes.ajlii.aiDiscovery"
 msgstr "AI Discovery Assistant"
@@ -204,19 +204,19 @@ msgid "plugins.themes.ajlii.homeLinks.title"
 msgstr "AJLII publishing and journal information"
 
 msgid "plugins.themes.ajlii.homeLinks.publishDealsTitle"
-msgstr "Open access publishing support"
+msgstr "Open access"
 
 msgid "plugins.themes.ajlii.homeLinks.publishDealsText"
-msgstr "Authors can publish in AJLII through a gold open-access model with a modest Article Processing Charge and support pathways for eligible emerging researchers."
+msgstr "Publish open-access research with clear author guidance."
 
 msgid "plugins.themes.ajlii.homeLinks.publishDealsLink"
-msgstr "View submission guidance"
+msgstr "Submission guidance"
 
 msgid "plugins.themes.ajlii.homeLinks.editorsTitle"
-msgstr "Meet the Editors"
+msgstr "Editors"
 
 msgid "plugins.themes.ajlii.homeLinks.editorsText"
-msgstr "AJLII is guided by African library and information science scholars, methodological experts, and international knowledge partners."
+msgstr "View the journal editorial team and roles."
 
 msgid "plugins.themes.ajlii.homeLinks.editorsLink"
 msgstr "View Editorial Masthead"
@@ -225,19 +225,19 @@ msgid "plugins.themes.ajlii.homeLinks.aboutTitle"
 msgstr "About the Journal"
 
 msgid "plugins.themes.ajlii.homeLinks.aboutText"
-msgstr "AJLII advances innovation, collaboration, equity, and knowledge access across Africa through peer-reviewed library and information science research."
+msgstr "Learn about the journal scope, publisher, and policies."
 
 msgid "plugins.themes.ajlii.homeLinks.aboutLink"
-msgstr "Find out more"
+msgstr "About AJLII"
 
 msgid "plugins.themes.ajlii.homeLinks.whyPublishTitle"
-msgstr "Why publish with AJLII?"
+msgstr "Submit"
 
 msgid "plugins.themes.ajlii.homeLinks.whyPublishText"
-msgstr "Publish open-access research for a continental audience of librarians, archivists, information professionals, policy makers, and higher education institutions."
+msgstr "Prepare and submit your manuscript to AJLII."
 
 msgid "plugins.themes.ajlii.homeLinks.whyPublishLink"
-msgstr "Learn more and submit your research"
+msgstr "Submit your research"
 
 msgid "plugins.themes.ajlii.wcag.open"
 msgstr "Open accessibility tools"
@@ -563,6 +563,9 @@ msgstr "Featured by AJLII"
 msgid "plugins.themes.ajlii.slider.featured"
 msgstr "Featured"
 
+msgid "plugins.themes.ajlii.slider.tagline"
+msgstr "Peer-reviewed library and information science research."
+
 msgid "plugins.themes.ajlii.slider.about"
 msgstr "About AJLII"
 
@@ -771,7 +774,7 @@ msgid "plugins.themes.ajlii.currentIssueLabel"
 msgstr "Latest AJLII issue"
 
 msgid "plugins.themes.ajlii.currentIssueFallback"
-msgstr "Read the latest peer-reviewed articles, case studies, and reviews from the African Journal of Library and Information Innovations."
+msgstr "Read the latest articles, case studies, and reviews."
 
 msgid "plugins.themes.ajlii.currentIssueStandards"
 msgstr "Journal publishing standards"
