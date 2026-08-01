@@ -42,7 +42,7 @@
 						<div class="ajlii-home-slide-content">
 							<p class="ajlii-home-slide-kicker">{translate key="plugins.themes.ajlii.slider.featured"}</p>
 							<h3>{translate key="plugins.themes.ajlii.journalTitle"}</h3>
-							<p>{translate key="plugins.themes.ajlii.seo.description"}</p>
+							<p>{translate key="plugins.themes.ajlii.slider.tagline"}</p>
 							<a class="btn btn-primary" href="{url page="about"}">{translate key="plugins.themes.ajlii.slider.about"}</a>
 						</div>
 					</article>
@@ -79,7 +79,7 @@
 						<div class="ajlii-home-slide-content">
 							<p class="ajlii-home-slide-kicker">{translate key="plugins.themes.ajlii.slider.featured"}</p>
 							<h3>{translate key="plugins.themes.ajlii.journalTitle"}</h3>
-							<p>{translate key="plugins.themes.ajlii.seo.description"}</p>
+							<p>{translate key="plugins.themes.ajlii.slider.tagline"}</p>
 							<a class="btn btn-primary" href="{url page="about"}">{translate key="plugins.themes.ajlii.slider.about"}</a>
 						</div>
 					</article>
