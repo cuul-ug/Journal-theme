@@ -12,9 +12,7 @@
 
 <div class="container page page-masthead page-editorial-history">
 	<header class="page-header ajlii-editorial-hero">
-		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.editorial.kicker"}</p>
 		<h1>{translate key="common.editorialHistory.page"}</h1>
-		<p>{translate key="plugins.themes.ajlii.editorial.historyIntro"}</p>
 	</header>
 
 	<div class="ajlii-editorial-layout">
@@ -65,19 +63,6 @@
 			{/if}
 			{include file="frontend/components/editLink.tpl" page="management" op="settings" path="context" anchor="masthead" sectionTitleKey="common.editorialHistory"}
 		</main>
-
-		<aside class="ajlii-editorial-aside" aria-label="{translate|escape key="plugins.themes.ajlii.editorial.sideTitle"}">
-			<section>
-				<h2>{translate key="plugins.themes.ajlii.editorial.sideTitle"}</h2>
-				<p>{translate key="plugins.themes.ajlii.editorial.historySideText"}</p>
-			</section>
-			<nav aria-label="{translate|escape key="plugins.themes.ajlii.editorial.relatedLinks"}">
-				<h2>{translate key="plugins.themes.ajlii.editorial.relatedLinks"}</h2>
-				<a href="{url page="about" op="editorialMasthead" router=\PKP\core\PKPApplication::ROUTE_PAGE}">{translate key="common.editorialMasthead"}</a>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a>
-				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
-			</nav>
-		</aside>
 	</div>
 </div>
 

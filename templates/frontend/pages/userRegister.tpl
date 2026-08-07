@@ -14,7 +14,6 @@
 
 <div class="container page-register">
 	<header class="page-header page-register-header">
-		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.register.kicker"}</p>
 		<h1>{translate key="plugins.themes.ajlii.register.pageTitle"}</h1>
 		<p>{translate key="plugins.themes.ajlii.register.shortIntro"}</p>
 	</header>

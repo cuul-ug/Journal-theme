@@ -149,21 +149,6 @@
 					{/if}
 				</div>
 			</div>
-			<aside class="ajlii-current-issue-metrics" aria-label="{translate|escape key="plugins.themes.ajlii.currentIssueStandards"}">
-				<div>
-					<strong>{translate key="plugins.themes.ajlii.metric.openAccessValue"}</strong>
-					<span>{translate key="plugins.themes.ajlii.metric.openAccessLabel"}</span>
-				</div>
-				<div>
-					<strong>{translate key="plugins.themes.ajlii.metric.reviewValue"}</strong>
-					<span>{translate key="plugins.themes.ajlii.metric.reviewLabel"}</span>
-				</div>
-				<div>
-					<strong>{translate key="plugins.themes.ajlii.metric.frequencyValue"}</strong>
-					<span>{translate key="plugins.themes.ajlii.metric.frequencyLabel"}</span>
-				</div>
-				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.metric.about"}</a>
-			</aside>
 		</section>
 
 	{/if}

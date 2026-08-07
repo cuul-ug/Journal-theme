@@ -12,9 +12,7 @@
 
 <div class="container page page-masthead page-editorial-masthead">
 	<header class="page-header ajlii-editorial-hero">
-		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.editorial.kicker"}</p>
 		<h1>{translate key="common.editorialMasthead"}</h1>
-		<p>{translate key="plugins.themes.ajlii.editorial.mastheadIntro"}</p>
 	</header>
 
 	<div class="ajlii-editorial-layout">
@@ -78,19 +76,6 @@
 				</section>
 			{/if}
 		</main>
-
-		<aside class="ajlii-editorial-aside" aria-label="{translate|escape key="plugins.themes.ajlii.editorial.sideTitle"}">
-			<section>
-				<h2>{translate key="plugins.themes.ajlii.editorial.sideTitle"}</h2>
-				<p>{translate key="plugins.themes.ajlii.editorial.sideText"}</p>
-			</section>
-			<nav aria-label="{translate|escape key="plugins.themes.ajlii.editorial.relatedLinks"}">
-				<h2>{translate key="plugins.themes.ajlii.editorial.relatedLinks"}</h2>
-				<a href="{url page="about" op="editorialHistory" router=\PKP\core\PKPApplication::ROUTE_PAGE}">{translate key="common.editorialHistory"}</a>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a>
-				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
-			</nav>
-		</aside>
 	</div>
 </div>
 

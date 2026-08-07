@@ -18,7 +18,6 @@
 
 <div class="container page-search">
 	<header class="page-header page-search-header">
-		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.search.kicker"}</p>
 		<h1>
 			{if $query}
 				{translate key="plugins.themes.ajlii.search.resultsFor" query=$query|escape}
@@ -32,7 +31,6 @@
 				{translate key="common.search"}
 			{/if}
 		</h1>
-		<p>{translate key="plugins.themes.ajlii.search.intro"}</p>
 	</header>
 
 	<div class="row page-search-layout">
