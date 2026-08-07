@@ -7,6 +7,16 @@
  *
  * @brief Common site frontend footer.
  *}
+{if $sidebar}
+	<section class="site-footer-sidebar ajlii-plugin-output-region" aria-label="{translate|escape key="plugins.themes.ajlii.plugins.outputRegion"}">
+		<div class="container">
+			<aside class="ajlii-plugin-blocks" role="complementary">
+				{$sidebar}
+			</aside>
+		</div>
+	</section>
+{/if}
+
 <footer class="site-footer">
 	<div class="site-footer-secondary">
 		<div class="container site-footer-secondary-grid">

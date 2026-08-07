@@ -116,3 +116,28 @@
 		{/if}
 	</fieldset>
 </form>
+
+{capture assign="ajliiLoginPluginOutput"}{strip}
+	{call_hook name="Templates::User::Login::Form"}
+	{call_hook name="Templates::User::Login::AdditionalLoginOptions"}
+	{call_hook name="Templates::User::Login::PostForm"}
+	{call_hook name="Templates::Login::AdditionalLoginOptions"}
+{/strip}{/capture}
+{assign var="ajliiLoginPluginOutputTrimmed" value=$ajliiLoginPluginOutput|trim}
+
+{if $ajliiLoginPluginOutputTrimmed || $ajliiOrcidAuthUrl}
+	<section class="ajlii-login-plugin-output" aria-labelledby="ajliiLoginPluginTitle-{$formId|escape}">
+		<h2 id="ajliiLoginPluginTitle-{$formId|escape}">{translate key="plugins.themes.ajlii.login.pluginOptions"}</h2>
+		{if $ajliiLoginPluginOutputTrimmed}
+			<div class="ajlii-login-plugin-content">
+				{$ajliiLoginPluginOutput}
+			</div>
+		{/if}
+		{if $ajliiOrcidAuthUrl}
+			<a class="ajlii-login-orcid-link" href="{$ajliiOrcidAuthUrl|escape}">
+				<span aria-hidden="true">iD</span>
+				{translate key="plugins.themes.ajlii.register.orcidButton"}
+			</a>
+		{/if}
+	</section>
+{/if}

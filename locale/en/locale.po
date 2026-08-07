@@ -1043,6 +1043,9 @@ msgstr "Login to AJLII"
 msgid "plugins.themes.ajlii.login.intro"
 msgstr "Use your AJLII account to read alerts, submit manuscripts, manage author details, review assigned submissions, or support editorial workflows."
 
+msgid "plugins.themes.ajlii.login.pluginOptions"
+msgstr "Other sign-in options"
+
 msgid "plugins.themes.ajlii.login.supportTitle"
 msgstr "Account support"
 
@@ -1057,3 +1060,6 @@ msgstr "Reviewers and editors can access assigned tasks through their authentica
 
 msgid "plugins.themes.ajlii.login.accountLinks"
 msgstr "Account links"
+
+msgid "plugins.themes.ajlii.plugins.outputRegion"
+msgstr "Journal tools and plugin content"
