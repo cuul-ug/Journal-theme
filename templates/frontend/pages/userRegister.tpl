@@ -13,49 +13,46 @@
 {include file="frontend/components/header.tpl" pageTitleTranslated=$pageTitleTranslated}
 
 <div class="container page-register">
-	<div class="page-register-hero">
-		<div>
-			<p class="ajlii-home-slide-kicker">{translate key="plugins.themes.ajlii.register.kicker"}</p>
-			<h1>{translate key="plugins.themes.ajlii.register.pageTitle"}</h1>
-			<p>{translate key="plugins.themes.ajlii.register.intro"}</p>
-		</div>
-		<aside class="page-register-support" aria-label="{translate|escape key="plugins.themes.ajlii.register.supportTitle"}">
-			<h2>{translate key="plugins.themes.ajlii.register.supportTitle"}</h2>
-			<ul>
-				<li>{translate key="plugins.themes.ajlii.register.supportAuthor"}</li>
-				<li>{translate key="plugins.themes.ajlii.register.supportReviewer"}</li>
-				<li>{translate key="plugins.themes.ajlii.register.supportReader"}</li>
-			</ul>
-		</aside>
-	</div>
-	<div class="row justify-content-md-center page-register-body">
+	<header class="page-header page-register-header">
+		<p class="ajlii-page-kicker">{translate key="plugins.themes.ajlii.register.kicker"}</p>
+		<h1>{translate key="plugins.themes.ajlii.register.pageTitle"}</h1>
+		<p>{translate key="plugins.themes.ajlii.register.shortIntro"}</p>
+	</header>
+
+	{capture assign="ajliiRegisterPluginOutput"}{strip}
+		{call_hook name="Templates::User::Register::Form"}
+		{call_hook name="Templates::User::Register::PreForm"}
+		{call_hook name="Templates::User::Register::AdditionalRegistrationOptions"}
+		{call_hook name="Templates::User::Register::RegistrationOptions"}
+		{call_hook name="Templates::User::Register::PostForm"}
+		{call_hook name="Templates::User::Login::AdditionalLoginOptions"}
+		{call_hook name="Templates::Login::AdditionalLoginOptions"}
+	{/strip}{/capture}
+	{assign var="ajliiRegisterPluginOutputTrimmed" value=$ajliiRegisterPluginOutput|trim}
+
+	{if $ajliiRegisterPluginOutputTrimmed || $ajliiOrcidAuthUrl}
+	<div class="row justify-content-md-center page-register-options-row">
 		<div class="col-lg-10">
-			<div class="page-register-note" role="note">
-				<strong>{translate key="plugins.themes.ajlii.register.beforeStartTitle"}</strong>
-				<span>{translate key="plugins.themes.ajlii.register.beforeStartText"}</span>
-			</div>
-			<div class="page-register-orcid">
-				<div>
-					<h2>{translate key="plugins.themes.ajlii.register.orcidTitle"}</h2>
-					<p>{translate key="plugins.themes.ajlii.register.orcidText"}</p>
-					{if !$ajliiOrcidAuthUrl}
-						<p class="page-register-orcid-note">{translate key="plugins.themes.ajlii.register.orcidSetupNote"}</p>
-					{/if}
-				</div>
-				<div class="page-register-orcid-actions">
-					{if $ajliiOrcidAuthUrl}
+			<section class="page-register-options" aria-labelledby="ajliiRegisterOptionsTitle">
+				<h2 id="ajliiRegisterOptionsTitle">{translate key="plugins.themes.ajlii.register.optionsTitle"}</h2>
+				<div class="page-register-options-list">
+					{if $ajliiOrcidAuthUrl && !$ajliiRegisterPluginOutputTrimmed}
 						<a class="ajlii-orcid-button" id="connect-orcid-button" href="{$ajliiOrcidAuthUrl|escape}" rel="nofollow">
 							<span aria-hidden="true">iD</span>
 							{translate key="plugins.themes.ajlii.register.orcidButton"}
 						</a>
 					{/if}
-					<a class="page-register-orcid-about" href="{$ajliiOrcidAboutUrl|escape}">
-						{translate key="plugins.themes.ajlii.register.orcidAbout"}
-					</a>
+					{if $ajliiRegisterPluginOutputTrimmed}
+						<div class="ajlii-register-plugin-output">
+							{$ajliiRegisterPluginOutput}
+						</div>
+					{/if}
 				</div>
-			</div>
+			</section>
 		</div>
 	</div>
+	{/if}
+
 	<div class="row justify-content-md-center">
 		<div class="col-lg-10">
 			<div class="page-content">

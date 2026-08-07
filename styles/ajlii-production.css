@@ -1362,117 +1362,58 @@ a:focus {
 }
 
 .page-register {
-	background: transparent;
-	color: var(--ajlii-text);
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-}
-
-.page-register-hero {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(240px, 340px);
-	gap: 1.25rem;
-	align-items: stretch;
-	margin-bottom: 1.25rem;
-	padding: clamp(1.25rem, 3vw, 2rem);
-	background: #edf8fd;
-	border-left: 5px solid var(--ajlii-sky);
-}
-
-.page-register-hero h1 {
-	margin: 0 0 0.75rem;
-	color: var(--ajlii-ink);
-	font-size: clamp(1.8rem, 3vw, 2.5rem);
-	line-height: 1.12;
-}
-
-.page-register-hero p {
-	max-width: 62rem;
-	margin: 0;
-	color: var(--ajlii-text);
-	font-size: 1.05rem;
-}
-
-.page-register-support {
-	padding: 1rem;
 	background: #fff;
-	border: 1px solid var(--ajlii-line);
-	border-radius: 8px;
-}
-
-.page-register-support h2 {
-	margin: 0 0 0.75rem;
-	color: var(--ajlii-ink);
-	font-size: 1rem;
-}
-
-.page-register-support ul {
-	margin: 0;
-	padding-left: 1.1rem;
-}
-
-.page-register-support li {
-	margin-bottom: 0.45rem;
 	color: var(--ajlii-text);
+	margin-top: 1.25rem;
+	margin-bottom: 1.5rem;
 }
 
-.page-register-body {
+.page-register-header {
 	margin-bottom: 1rem;
 }
 
-.page-register-note {
-	display: flex;
-	gap: 0.5rem;
-	align-items: flex-start;
-	padding: 0.85rem 1rem;
-	background: #fff;
-	border: 1px solid var(--ajlii-line);
-	border-radius: 8px;
-	color: var(--ajlii-text);
-}
-
-.page-register-note strong {
-	flex: 0 0 auto;
+.page-register-header h1 {
+	margin: 0 0 0.45rem;
 	color: var(--ajlii-ink);
+	font-size: clamp(1.65rem, 2.6vw, 2.15rem);
+	line-height: 1.2;
 }
 
-.page-register-orcid {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) auto;
-	gap: 1rem;
-	align-items: center;
-	margin-top: 1rem;
-	padding: 1rem;
-	background: #fff;
-	border: 1px solid var(--ajlii-line);
-	border-left: 5px solid #a6ce39;
-	border-radius: 8px;
-	color: var(--ajlii-text);
-}
-
-.page-register-orcid h2 {
-	margin: 0 0 0.35rem;
-	color: var(--ajlii-ink);
-	font-size: 1.1rem;
-}
-
-.page-register-orcid p {
+.page-register-header p:not(.ajlii-page-kicker) {
+	max-width: 64ch;
 	margin: 0;
 	color: var(--ajlii-text);
+	font-size: 1rem;
+	line-height: 1.55;
 }
 
-.page-register-orcid-note {
-	margin-top: 0.45rem !important;
-	color: var(--ajlii-muted) !important;
-	font-size: 0.92rem;
+.page-register-options-row {
+	margin-bottom: 1rem;
 }
 
-.page-register-orcid-actions {
+.page-register-options {
+	display: grid;
+	gap: 0.75rem;
+	padding: 0.9rem 1rem;
+	background: #fff;
+	border: 1px solid var(--ajlii-line);
+	border-left: 4px solid #4f7d1f;
+	border-radius: 8px;
+	color: var(--ajlii-text);
+}
+
+.page-register-options h2 {
+	margin: 0;
+	color: var(--ajlii-ink);
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.page-register-options-list {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.65rem;
 	align-items: center;
-	justify-content: flex-end;
 }
 
 .ajlii-orcid-button {
@@ -1482,10 +1423,11 @@ a:focus {
 	gap: 0.55rem;
 	min-height: var(--ajlii-touch-target);
 	padding: 0.65rem 0.9rem;
+	border: 1px solid #4f7d1f;
 	border-radius: 6px;
-	background: #a6ce39;
-	color: #111827 !important;
-	font-weight: 800;
+	background: #fff;
+	color: #244a09 !important;
+	font-weight: 700;
 	text-decoration: none;
 }
 
@@ -1496,21 +1438,64 @@ a:focus {
 	width: 1.6rem;
 	height: 1.6rem;
 	border-radius: 50%;
-	background: #fff;
-	color: #a6ce39;
+	background: #4f7d1f;
+	color: #fff;
 	font-size: 0.8rem;
 	font-weight: 900;
 }
 
-.page-register-orcid-about {
-	color: var(--ajlii-sky-dark);
+.ajlii-register-plugin-output {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.65rem;
+	align-items: center;
+}
+
+.ajlii-register-plugin-output ul {
+	display: contents;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.ajlii-register-plugin-output li {
+	margin: 0;
+}
+
+.ajlii-register-plugin-output li > strong {
+	display: none;
+}
+
+.ajlii-register-plugin-output a[id^="openid-provider-"] {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	min-height: var(--ajlii-touch-target);
+	padding: 0.65rem 0.9rem;
+	border: 1px solid var(--ajlii-line);
+	border-radius: 6px;
+	background: #fff;
+	color: var(--ajlii-ink) !important;
 	font-weight: 700;
+	text-decoration: none;
+}
+
+.ajlii-register-plugin-output a[id^="openid-provider-"] div {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+}
+
+.ajlii-register-plugin-output img {
+	max-width: 1.6rem;
+	max-height: 1.6rem;
+	object-fit: contain;
 }
 
 .page-register .page-content {
 	border: 1px solid var(--ajlii-line);
 	border-radius: 8px;
-	box-shadow: 0 16px 38px rgba(6, 24, 38, 0.08);
+	box-shadow: none;
 	padding: clamp(1rem, 2.4vw, 1.5rem);
 }
 
@@ -3465,10 +3450,7 @@ body.ajlii-wcag-darkContrast .ajlii-current-issue-metrics,
 body.ajlii-wcag-darkContrast .ajlii-home-utility-panel,
 body.ajlii-wcag-darkContrast .ajlii-home-links-section,
 body.ajlii-wcag-darkContrast .ajlii-home-link-card,
-body.ajlii-wcag-darkContrast .page-register-hero,
-body.ajlii-wcag-darkContrast .page-register-support,
-body.ajlii-wcag-darkContrast .page-register-note,
-body.ajlii-wcag-darkContrast .page-register-orcid,
+body.ajlii-wcag-darkContrast .page-register-options,
 body.ajlii-wcag-darkContrast .ajlii-information-card,
 body.ajlii-wcag-darkContrast .ajlii-information-managed-content,
 body.ajlii-wcag-darkContrast .form-register fieldset,
@@ -3822,10 +3804,6 @@ body.ajlii-wcag-bigCursor * {
 		margin-bottom: 1rem;
 	}
 
-	.page-register-hero {
-		grid-template-columns: 1fr;
-	}
-
 	.site-footer {
 		padding-bottom: calc(1rem + env(safe-area-inset-bottom));
 	}
@@ -3855,26 +3833,20 @@ body.ajlii-wcag-bigCursor * {
 		line-height: 1.25;
 	}
 
-	.page-register-hero,
+	.page-register-options,
 	.page-register .page-content {
 		padding: 1rem;
 	}
 
-	.page-register-note {
-		display: block;
+	.page-register-options-list,
+	.ajlii-register-plugin-output {
+		align-items: stretch;
+		flex-direction: column;
 	}
 
-	.page-register-note strong {
-		display: block;
-		margin-bottom: 0.25rem;
-	}
-
-	.page-register-orcid {
-		grid-template-columns: 1fr;
-	}
-
-	.page-register-orcid-actions {
-		justify-content: flex-start;
+	.ajlii-orcid-button,
+	.ajlii-register-plugin-output a[id^="openid-provider-"] {
+		width: 100%;
 	}
 
 	.ajlii-login-guidelines-panel {

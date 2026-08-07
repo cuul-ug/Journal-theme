@@ -317,6 +317,12 @@ msgstr "AJLII account access"
 msgid "plugins.themes.ajlii.register.intro"
 msgstr "Create an account to read alerts, submit manuscripts, manage author details, or support the African Journal of Library and Information Innovations as a reviewer."
 
+msgid "plugins.themes.ajlii.register.shortIntro"
+msgstr "Create an account to submit manuscripts, follow new issues, or manage your AJLII profile."
+
+msgid "plugins.themes.ajlii.register.optionsTitle"
+msgstr "Registration options"
+
 msgid "plugins.themes.ajlii.register.supportTitle"
 msgstr "Account options"
 
