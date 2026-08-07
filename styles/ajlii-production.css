@@ -630,6 +630,7 @@ a:focus {
 .page-search,
 .page-user-login,
 .page-user-register,
+.page_openid_login,
 .page-lost-password {
 	background: #fff;
 	color: var(--ajlii-text);
@@ -1598,6 +1599,201 @@ a:focus {
 .form-register .form-group-login {
 	margin-top: 0.75rem;
 	color: var(--ajlii-text);
+}
+
+.page_openid_login {
+	width: min(100% - 2rem, var(--ajlii-container));
+	margin: 1.25rem auto 1.5rem;
+	padding: 0;
+	background: #fff;
+	color: var(--ajlii-text);
+}
+
+.page_openid_login .cmp_breadcrumbs {
+	margin-bottom: 1rem;
+	color: var(--ajlii-muted);
+	font-size: 0.92rem;
+}
+
+.page_openid_login .cmp_breadcrumbs ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.page_openid_login .cmp_breadcrumbs a {
+	color: var(--ajlii-link) !important;
+	font-weight: 600;
+}
+
+.page_openid_login .cmp_breadcrumbs .separator {
+	color: var(--ajlii-muted);
+}
+
+.page_openid_login > h1 {
+	margin: 0 0 1rem;
+	padding-bottom: 0.75rem;
+	border-bottom: 1px solid var(--ajlii-line);
+	color: var(--ajlii-ink);
+	font-size: clamp(1.75rem, 3vw, 2.35rem);
+	line-height: 1.15;
+	font-weight: 700;
+}
+
+#openid-provider-list {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+	gap: 1rem;
+	align-items: start;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#openid-provider-list > li {
+	min-width: 0;
+	margin: 0;
+}
+
+#openid-provider-list > li.margin-top-30 {
+	grid-column: 1 / -1;
+	margin: 0;
+	color: var(--ajlii-ink);
+	font-size: 1rem;
+}
+
+#openid-provider-list > li.margin-top-30 + .page_login {
+	grid-row: span 3;
+}
+
+#openid-provider-list .page_login {
+	padding: clamp(0.9rem, 2vw, 1.25rem);
+	border: 1px solid var(--ajlii-line);
+	border-radius: 8px;
+	background: #fff;
+}
+
+#openid-provider-list .cmp_form,
+#openid-provider-list .cmp_form fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#openid-provider-list .cmp_form .username,
+#openid-provider-list .cmp_form .password,
+#openid-provider-list .cmp_form .remember {
+	margin-bottom: 1rem;
+}
+
+#openid-provider-list .cmp_form label,
+#openid-provider-list .cmp_form .label {
+	display: block;
+	margin-bottom: 0.35rem;
+	color: var(--ajlii-ink);
+	font-weight: 700;
+}
+
+#openid-provider-list .cmp_form input[type="text"],
+#openid-provider-list .cmp_form input[type="password"] {
+	width: 100%;
+	min-height: var(--ajlii-touch-target);
+	border: 1px solid #bfd4df;
+	border-radius: 6px;
+	background: #fff;
+	color: var(--ajlii-ink);
+	padding: 0.65rem 0.75rem;
+}
+
+#openid-provider-list .cmp_form input:focus {
+	border-color: var(--ajlii-focus);
+	box-shadow: 0 0 0 0.2rem rgba(14, 165, 233, 0.18);
+	outline: 0;
+}
+
+#openid-provider-list .cmp_form .password a {
+	display: inline-block;
+	margin-top: 0.45rem;
+	color: var(--ajlii-link) !important;
+	font-weight: 600;
+}
+
+#openid-provider-list .cmp_form .remember label {
+	display: flex;
+	gap: 0.65rem;
+	align-items: center;
+	min-height: var(--ajlii-touch-target);
+	color: var(--ajlii-text);
+	font-weight: 600;
+}
+
+#openid-provider-list .cmp_form input[type="checkbox"] {
+	width: 1.2rem;
+	height: 1.2rem;
+	accent-color: var(--ajlii-sky-dark);
+}
+
+#openid-provider-list .cmp_form .buttons {
+	margin-top: 0.5rem;
+}
+
+#openid-provider-list .cmp_form .submit,
+#openid-provider-list a[id^="openid-provider-"] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: var(--ajlii-touch-target);
+	border-radius: 6px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+#openid-provider-list .cmp_form .submit {
+	width: 100%;
+	border: 1px solid var(--ajlii-sky-dark);
+	background: var(--ajlii-sky-dark);
+	color: #fff;
+	padding: 0.7rem 1rem;
+}
+
+#openid-provider-list a[id^="openid-provider-"] {
+	width: 100%;
+	border: 1px solid var(--ajlii-line);
+	background: #fff;
+	color: var(--ajlii-ink) !important;
+	padding: 0.65rem 0.9rem;
+}
+
+#openid-provider-list a[id^="openid-provider-"]:hover,
+#openid-provider-list a[id^="openid-provider-"]:focus {
+	border-color: var(--ajlii-sky-dark);
+	box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.16);
+	text-decoration: none;
+}
+
+#openid-provider-list a[id^="openid-provider-"] div {
+	display: flex;
+	gap: 0.65rem;
+	align-items: center;
+	justify-content: center;
+}
+
+#openid-provider-list a[id^="openid-provider-"] img {
+	max-width: 1.7rem;
+	max-height: 1.7rem;
+	object-fit: contain;
+}
+
+#openid-provider-orcid {
+	border-color: #a6ce39 !important;
+}
+
+#openid-provider-legacyRegister {
+	background: #f7f7f5 !important;
 }
 
 .page-information {
@@ -3401,6 +3597,7 @@ body.ajlii-wcag-darkContrast .search-pagination,
 body.ajlii-wcag-darkContrast .pkp_page_search .cmp_pagination,
 body.ajlii-wcag-darkContrast .page-submissions,
 body.ajlii-wcag-darkContrast .page-register,
+body.ajlii-wcag-darkContrast .page_openid_login,
 body.ajlii-wcag-darkContrast .page-information,
 body.ajlii-wcag-darkContrast .page-article,
 body.ajlii-wcag-darkContrast .container-homepage-issue,
@@ -3410,6 +3607,7 @@ body.ajlii-wcag-darkContrast .ajlii-home-utility-panel,
 body.ajlii-wcag-darkContrast .ajlii-home-links-section,
 body.ajlii-wcag-darkContrast .ajlii-home-link-card,
 body.ajlii-wcag-darkContrast .page-register-options,
+body.ajlii-wcag-darkContrast #openid-provider-list .page_login,
 body.ajlii-wcag-darkContrast .ajlii-information-card,
 body.ajlii-wcag-darkContrast .ajlii-information-managed-content,
 body.ajlii-wcag-darkContrast .form-register fieldset,
@@ -3452,6 +3650,7 @@ body.ajlii-wcag-darkContrast .container-homepage-issue *,
 body.ajlii-wcag-darkContrast .ajlii-home-utility-panel *,
 body.ajlii-wcag-darkContrast .ajlii-home-links-section *,
 body.ajlii-wcag-darkContrast .page-register *,
+body.ajlii-wcag-darkContrast .page_openid_login *,
 body.ajlii-wcag-darkContrast .page-information *,
 body.ajlii-wcag-darkContrast .form-register *,
 body.ajlii-wcag-darkContrast .dropdown-menu *,
@@ -3705,6 +3904,10 @@ body.ajlii-wcag-bigCursor * {
 		align-items: stretch;
 	}
 
+	#openid-provider-list {
+		grid-template-columns: 1fr;
+	}
+
 	.ajlii-cookie-options {
 		grid-template-columns: 1fr;
 	}
@@ -3745,6 +3948,7 @@ body.ajlii-wcag-bigCursor * {
 	.page-search,
 	.page-user-login,
 	.page-user-register,
+	.page_openid_login,
 	.page-lost-password,
 	.container-homepage-issue {
 		margin-top: 1rem;
@@ -3754,6 +3958,12 @@ body.ajlii-wcag-bigCursor * {
 	}
 
 	.page-register {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.page_openid_login {
+		width: 100%;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}
@@ -3799,7 +4009,8 @@ body.ajlii-wcag-bigCursor * {
 	}
 
 	.ajlii-orcid-button,
-	.ajlii-register-plugin-output a[id^="openid-provider-"] {
+	.ajlii-register-plugin-output a[id^="openid-provider-"],
+	#openid-provider-list a[id^="openid-provider-"] {
 		width: 100%;
 	}
 
