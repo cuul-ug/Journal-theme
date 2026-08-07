@@ -351,10 +351,28 @@ msgid "plugins.themes.ajlii.register.orcidSetupNote"
 msgstr "ORCID registration is ready for display after the Journal Manager enables it in the AJLII theme settings and configures the OJS ORCID Profile plugin with valid API credentials."
 
 msgid "plugins.themes.ajlii.search.resultsFor"
-msgstr "Search Results for <em>{$query}</em>"
+msgstr "Search results for <em>{$query}</em>"
 
 msgid "plugins.themes.ajlii.search.params"
-msgstr "Search Parameters"
+msgstr "Search filters"
+
+msgid "plugins.themes.ajlii.search.kicker"
+msgstr "AJLII discovery"
+
+msgid "plugins.themes.ajlii.search.intro"
+msgstr "Search articles, authors, titles, subjects, and publication dates across the African Journal of Library and Information Innovations."
+
+msgid "plugins.themes.ajlii.search.titleLabel"
+msgstr "By title"
+
+msgid "plugins.themes.ajlii.search.subjectLabel"
+msgstr "By subject"
+
+msgid "plugins.themes.ajlii.search.clear"
+msgstr "Clear filters"
+
+msgid "plugins.themes.ajlii.search.pagination"
+msgstr "Search results pagination"
 
 msgid "plugins.themes.ajlii.search.scopeLabel"
 msgstr "Search scope"
