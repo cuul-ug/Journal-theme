@@ -82,50 +82,28 @@
 		<div class="visually-hidden">{$pageTitleTranslated|escape}</div>
 
 	{* Main navigation *}
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<span class="ajlii-mobile-menu-label">{translate key="plugins.themes.ajlii.nav.menu"}</span>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
-		        aria-controls="main-navbar" aria-expanded="false"
-		        aria-label="{translate key="plugins.themes.ajlii.nav.toggle"}">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+	<nav class="navbar navbar-expand-lg navbar-light ajlii-header-nav" aria-label="{translate key="common.navigation"}">
+		<div class="dropdown ajlii-global-menu">
+			<button class="btn ajlii-menu-trigger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{translate key="plugins.themes.ajlii.nav.menu"}">
+				<span>{translate key="plugins.themes.ajlii.nav.menu"}</span>
+			</button>
+			<div class="dropdown-menu ajlii-nav-dropdown">
+				{capture assign="primaryMenu"}
+					{load_menu name="primary" id="primaryNav" ulClass="navbar-nav" liClass="nav-item"}
+				{/capture}
+				{if !empty(trim($primaryMenu)) || $currentContext}
+					<div class="ajlii-nav-section">{$primaryMenu}</div>
+				{/if}
+				<div class="ajlii-nav-section">
+					<a class="dropdown-item" href="{url page="information"}">{translate key="plugins.themes.ajlii.information.title"}</a>
+					<a class="dropdown-item" href="{url page="issue" op="archive"}">{translate key="journal.archives"}</a>
+					<a class="dropdown-item" href="{url page="announcements"}">{translate key="announcement.announcements"}</a>
+					<a class="dropdown-item" href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeTools.makeSubmission"}</a>
+					<a class="dropdown-item" href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contactPage"}</a>
+				</div>
+			</div>
+		</div>
 
-		<div class="collapse navbar-collapse justify-content-md-center" id="main-navbar">
-			{* primary menu *}
-			{capture assign="primaryMenu"}
-				{load_menu name="primary" id="primaryNav" ulClass="navbar-nav" liClass="nav-item"}
-			{/capture}
-			{if !empty(trim($primaryMenu)) || $currentContext}
-				{$primaryMenu}
-			{/if}
-			{* user menu *}
-			{load_menu name="user" id="primaryNav-userNav" ulClass="navbar-nav" liClass="nav-item"}
-			{include file="frontend/components/languageSwitcher.tpl" id="languageSmallNav"}		{* utility submenu for information and links *}
-		<ul class="navbar-nav ms-auto">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="utilityMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">{translate key="plugins.themes.ajlii.homeTools.information"}</a>
-				<ul class="dropdown-menu" aria-labelledby="utilityMenu">
-					<li><a class="dropdown-item" href="{url page="information" op="readers"}">{translate key="plugins.themes.ajlii.footer.forReaders"}</a></li>
-					<li><a class="dropdown-item" href="{url page="information" op="authors"}">{translate key="plugins.themes.ajlii.footer.forAuthors"}</a></li>
-					<li><a class="dropdown-item" href="{url page="information" op="librarians"}">{translate key="plugins.themes.ajlii.footer.forLibrarians"}</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><h6 class="dropdown-header">{translate key="plugins.themes.ajlii.footer.journalLinks"}</h6></li>
-					<li><a class="dropdown-item" href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.aboutJournal"}</a></li>
-					<li><a class="dropdown-item" href="{url page="about" op="editorialMasthead"}">{translate key="plugins.themes.ajlii.footer.editorialBoard"}</a></li>
-					<li><a class="dropdown-item" href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a></li>
-					<li><a class="dropdown-item" href="{url page="issue" op="archive"}">{translate key="journal.archives"}</a></li>
-					<li><a class="dropdown-item" href="{url page="announcements"}">{translate key="announcement.announcements"}</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contactPage"}</a></li>
-				</ul>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{url page="gateway" op="plugin" path="WebFeedGatewayPlugin"}/rss2" rel="alternate" type="application/rss+xml"><span aria-hidden="true">RSS</span>{translate key="plugins.themes.ajlii.homeTools.rss2"}</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link btn btn-primary" href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeTools.makeSubmission"}</a>
-			</li>
-		</ul>		</div>
 		<form class="ajlii-header-search" action="{url page="search" op="search"}" method="get" role="search" data-ajlii-header-search>
 			<label class="visually-hidden" for="ajliiHeaderSearchScope">{translate key="plugins.themes.ajlii.search.scopeLabel"}</label>
 			<select id="ajliiHeaderSearchScope" class="ajlii-header-search-scope" data-ajlii-search-scope aria-label="{translate|escape key="plugins.themes.ajlii.search.scopeLabel"}">
