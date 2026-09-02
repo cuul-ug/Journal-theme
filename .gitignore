@@ -17,13 +17,25 @@ Desktop.ini
 *.orig
 *.rej
 
-# Build and release artifacts
-*.zip
-*.tar
-*.tar.gz
-*.tgz
-*.gz
-*.7z
+# OJS theme release packages and packaging outputs
+# These are release artifacts generated from the plugin folder, not source files.
+ajlii*.zip
+ajlii*.tar
+ajlii*.tar.gz
+ajlii*.tgz
+AfricanJournalThemePlugin*.zip
+AfricanJournalThemePlugin*.tar
+AfricanJournalThemePlugin*.tar.gz
+AfricanJournalThemePlugin*.tgz
+plugins/themes/ajlii/*.zip
+plugins/themes/ajlii/*.tar
+plugins/themes/ajlii/*.tar.gz
+plugins/themes/ajlii/*.tgz
+/release/
+/releases/
+/build/
+/dist/
+/tmp/
 
 # Local environment and caches
 .env
