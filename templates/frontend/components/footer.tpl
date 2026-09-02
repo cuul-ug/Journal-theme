@@ -166,19 +166,6 @@
 	</div>
 </div>
 
-<div class="ajlii-reader-modal" data-ajlii-reader-modal hidden>
-	<div class="ajlii-reader-dialog" role="dialog" aria-modal="true" aria-labelledby="ajliiReaderTitle">
-		<div class="ajlii-reader-header">
-			<h2 id="ajliiReaderTitle">{translate key="plugins.themes.ajlii.reader.title"}</h2>
-			<div>
-				<a data-ajlii-reader-open href="#" target="_blank" rel="noopener">{translate key="plugins.themes.ajlii.reader.newTab"}</a>
-				<button type="button" data-ajlii-reader-close aria-label="{translate key="common.close"}">x</button>
-			</div>
-		</div>
-		<iframe title="{translate key="plugins.themes.ajlii.reader.title"}" data-ajlii-reader-frame></iframe>
-	</div>
-</div>
-
 <div class="ajlii-ai-panel" data-ajlii-ai-panel hidden data-ai-provider="{$ajliiAiProvider|escape}" data-ai-model="{$ajliiAiModel|escape}" data-ai-proxy-url="{$ajliiAiProxyUrl|escape}">
 	<div class="ajlii-ai-dialog" role="dialog" aria-modal="true" aria-labelledby="ajliiAiTitle">
 		<div class="ajlii-ai-header">

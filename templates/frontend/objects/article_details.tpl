@@ -426,27 +426,6 @@
 						{/foreach}
 					</div>
 
-					{assign var="articlePdfReaderPrinted" value=0}
-					{foreach from=$primaryGalleys item=galley name=ajliiPdfReader}
-						{if !$articlePdfReaderPrinted && $galley->isPdfGalley()}
-							{assign var="articleReaderParentId" value=$article->getBestId()}
-							{if $publication && $publication->getId() !== $article->getData('currentPublicationId')}
-								{assign var="articleReaderPath" value=$articleReaderParentId|to_array:"version":$publication->getId():$galley->getBestGalleyId()}
-							{else}
-								{assign var="articleReaderPath" value=$articleReaderParentId|to_array:$galley->getBestGalleyId()}
-							{/if}
-							{capture assign="articlePdfViewUrl"}{url page="article" op="view" path=$articleReaderPath}{/capture}
-							{capture assign="articlePdfDownloadUrl"}{url page="article" op="download" path=$articleReaderPath}{/capture}
-							<div class="article-details-block article-details-inline-reader">
-								<div class="article-details-inline-reader-header">
-									<h2 class="article-details-heading">{translate key="plugins.themes.ajlii.article.pdfReader"}</h2>
-									<a href="{$articlePdfDownloadUrl|escape}" target="_blank" rel="noopener">{translate key="common.open"}</a>
-								</div>
-								<iframe src="{$articlePdfViewUrl|escape}" title="{$publication->getLocalizedFullTitle(null, 'text')|escape} {$galley->getGalleyLabel()|escape}"></iframe>
-							</div>
-							{assign var="articlePdfReaderPrinted" value=1}
-						{/if}
-					{/foreach}
 				{/if}
 
 				{if $publication->getData('authors')}

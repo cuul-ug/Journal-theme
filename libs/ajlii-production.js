@@ -366,41 +366,6 @@
 		});
 	};
 
-	const initReader = function () {
-		const modal = document.querySelector('[data-ajlii-reader-modal]');
-		if (!modal) return;
-		const frame = modal.querySelector('[data-ajlii-reader-frame]');
-		const title = modal.querySelector('#ajliiReaderTitle');
-		const openLink = modal.querySelector('[data-ajlii-reader-open]');
-		const close = function () {
-			modal.hidden = true;
-			if (frame) frame.removeAttribute('src');
-			document.body.classList.remove('ajlii-modal-open');
-		};
-		document.querySelectorAll('[data-ajlii-reader]').forEach(function (link) {
-			if (link.dataset.productionReader === 'true') return;
-			link.dataset.productionReader = 'true';
-			link.addEventListener('click', function (event) {
-				event.preventDefault();
-				const href = link.getAttribute('href');
-				const readerSrc = link.getAttribute('data-reader-src') || href;
-				const downloadHref = link.getAttribute('data-reader-download') || href;
-				if (!readerSrc) return;
-				if (title) title.textContent = link.getAttribute('data-reader-label') || link.textContent.trim();
-				if (frame) frame.setAttribute('src', readerSrc);
-				if (openLink) openLink.setAttribute('href', downloadHref || readerSrc);
-				modal.hidden = false;
-				document.body.classList.add('ajlii-modal-open');
-			}, true);
-		});
-		modal.querySelectorAll('[data-ajlii-reader-close]').forEach(function (button) {
-			button.addEventListener('click', close);
-		});
-		modal.addEventListener('click', function (event) {
-			if (event.target === modal) close();
-		});
-	};
-
 	const initAi = function () {
 		const panel = document.querySelector('[data-ajlii-ai-panel]');
 		if (!panel) return;
@@ -565,7 +530,6 @@
 		initHeaderSearch();
 		initCookieConsent();
 		initWcag();
-		initReader();
 		initAi();
 	});
 })();

@@ -59,7 +59,7 @@
 {* Don't be frightened. This is just a link *}
 {capture assign="galleyViewUrl"}{url page=$page op="view" path=$path}{/capture}
 {capture assign="galleyDownloadUrl"}{url page=$page op="download" path=$path}{/capture}
-<a class="btn{if !$isSupplementary} btn-primary{/if} ajlii-reader-link" href="{$galleyViewUrl}" data-ajlii-reader data-reader-src="{$galleyViewUrl|escape}" data-reader-download="{$galleyDownloadUrl|escape}" data-reader-type="{$type|escape}" data-reader-label="{$galley->getGalleyLabel()|escape}">
+<a class="btn{if !$isSupplementary} btn-primary{/if} ajlii-reader-link" href="{$galleyViewUrl}" data-reader-type="{$type|escape}" data-reader-label="{$galley->getGalleyLabel()|escape}">
 
 	{* Add some screen reader text to indicate if a galley is restricted *}
 	{if $restricted}
