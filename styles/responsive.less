@@ -1,0 +1,547 @@
+/**
+ * @file styles/responsive.less
+ *
+ * Copyright (c) 2014-2025 Simon Fraser University
+ * Copyright (c) 2003-2025 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @brief Responsive Web Design Foundation & Mobile-First Approach
+ *
+ * This file implements comprehensive responsive design patterns following
+ * modern CSS standards and mobile-first workflow principles.
+ *
+ * BREAKPOINTS REFERENCE (Mobile-First Approach):
+ * ============================================
+ * Extra Small (xs): 320px - 575px  [Default - Mobile devices]
+ * Small (sm):       576px - 767px  [Large phones, small tablets]
+ * Medium (md):      768px - 991px  [Tablets]
+ * Large (lg):       992px - 1199px [Small laptops]
+ * Extra Large (xl): 1200px+        [Desktops, monitors]
+ * Ultra Large (2xl):1400px+        [Large monitors, ultra-wide displays]
+ *
+ * IMPLEMENTATION STRATEGY:
+ * =======================
+ * 1. Start with mobile styles (default)
+ * 2. Use min-width media queries for progressive enhancement
+ * 3. Use max-width media queries only for major breakpoint corrections
+ * 4. Prefer fluid units (rem, %, vw) over fixed pixels
+ * 5. Use clamp() for responsive typography and spacing
+ */
+
+// ============================================
+// CORE RESPONSIVE FOUNDATION
+// ============================================
+
+/**
+ * Global Box Sizing
+ * Ensures padding/border are included in element width/height calculations
+ */
+html {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// ============================================
+// FLUID TYPOGRAPHY SYSTEM
+// ============================================
+
+/**
+ * Fluid Typography using clamp()
+ * Scales smoothly between minimum and maximum sizes
+ * Format: clamp(min, preferred, max)
+ */
+
+// Headings with fluid sizing
+h1 {
+	font-size: clamp(1.75rem, 5vw, 3.5rem);
+	line-height: clamp(1.2, 1.2 + 1vw, 1.4);
+	margin: clamp(1rem, 5vw, 2rem) 0 clamp(0.5rem, 2vw, 1rem);
+}
+
+h2 {
+	font-size: clamp(1.5rem, 4vw, 2.8rem);
+	line-height: clamp(1.2, 1.2 + 0.8vw, 1.4);
+	margin: clamp(0.875rem, 4vw, 1.75rem) 0 clamp(0.5rem, 1.5vw, 0.875rem);
+}
+
+h3 {
+	font-size: clamp(1.25rem, 3vw, 2.2rem);
+	line-height: clamp(1.3, 1.3 + 0.5vw, 1.5);
+	margin: clamp(0.75rem, 3vw, 1.5rem) 0 clamp(0.5rem, 1.2vw, 0.75rem);
+}
+
+h4 {
+	font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+	line-height: 1.4;
+	margin: clamp(0.625rem, 2.5vw, 1.25rem) 0 clamp(0.375rem, 1vw, 0.625rem);
+}
+
+h5 {
+	font-size: clamp(1rem, 2vw, 1.5rem);
+	line-height: 1.4;
+	margin: clamp(0.5rem, 2vw, 1rem) 0 clamp(0.375rem, 0.8vw, 0.5rem);
+}
+
+h6 {
+	font-size: clamp(0.9rem, 1.8vw, 1.25rem);
+	line-height: 1.4;
+	margin: clamp(0.5rem, 1.5vw, 0.875rem) 0 clamp(0.25rem, 0.5vw, 0.375rem);
+}
+
+// Body text sizing
+body {
+	font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+	line-height: clamp(1.5, 1.5 + 0.3vw, 1.75);
+}
+
+p {
+	margin-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+
+// Small text
+small,
+.small {
+	font-size: clamp(0.75rem, 0.9vw, 0.95rem);
+}
+
+// ============================================
+// RESPONSIVE CONTAINERS & LAYOUTS
+// ============================================
+
+/**
+ * Fluid Container with Max-Width
+ * Provides responsive padding and centers content
+ * Handles future ultra-wide displays
+ */
+.container,
+.container-fluid {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: clamp(0.75rem, 2vw, 2rem);
+	padding-right: clamp(0.75rem, 2vw, 2rem);
+}
+
+.container {
+	// Mobile-first: full width
+	max-width: 100%;
+
+	// Tablets and above
+	@media (min-width: 768px) {
+		max-width: 750px;
+	}
+
+	// Small laptops
+	@media (min-width: 992px) {
+		max-width: 970px;
+	}
+
+	// Desktops
+	@media (min-width: 1200px) {
+		max-width: 1170px;
+	}
+
+	// Large monitors
+	@media (min-width: 1400px) {
+		max-width: 1320px;
+	}
+
+	// Ultra-wide displays (future-proofing)
+	@media (min-width: 1920px) {
+		max-width: 1440px;
+	}
+}
+
+// ============================================
+// RESPONSIVE GRID SYSTEM
+// ============================================
+
+/**
+ * Auto-fit Grid Layout
+ * Automatically adjusts columns based on available space
+ * No media queries needed - uses CSS Grid intrinsic sizing
+ */
+.grid-auto {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+	width: 100%;
+}
+
+// Flexible 2-column grid
+.grid-2 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+	width: 100%;
+
+	@media (min-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+// Flexible 3-column grid
+.grid-3 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+	width: 100%;
+
+	@media (min-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (min-width: 992px) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+// Flexible 4-column grid
+.grid-4 {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+	width: 100%;
+
+	@media (min-width: 576px) {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (min-width: 992px) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+
+// ============================================
+// RESPONSIVE IMAGES & MEDIA
+// ============================================
+
+/**
+ * Responsive Images
+ * Ensures images scale with their containers
+ * Maintains aspect ratio automatically
+ */
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+// Picture element support for modern responsive images
+picture {
+	display: block;
+	width: 100%;
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+// Responsive video/iframe containers
+.video-container,
+.iframe-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%; // 16:9 aspect ratio
+	height: 0;
+	overflow: hidden;
+
+	iframe,
+	video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+}
+
+// ============================================
+// RESPONSIVE TYPOGRAPHY & SPACING
+// ============================================
+
+/**
+ * Fluid Margins & Padding
+ * Uses clamp() for responsive spacing
+ */
+.margin-responsive {
+	margin: clamp(0.5rem, 3vw, 2rem);
+}
+
+.padding-responsive {
+	padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.gap-responsive {
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+// Responsive columns
+.cols {
+	display: grid;
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+// ============================================
+// DISPLAY UTILITIES (Mobile-First)
+// ============================================
+
+/**
+ * Responsive display helpers
+ * Hide/show content based on screen size
+ */
+
+// Hide on mobile by default
+.hide-mobile {
+	display: none;
+}
+
+// Show on mobile only
+.show-mobile {
+	display: block;
+}
+
+// Show on tablet and above
+@media (min-width: 768px) {
+	.hide-mobile {
+		display: block;
+	}
+
+	.show-mobile {
+		display: none;
+	}
+
+	.hide-tablet {
+		display: none;
+	}
+
+	.show-tablet {
+		display: block;
+	}
+}
+
+// Show on desktop and above
+@media (min-width: 992px) {
+	.hide-tablet {
+		display: block;
+	}
+
+	.show-tablet {
+		display: none;
+	}
+
+	.hide-desktop {
+		display: none;
+	}
+
+	.show-desktop {
+		display: block;
+	}
+}
+
+// Show on large screens
+@media (min-width: 1200px) {
+	.hide-desktop {
+		display: block;
+	}
+
+	.show-desktop {
+		display: none;
+	}
+}
+
+// ============================================
+// RESPONSIVE FLEXBOX LAYOUTS
+// ============================================
+
+/**
+ * Flex utilities for responsive layouts
+ */
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+// Stack on mobile, row on larger screens
+.flex-responsive {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(0.75rem, 2vw, 1.5rem);
+
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
+}
+
+// ============================================
+// TOUCH-FRIENDLY RESPONSIVE ELEMENTS
+// ============================================
+
+/**
+ * Responsive touch targets
+ * Minimum 44x44px for mobile, scalable for larger screens
+ */
+button,
+a,
+.touch-target {
+	min-height: clamp(44px, 10vw, 56px);
+	min-width: clamp(44px, 10vw, 56px);
+	padding: clamp(0.5rem, 1vw, 0.75rem) clamp(0.75rem, 2vw, 1.5rem);
+	transition: all 200ms ease;
+}
+
+// ============================================
+// RESPONSIVE PRINT STYLES
+// ============================================
+
+/**
+ * Print optimization
+ * Ensures proper layout when printing
+ */
+@media print {
+	* {
+		background: transparent !important;
+		color: black !important;
+		text-shadow: none !important;
+		box-shadow: none !important;
+	}
+
+	body {
+		line-height: 1.6;
+		font-size: 12pt;
+	}
+
+	a {
+		color: black;
+		text-decoration: underline;
+	}
+
+	img {
+		max-width: 100%;
+		page-break-inside: avoid;
+	}
+
+	.no-print,
+	.hide-print {
+		display: none !important;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		page-break-after: avoid;
+		page-break-inside: avoid;
+	}
+
+	p {
+		orphans: 3;
+		widows: 3;
+	}
+}
+
+// ============================================
+// PERFORMANCE OPTIMIZATIONS
+// ============================================
+
+/**
+ * Reduce motion for accessibility
+ * Respects user's motion preferences
+ */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/**
+ * Dark mode support
+ * Respects user's color scheme preference
+ */
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+}
+
+/**
+ * High contrast mode support
+ * For users with vision impairments
+ */
+@media (prefers-contrast: more) {
+	body {
+		font-weight: 600;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+// ============================================
+// FUTURE-PROOFING FOR EMERGING SCREENS
+// ============================================
+
+/**
+ * Support for foldable and future devices
+ */
+
+// Foldable/multi-screen devices
+@media (fold-left: 0px) or (fold-right: 100vw) {
+	body {
+		// Adjust layout for foldable displays
+	}
+}
+
+// Super-wide ultrawide monitors
+@media (min-width: 2560px) {
+	.container {
+		max-width: 2400px;
+	}
+
+	body {
+		font-size: 1.2rem;
+	}
+}
+
+// Smartwatch and very small screens (future)
+@media (max-width: 319px) {
+	body {
+		font-size: 0.8rem;
+	}
+
+	h1 {
+		font-size: 1.2rem;
+	}
+
+	.container {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+}

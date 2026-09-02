@@ -1,0 +1,39 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# Build and release artifacts
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.gz
+*.7z
+
+# Local environment and caches
+.env
+.env.*
+.cache/
+coverage/
+node_modules/
+vendor/
+
+# Generated or local-only files
+*.local
+*.sqlite
+*.sqlite3
