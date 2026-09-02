@@ -116,9 +116,6 @@ msgstr "AI Discovery Assistant"
 msgid "plugins.themes.ajlii.footer.publisher"
 msgstr "Published by the Consortium of Uganda University Libraries for scholars, librarians, information professionals, and higher education institutions."
 
-msgid "plugins.themes.ajlii.footer.scope"
-msgstr "AJLII provides a continental platform for peer-reviewed library and information science research that fosters innovation, collaboration, equity, and knowledge access across Africa."
-
 msgid "plugins.themes.ajlii.footer.openAccess"
 msgstr "Open Access"
 
@@ -154,9 +151,6 @@ msgstr "Author Guidelines"
 
 msgid "plugins.themes.ajlii.footer.cuulPublishing"
 msgstr "Consortium of Uganda University Libraries Publishing"
-
-msgid "plugins.themes.ajlii.footer.openAccessStatement"
-msgstr "Gold open access, double-blind peer review, and CC BY 4.0 licensing for equitable African scholarship."
 
 msgid "plugins.themes.ajlii.footer.publishWithUs"
 msgstr "Publish with AJLII"
