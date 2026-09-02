@@ -100,8 +100,32 @@
 			{/if}
 			{* user menu *}
 			{load_menu name="user" id="primaryNav-userNav" ulClass="navbar-nav" liClass="nav-item"}
-			{include file="frontend/components/languageSwitcher.tpl" id="languageSmallNav"}
-		</div>
+			{include file="frontend/components/languageSwitcher.tpl" id="languageSmallNav"}		{* utility submenu for information and links *}
+		<ul class="navbar-nav ms-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="utilityMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">{translate key="plugins.themes.ajlii.homeTools.information"}</a>
+				<ul class="dropdown-menu" aria-labelledby="utilityMenu">
+					<li><a class="dropdown-item" href="{url page="information" op="readers"}">{translate key="plugins.themes.ajlii.footer.forReaders"}</a></li>
+					<li><a class="dropdown-item" href="{url page="information" op="authors"}">{translate key="plugins.themes.ajlii.footer.forAuthors"}</a></li>
+					<li><a class="dropdown-item" href="{url page="information" op="librarians"}">{translate key="plugins.themes.ajlii.footer.forLibrarians"}</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><h6 class="dropdown-header">{translate key="plugins.themes.ajlii.footer.journalLinks"}</h6></li>
+					<li><a class="dropdown-item" href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.aboutJournal"}</a></li>
+					<li><a class="dropdown-item" href="{url page="about" op="editorialMasthead"}">{translate key="plugins.themes.ajlii.footer.editorialBoard"}</a></li>
+					<li><a class="dropdown-item" href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.authorGuidelines"}</a></li>
+					<li><a class="dropdown-item" href="{url page="issue" op="archive"}">{translate key="journal.archives"}</a></li>
+					<li><a class="dropdown-item" href="{url page="announcements"}">{translate key="announcement.announcements"}</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contactPage"}</a></li>
+				</ul>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{url page="gateway" op="plugin" path="WebFeedGatewayPlugin"}/rss2" rel="alternate" type="application/rss+xml"><span aria-hidden="true">RSS</span>{translate key="plugins.themes.ajlii.homeTools.rss2"}</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link btn btn-primary" href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.homeTools.makeSubmission"}</a>
+			</li>
+		</ul>		</div>
 		<form class="ajlii-header-search" action="{url page="search" op="search"}" method="get" role="search" data-ajlii-header-search>
 			<label class="visually-hidden" for="ajliiHeaderSearchScope">{translate key="plugins.themes.ajlii.search.scopeLabel"}</label>
 			<select id="ajliiHeaderSearchScope" class="ajlii-header-search-scope" data-ajlii-search-scope aria-label="{translate|escape key="plugins.themes.ajlii.search.scopeLabel"}">
