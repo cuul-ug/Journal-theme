@@ -25,7 +25,8 @@
 	padding-top: 2.5rem;
 	padding-bottom: 2rem;
 	color: @contrast;
-}
+	.ajlii-ai-dialog,
+	.ajlii-discovery-dialog {
 
 .site-footer-grid {
 	row-gap: 2rem;
@@ -370,7 +371,6 @@ body.ajlii-modal-open {
 	overflow: hidden;
 }
 
-.ajlii-reader-modal,
 .ajlii-ai-panel,
 .ajlii-discovery-panel {
 	position: fixed;
@@ -380,7 +380,6 @@ body.ajlii-modal-open {
 	background: rgba(7, 25, 35, 0.72);
 }
 
-.ajlii-reader-dialog,
 .ajlii-ai-dialog,
 .ajlii-discovery-dialog {
 	display: flex;
@@ -394,7 +393,6 @@ body.ajlii-modal-open {
 	overflow: hidden;
 }
 
-.ajlii-reader-header,
 .ajlii-ai-header {
 	display: flex;
 	align-items: center;
@@ -421,13 +419,6 @@ body.ajlii-modal-open {
 		background: transparent;
 		border-radius: 4px;
 	}
-}
-
-.ajlii-reader-dialog iframe {
-	flex: 1;
-	width: 100%;
-	border: 0;
-	background: @contrast;
 }
 
 .ajlii-ai-dialog {
@@ -634,13 +625,11 @@ body.ajlii-modal-open {
 		border-radius: 12px 12px 0 0;
 	}
 
-	.ajlii-reader-modal,
 	.ajlii-ai-panel,
 	.ajlii-discovery-panel {
 		padding: 0;
 	}
 
-	.ajlii-reader-dialog,
 	.ajlii-ai-dialog,
 	.ajlii-discovery-dialog {
 		width: 100%;

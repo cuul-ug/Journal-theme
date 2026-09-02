@@ -490,7 +490,6 @@ a:focus {
 	opacity: 0;
 	visibility: hidden;
 	transform: translateX(1.5rem);
-	transition: opacity 260ms ease, transform 260ms ease, visibility 260ms ease;
 	background: var(--ajlii-ink);
 }
 
@@ -499,9 +498,16 @@ a:focus {
 	visibility: visible;
 	transform: translateX(0);
 	z-index: 1;
-}
-
-.ajlii-home-slide > img {
+	.ajlii-reader-dialog {
+		min-height: 100dvh;
+		min-height: 100vh;
+		max-height: none;
+		border-radius: 0;
+	}
+    
+	.ajlii-reader-dialog iframe {
+		height: calc(100vh - 80px);
+	}
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -1942,58 +1948,6 @@ a:focus {
 	text-decoration: none;
 }
 
-.ajlii-reader-link[data-reader-type="pdf"]::before {
-	content: "PDF";
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-width: 2.2rem;
-	min-height: 1.35rem;
-	margin-right: 0.5rem;
-	border-radius: 4px;
-	background: rgba(255, 255, 255, 0.18);
-	font-size: 0.72rem;
-	font-weight: 900;
-	line-height: 1;
-}
-
-.article-details-inline-reader {
-	overflow: hidden;
-}
-
-.article-details-inline-reader-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 0.85rem;
-	margin-bottom: 0.9rem;
-}
-
-.article-details-inline-reader-header .article-details-heading {
-	margin: 0;
-}
-
-.article-details-inline-reader-header a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 2.5rem;
-	border: 1px solid var(--ajlii-sky);
-	border-radius: 6px;
-	padding: 0.45rem 0.8rem;
-	background: #fff;
-	font-weight: 900;
-	text-decoration: none;
-}
-
-.article-details-inline-reader iframe {
-	display: block;
-	width: 100%;
-	height: min(76dvh, 900px);
-	min-height: 560px;
-	border: 1px solid var(--ajlii-line);
-	border-radius: 6px;
-	background: #fff;
 }
 
 .article-details-author-bios ul {
@@ -3068,7 +3022,6 @@ button.btn-primary {
 }
 
 .ajlii-wcag-panel[hidden],
-.ajlii-reader-modal[hidden],
 .ajlii-ai-panel[hidden],
 .ajlii-discovery-panel[hidden] {
 	display: none !important;
@@ -3228,7 +3181,7 @@ button.btn-primary {
 	font-weight: 700;
 }
 
-.ajlii-reader-modal,
+
 .ajlii-ai-panel,
 .ajlii-discovery-panel {
 	position: fixed;
@@ -3238,7 +3191,6 @@ button.btn-primary {
 	padding: max(1rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
 }
 
-.ajlii-reader-dialog,
 .ajlii-ai-dialog,
 .ajlii-discovery-dialog {
 	width: min(980px, 100%);
@@ -3251,7 +3203,6 @@ button.btn-primary {
 	box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 
-.ajlii-reader-header,
 .ajlii-ai-header {
 	display: flex;
 	align-items: center;
@@ -3261,14 +3212,12 @@ button.btn-primary {
 	border-bottom: 1px solid var(--ajlii-line);
 }
 
-.ajlii-reader-header h2,
 .ajlii-ai-header h2 {
 	margin: 0;
 	font-size: 1.15rem;
 	color: var(--ajlii-ink);
 }
 
-.ajlii-reader-header button,
 .ajlii-ai-header button {
 	border: 0;
 	background: var(--ajlii-ink);
@@ -3276,15 +3225,6 @@ button.btn-primary {
 	border-radius: 50%;
 	width: var(--ajlii-touch-target);
 	height: var(--ajlii-touch-target);
-}
-
-.ajlii-reader-dialog iframe {
-	display: block;
-	width: 100%;
-	height: min(78dvh, 820px);
-	height: min(78vh, 820px);
-	border: 0;
-	background: #fff;
 }
 
 .ajlii-ai-body,
@@ -3964,20 +3904,6 @@ body.ajlii-wcag-bigCursor * {
 		grid-template-columns: 1fr;
 	}
 
-	.article-details-inline-reader-header {
-		align-items: stretch;
-		flex-direction: column;
-	}
-
-	.article-details-inline-reader-header a {
-		width: 100%;
-	}
-
-	.article-details-inline-reader iframe {
-		height: 68dvh;
-		min-height: 420px;
-	}
-
 	.article-details-galleys {
 		align-items: stretch;
 		flex-direction: column;
@@ -4069,24 +3995,17 @@ body.ajlii-wcag-bigCursor * {
 		padding: 0.65rem;
 	}
 
-	.ajlii-reader-modal,
 	.ajlii-ai-panel,
 	.ajlii-discovery-panel {
 		padding: 0;
 	}
 
-	.ajlii-reader-dialog,
 	.ajlii-ai-dialog,
 	.ajlii-discovery-dialog {
 		min-height: 100dvh;
 		min-height: 100vh;
 		max-height: none;
 		border-radius: 0;
-	}
-
-	.ajlii-reader-dialog iframe {
-		height: calc(100dvh - 80px);
-		height: calc(100vh - 80px);
 	}
 
 	#loginModal .modal-dialog {
