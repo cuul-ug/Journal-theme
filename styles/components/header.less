@@ -108,8 +108,9 @@
 }
 
 .ajlii-journal-band {
-	background: @primary;
-	border-bottom: 2px solid rgba(244, 197, 66, 0.3);
+	background: @accent-yellow;
+	color: @black;
+	border-bottom: 2px solid darken(@accent-yellow, 12%);
 }
 
 .ajlii-journal-inner {
@@ -155,7 +156,7 @@
 	min-height: clamp(72px, 12vw, 90px);
 	padding: clamp(0.5rem, 1vw, 0.9rem);
 	background: @black;
-	color: rgba(244, 197, 66, 0.6);
+	color: fade(@accent-yellow, 60%);
 	border: 2px solid @black;
 	font-size: clamp(0.8rem, 1.5vw, 1rem);
 

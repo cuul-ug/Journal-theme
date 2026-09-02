@@ -238,9 +238,9 @@ a:focus {
 }
 
 .ajlii-journal-band {
-	background: linear-gradient(90deg, var(--ajlii-gold) 0 72%, #fff6bf 100%);
-	color: var(--ajlii-ink);
-	border-bottom: 4px solid var(--ajlii-red);
+	background: #fff1a8;
+	color: #071923;
+	border-bottom: 2px solid #d9c36f;
 }
 
 .ajlii-journal-inner {
