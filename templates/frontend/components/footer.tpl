@@ -20,26 +20,6 @@
 <footer class="site-footer">
 	<div class="site-footer-secondary">
 		<div class="container site-footer-secondary-grid">
-			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.openAccess"}">
-				<h2>{translate key="plugins.themes.ajlii.footer.openAccess"}</h2>
-				<a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener" target="_blank">CC BY 4.0 International</a>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.publishWithUs"}</a>
-				<a href="{url page="about" op="submissions"}">{translate key="plugins.themes.ajlii.footer.apcAndWaivers"}</a>
-				<a href="{url page="about"}">{translate key="plugins.themes.ajlii.footer.ethicsIntegrity"}</a>
-			</nav>
-			<nav class="site-footer-link-column" aria-label="{translate|escape key="plugins.themes.ajlii.footer.supportLinks"}">
-				<h2>{translate key="plugins.themes.ajlii.footer.supportLinks"}</h2>
-				<a href="{url page="about" op="contact"}">{translate key="plugins.themes.ajlii.footer.contact"}</a>
-				<a href="{url page="about" op="privacy"}">{translate key="plugins.themes.ajlii.footer.privacyPolicy"}</a>
-				<details class="site-footer-legal-note">
-					<summary>{translate key="plugins.themes.ajlii.footer.legalNotice"}</summary>
-					<p>{translate key="plugins.themes.ajlii.footer.legalNoticeText"}</p>
-				</details>
-			</nav>
-			<div class="site-footer-statement">
-				<h2>{translate key="plugins.themes.ajlii.footer.publisherStatementTitle"}</h2>
-				<p>{translate key="plugins.themes.ajlii.footer.publisherStatement"}</p>
-			</div>
 			<div class="site-footer-brand-block">
 				<a class="site-footer-publisher-mark" href="{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}" aria-label="{translate|escape key="plugins.themes.ajlii.footer.cuulPublishing"}">
 					<span class="site-footer-publisher-logo" aria-hidden="true">
