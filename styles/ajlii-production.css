@@ -647,6 +647,25 @@ a:focus {
 	overflow-x: clip;
 }
 
+.page,
+.page-about,
+.page-contact,
+.page-privacy,
+.page-masthead,
+.page-submissions,
+.page-announcements,
+.page-issue,
+.page-article,
+.page-search,
+.page-user-login,
+.page-user-register,
+.page-lost-password,
+.container-homepage-issue {
+	width: min(calc(100% - 2rem), 1200px);
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .page-header {
 	padding: 1.25rem 0 0.75rem;
 	border-bottom: 1px solid var(--ajlii-line);
