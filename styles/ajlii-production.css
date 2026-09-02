@@ -2641,16 +2641,31 @@ a:focus {
 .btn-primary,
 button.btn-primary {
 	border-radius: 6px;
-	border-color: var(--ajlii-sky-dark);
-	background: var(--ajlii-sky-dark);
-	color: #fff;
+	border-color: var(--ajlii-line);
+	background: #f7f9fa;
+	color: var(--ajlii-ink);
+	font-size: 0.85rem;
 	font-weight: 700;
-	min-height: var(--ajlii-touch-target);
+	min-height: 2.25rem;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	gap: 0.35rem;
 	white-space: normal;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+button.btn-primary:hover,
+button.btn-primary:focus,
+button.btn-primary:active {
+	border-color: #9aaab5;
+	background: #e7edf1;
+	color: var(--ajlii-ink);
 }
 
 #loginModal .modal-dialog {

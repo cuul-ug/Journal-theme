@@ -1,10 +1,10 @@
 .btn {
 	padding: 0.5em 1em;
 	border-radius: 0;
-	border: 1px solid @mid-grey;
-	background: transparent;
+	border: 1px solid @faded-grey;
+	background: @light-grey;
 	font-family: @font-sans;
-	font-size: 18px;
+	font-size: 0.85rem;
 	font-weight: 600;
 	color: @dark-grey;
 	text-decoration: none;
@@ -14,29 +14,30 @@
 	&:focus,
 	&:active {
 		box-shadow: none;
-		color: @primary;
-		border-color: @primary;
+		background: @faded-grey;
+		color: @dark-grey;
+		border-color: @mid-grey;
 		text-decoration: none;
 	}
 }
 
 // Font-size for buttons; overwriting Bootstrap
 .btn.btn {
-	font-size: @link-size;
+	font-size: 0.85rem;
 }
 
 .btn-primary {
-	background: @primary;
-	border-color: @btn-border-colour;
-	color: @contrast;
+	background: @light-grey;
+	border-color: @faded-grey;
+	color: @dark-grey;
 	font-weight: 600;
 
 	&:hover,
 	&:focus,
 	&:active {
-		background: @primary-text !important;
-		border-color: @primary-text !important;
-		color: @contrast;
+		background: @faded-grey !important;
+		border-color: @mid-grey !important;
+		color: @dark-grey;
 	}
 }
 
