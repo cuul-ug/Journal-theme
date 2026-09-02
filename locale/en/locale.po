@@ -422,6 +422,24 @@ msgstr "Downloads"
 msgid "plugins.themes.ajlii.displayStats.noStats"
 msgstr "Download data is not yet available."
 
+msgid "plugins.themes.ajlii.displayStats"
+msgstr "Journal Statistics"
+
+msgid "plugins.themes.ajlii.stats.views"
+msgstr "Abstract Views"
+
+msgid "plugins.themes.ajlii.stats.viewsDesc"
+msgstr "Total abstract views across all articles"
+
+msgid "plugins.themes.ajlii.stats.articles"
+msgstr "Articles Published"
+
+msgid "plugins.themes.ajlii.stats.articlesDesc"
+msgstr "Total peer-reviewed articles published"
+
+msgid "plugins.themes.ajlii.stats.downloadsDesc"
+msgstr "Total article downloads and galley access"
+
 msgid "plugins.themes.ajlii.option.aiProvider.label"
 msgstr "AI assistant provider"
 

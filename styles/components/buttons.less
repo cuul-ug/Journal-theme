@@ -5,7 +5,7 @@
 	background: transparent;
 	font-family: @font-sans;
 	font-size: 18px;
-	font-weight: 400;
+	font-weight: 600;
 	color: @dark-grey;
 	text-decoration: none;
 	cursor: pointer;
@@ -29,6 +29,7 @@
 	background: @primary;
 	border-color: @btn-border-colour;
 	color: @contrast;
+	font-weight: 600;
 
 	&:hover,
 	&:focus,
@@ -40,13 +41,16 @@
 }
 
 .btn-light {
-	border-color: @light-grey;
-	color: @light-grey;
+	border-color: @faded-grey;
+	background-color: @light-grey;
+	color: @dark-grey;
+	font-weight: 600;
 
 	&:hover,
 	&:focus,
 	&:active {
-		background: @light-grey;
+		background-color: @faded-grey;
+		border-color: @dark-grey;
 		color: @dark-grey;
 	}
 }

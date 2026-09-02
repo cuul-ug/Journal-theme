@@ -1,0 +1,107 @@
+/**
+ * @file styles/components/statistics.less
+ *
+ * Copyright (c) 2014-2025 Simon Fraser University
+ * Copyright (c) 2003-2025 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @brief Statistics display component styling
+ */
+
+.ajlii-homepage-statistics {
+	margin: 3rem 0;
+	padding: 2rem;
+	background-color: @primary-light;
+	border-radius: 4px;
+	border-top: 4px solid @primary;
+}
+
+.ajlii-stats-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 2rem;
+	margin-top: 1.5rem;
+}
+
+.ajlii-stat-card {
+	padding: 1.5rem;
+	background-color: @contrast;
+	border-radius: 4px;
+	border: 1px solid @faded-grey;
+	text-align: center;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	transition: all 0.3s ease;
+
+	&:hover {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		border-color: @primary;
+	}
+}
+
+.ajlii-stat-label {
+	margin: 0 0 0.75rem 0;
+	font-size: 0.95rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: @primary-text;
+	line-height: 1.3;
+}
+
+.ajlii-stat-value {
+	margin: 1rem 0;
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.ajlii-stat-number {
+	display: block;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: @primary;
+	line-height: 1;
+	font-family: @font-sans;
+}
+
+.ajlii-stat-description {
+	font-size: 0.85rem;
+	color: @mid-grey;
+	line-height: 1.5;
+	margin: 0.75rem 0 0 0;
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+	.ajlii-stats-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.ajlii-stat-number {
+		font-size: 2rem;
+	}
+
+	.ajlii-homepage-statistics {
+		padding: 1.5rem;
+		margin: 2rem 0;
+	}
+}
+
+// Dark mode support if implemented
+@media (prefers-color-scheme: dark) {
+	.ajlii-homepage-statistics {
+		background-color: rgba(63, 189, 248, 0.1);
+	}
+
+	.ajlii-stat-card {
+		background-color: #1a1a1a;
+		border-color: #333;
+
+		&:hover {
+			border-color: @primary;
+			background-color: #222;
+		}
+	}
+}

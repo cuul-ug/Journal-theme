@@ -1,0 +1,405 @@
+/**
+ * @file styles/plugins.less
+ *
+ * Copyright (c) 2014-2025 Simon Fraser University
+ * Copyright (c) 2003-2025 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @brief Plugin compatibility and integration styles for AJLII theme
+ *
+ * This file ensures all OJS plugins can effectively interact with the AJLII theme
+ * without style conflicts or layout issues.
+ */
+
+// Plugin output regions - allow plugins to display content naturally
+.pkp_structure_main {
+	.page-content {
+		// Allow plugin blocks to flow naturally
+		.pkp_output_region {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+// Plugin blocks and sidebars
+.plugin-content {
+	margin-bottom: 1.5rem;
+	
+	h2 {
+		font-size: 1.3rem;
+		margin-bottom: 0.75rem;
+	}
+
+	h3 {
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	p {
+		margin-bottom: 0.75rem;
+	}
+
+	ul, ol {
+		margin-bottom: 0.75rem;
+		padding-left: 1.5rem;
+
+		li {
+			margin-bottom: 0.3rem;
+		}
+	}
+}
+
+// Generic plugin sidebar
+.pkp_structure_sidebar {
+	.plugin-blocks {
+		section {
+			margin-bottom: 1.5rem;
+			padding-bottom: 1.5rem;
+			border-bottom: 1px solid @faded-grey;
+
+			&:last-child {
+				border-bottom: none;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+// Plugin modal/dialog support
+.plugin_modal {
+	z-index: 1000;
+}
+
+// Article galley plugin support (HTML, PDF, etc.)
+.galley-view {
+	margin: 2rem 0;
+	
+	&.pdf-galley,
+	&.html-galley,
+	&.epub-galley {
+		min-height: 400px;
+	}
+}
+
+// Plugin buttons should follow theme styling
+.plugin-button {
+	@extend .btn;
+	
+	&.primary,
+	&.btn-primary {
+		@extend .btn-primary;
+	}
+
+	&.secondary,
+	&.btn-secondary {
+		@extend .btn-secondary;
+	}
+}
+
+// Plugin forms should integrate seamlessly
+.plugin-form {
+	margin-bottom: 2rem;
+
+	.form-group {
+		margin-bottom: 1rem;
+	}
+
+	.form-control,
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	select,
+	textarea {
+		border: 1px solid @faded-grey;
+		padding: 0.5rem;
+		border-radius: 4px;
+		font-size: 1rem;
+
+		&:focus {
+			border-color: @primary;
+			box-shadow: 0 0 0 0.2rem rgba(@primary, 0.25);
+		}
+	}
+}
+
+// Plugin alerts
+.plugin-alert {
+	margin-bottom: 1rem;
+	padding: 0.75rem 1rem;
+	border-radius: 4px;
+	border-left: 4px solid @primary;
+
+	&.alert-info {
+		background-color: @primary-light;
+		border-left-color: @primary;
+		color: @primary-text;
+	}
+
+	&.alert-success {
+		background-color: #dcf5dc;
+		border-left-color: #28a745;
+		color: #155724;
+	}
+
+	&.alert-warning {
+		background-color: #fff3cd;
+		border-left-color: @warning;
+		color: #856404;
+	}
+
+	&.alert-danger {
+		background-color: #f8d7da;
+		border-left-color: @accent-red;
+		color: #721c24;
+	}
+}
+
+// Plugin tables
+.plugin-table {
+	@extend .table;
+	margin-bottom: 1rem;
+}
+
+// Ensure plugin links inherit theme colors
+.plugin-link {
+	color: @primary-link;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: darken(@primary-link, 12%);
+		text-decoration: underline;
+	}
+}
+
+// Plugin typography scale matching theme
+.plugin-h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+.plugin-h2 { font-size: 1.75rem; font-weight: 700; line-height: 1.3; }
+.plugin-h3 { font-size: 1.5rem; font-weight: 700; line-height: 1.4; }
+.plugin-h4 { font-size: 1.25rem; font-weight: 600; line-height: 1.5; }
+.plugin-h5 { font-size: 1.1rem; font-weight: 600; line-height: 1.6; }
+.plugin-h6 { font-size: 1rem; font-weight: 600; line-height: 1.6; }
+
+// PubIds plugin support
+.pub-id {
+	display: inline-block;
+	margin: 0.25rem 0.5rem 0.25rem 0;
+	padding: 0.25rem 0.5rem;
+	background-color: @light-grey;
+	border: 1px solid @faded-grey;
+	border-radius: 3px;
+	font-size: 0.9rem;
+
+	a {
+		color: @primary-link;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Crossref plugin support
+.crossref-status {
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	background-color: @light-grey;
+	border-left: 4px solid @primary;
+	border-radius: 3px;
+	font-size: 0.95rem;
+}
+
+// ORCID profile plugin support (additional to theme's native ORCID support)
+.orcid-profile-link {
+	display: inline-block;
+	margin: 0.25rem 0.5rem 0.25rem 0;
+
+	img {
+		height: 20px;
+		vertical-align: middle;
+		margin-right: 0.25rem;
+	}
+
+	a {
+		color: @primary-link;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Web feeds (RSS, Atom) - plugin support
+.feed-link {
+	display: inline-block;
+	margin: 0.25rem 0.5rem 0.25rem 0;
+
+	a {
+		color: @primary-link;
+		text-decoration: none;
+		padding: 0.25rem 0.5rem;
+		border: 1px solid @faded-grey;
+		border-radius: 3px;
+		font-size: 0.9rem;
+
+		&:hover,
+		&:focus {
+			background-color: @primary-light;
+			border-color: @primary;
+			text-decoration: none;
+		}
+
+		span {
+			font-weight: 600;
+			margin-right: 0.25rem;
+		}
+	}
+}
+
+// Statistics display plugin support
+.statistics-block {
+	padding: 1rem;
+	background-color: @light-grey;
+	border-radius: 4px;
+	margin-bottom: 1.5rem;
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.stat-item {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid @faded-grey;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		.stat-label {
+			font-weight: 600;
+			color: @primary-text;
+		}
+
+		.stat-value {
+			color: @primary;
+			font-weight: 700;
+		}
+	}
+}
+
+// Plugin widget containers
+.plugin-widget {
+	margin-bottom: 2rem;
+	padding: 1rem;
+	background-color: @contrast;
+	border: 1px solid @faded-grey;
+	border-radius: 4px;
+
+	.widget-title {
+		font-size: 1.1rem;
+		font-weight: 700;
+		margin-bottom: 0.75rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid @primary;
+	}
+
+	.widget-content {
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+}
+
+// Ensure plugin-generated content respects theme contrast
+.pkp_output_region {
+	color: @primary-text;
+
+	a {
+		color: @primary-link;
+
+		&:visited {
+			color: darken(@primary-link, 15%);
+		}
+
+		&:hover,
+		&:focus {
+			color: darken(@primary-link, 12%);
+		}
+	}
+}
+
+// Plugin-generated lists
+ul.plugin-list,
+ol.plugin-list {
+	margin-bottom: 1rem;
+	padding-left: 1.5rem;
+
+	li {
+		margin-bottom: 0.5rem;
+		line-height: 1.6;
+	}
+}
+
+// Compatibility for common plugin classes
+.block,
+.module,
+.section {
+	margin-bottom: 2rem;
+
+	.block-title,
+	.module-title,
+	.section-title {
+		font-size: 1.25rem;
+		font-weight: 700;
+		margin-bottom: 0.75rem;
+		color: @primary-text;
+	}
+}
+
+// Support for plugin modals and popups
+.plugin-modal-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+}
+
+.plugin-modal-dialog {
+	background-color: @contrast;
+	border-radius: 4px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+}
+
+// Plugin customization hooks
+// These classes allow theme administrators to customize plugin appearance
+.plugin-customizable {
+	// Base styling for customizable plugin elements
+}
+
+// Ensure RTL language support for plugins
+html[lang|="ar"],
+html[lang|="he"],
+html[lang|="fa"],
+html[lang|="ur"],
+html[lang="ps"] {
+	.plugin-content {
+		direction: rtl;
+		text-align: right;
+
+		ul, ol {
+			padding-left: 0;
+			padding-right: 1.5rem;
+		}
+	}
+
+	.pub-id,
+	.orcid-profile-link,
+	.feed-link {
+		margin-left: 0.5rem;
+		margin-right: 0;
+	}
+}
