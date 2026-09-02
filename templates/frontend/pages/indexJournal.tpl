@@ -181,34 +181,6 @@
 			</div>
 		</div>
 
-		{* Statistics Section *}
-		<section class="ajlii-homepage-statistics" aria-labelledby="ajliiStatsTitle">
-			<h2 id="ajliiStatsTitle" class="visually-hidden">{translate key="plugins.themes.ajlii.displayStats"}</h2>
-			<div class="ajlii-stats-grid">
-				<div class="ajlii-stat-card">
-					<h3 class="ajlii-stat-label">{translate key="plugins.themes.ajlii.displayStats.downloads"}</h3>
-					<div class="ajlii-stat-value" data-ajlii-total-downloads>
-						<span class="ajlii-stat-number">—</span>
-					</div>
-					<p class="ajlii-stat-description">{translate key="plugins.themes.ajlii.stats.downloadsDesc"}</p>
-				</div>
-				<div class="ajlii-stat-card">
-					<h3 class="ajlii-stat-label">{translate key="plugins.themes.ajlii.stats.views"}</h3>
-					<div class="ajlii-stat-value" data-ajlii-total-views>
-						<span class="ajlii-stat-number">—</span>
-					</div>
-					<p class="ajlii-stat-description">{translate key="plugins.themes.ajlii.stats.viewsDesc"}</p>
-				</div>
-				<div class="ajlii-stat-card">
-					<h3 class="ajlii-stat-label">{translate key="plugins.themes.ajlii.stats.articles"}</h3>
-					<div class="ajlii-stat-value" data-ajlii-total-articles>
-						<span class="ajlii-stat-number">—</span>
-					</div>
-					<p class="ajlii-stat-description">{translate key="plugins.themes.ajlii.stats.articlesDesc"}</p>
-				</div>
-			</div>
-		</section>
-
 		<div class="text-center">
 			<a class="btn" href="{url router=\PKP\core\PKPApplication::ROUTE_PAGE page="issue" op="archive"}">
 				{translate key="journal.viewAllIssues"}
