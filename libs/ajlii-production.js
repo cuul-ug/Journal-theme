@@ -101,7 +101,7 @@
 
 		const storedValue = function () {
 			try {
-				return localStorage.getItem(storageKey);
+				return sessionStorage.getItem(storageKey);
 			} catch (error) {
 				return null;
 			}
@@ -133,7 +133,7 @@
 		const save = function (nextState) {
 			state = Object.assign({}, defaults, nextState, { necessary: true, updatedAt: new Date().toISOString() });
 			try {
-				localStorage.setItem(storageKey, JSON.stringify(state));
+				sessionStorage.setItem(storageKey, JSON.stringify(state));
 			} catch (error) {}
 			syncInputs();
 			publish();
